@@ -1,0 +1,214 @@
+{
+  "shipTypes": [
+    {
+      "id": "fighter",
+      "name": "Fighter Squadron",
+      "description": "Fast, light interceptors that gain bonus combat power when deployed alongside carrier-class ships.",
+      "faction": "all",
+      "class": "Fighter",
+      "combatPower": 5,
+      "hullPoints": 1,
+      "speed": 4,
+      "maintenanceCost": 10,
+      "productionCost": {
+        "credits": 100,
+        "materials": 20
+      },
+      "productionTime": 2,
+      "requiresTech": null,
+      "requiresFacilityLevel": 1,
+      "specialAbility": "carrierSynergy"
+    },
+    {
+      "id": "corvette",
+      "name": "Corvette",
+      "description": "Versatile all-purpose warship; the affordable backbone of early and mid-game fleets.",
+      "faction": "all",
+      "class": "Corvette",
+      "combatPower": 15,
+      "hullPoints": 2,
+      "speed": 3,
+      "maintenanceCost": 25,
+      "productionCost": {
+        "credits": 250,
+        "materials": 50
+      },
+      "productionTime": 3.5,
+      "requiresTech": null,
+      "requiresFacilityLevel": 1,
+      "specialAbility": null
+    },
+    {
+      "id": "cruiser",
+      "name": "Cruiser",
+      "description": "Heavy warship with strong firepower and hull; the workhorse of mid-to-late game fleets.",
+      "faction": "all",
+      "class": "Cruiser",
+      "combatPower": 35,
+      "hullPoints": 4,
+      "speed": 2,
+      "maintenanceCost": 60,
+      "productionCost": {
+        "credits": 600,
+        "materials": 120
+      },
+      "productionTime": 5.5,
+      "requiresTech": null,
+      "requiresFacilityLevel": 2,
+      "specialAbility": null
+    },
+    {
+      "id": "capitalShip",
+      "name": "Capital Ship",
+      "description": "Massive command vessel that dominates fleet engagements; the most powerful general-purpose warship.",
+      "faction": "all",
+      "class": "Capital",
+      "combatPower": 80,
+      "hullPoints": 8,
+      "speed": 1,
+      "maintenanceCost": 150,
+      "productionCost": {
+        "credits": 1500,
+        "materials": 300
+      },
+      "productionTime": 8,
+      "requiresTech": null,
+      "requiresFacilityLevel": 3,
+      "specialAbility": null
+    },
+    {
+      "id": "enforcerDreadnought",
+      "name": "Enforcer Dreadnought",
+      "description": "Brand Authority flagship of overwhelming firepower; the mightiest vessel in any armada.",
+      "faction": "brandAuthority",
+      "class": "Capital",
+      "combatPower": 120,
+      "hullPoints": 12,
+      "speed": 1,
+      "maintenanceCost": 250,
+      "productionCost": {
+        "credits": 3000,
+        "materials": 600
+      },
+      "productionTime": 12,
+      "requiresTech": "tier5-brand-authority",
+      "requiresFacilityLevel": 3,
+      "specialAbility": null
+    },
+    {
+      "id": "blockadeRunner",
+      "name": "Blockade Runner",
+      "description": "Strikes first every combat round, dealing damage before the enemy fleet can respond.",
+      "faction": "brandAuthority",
+      "class": "Corvette",
+      "combatPower": 20,
+      "hullPoints": 2,
+      "speed": 4,
+      "maintenanceCost": 35,
+      "productionCost": {
+        "credits": 400,
+        "materials": 80
+      },
+      "productionTime": 3.5,
+      "requiresTech": "tier3-brand-authority",
+      "requiresFacilityLevel": 2,
+      "specialAbility": "firstStrike"
+    },
+    {
+      "id": "stealthCorvette",
+      "name": "Stealth Corvette",
+      "description": "Agile Union corvette with an evasion system that causes some enemy fire to miss entirely.",
+      "faction": "union",
+      "class": "Corvette",
+      "combatPower": 15,
+      "hullPoints": 2,
+      "speed": 4,
+      "maintenanceCost": 30,
+      "productionCost": {
+        "credits": 350,
+        "materials": 70
+      },
+      "productionTime": 3.5,
+      "requiresTech": "tier3-union",
+      "requiresFacilityLevel": 2,
+      "specialAbility": "evasion"
+    },
+    {
+      "id": "liberationCarrier",
+      "name": "Liberation Carrier",
+      "description": "Massive Union carrier that amplifies fighter squadron effectiveness across the entire fleet.",
+      "faction": "union",
+      "class": "Capital",
+      "combatPower": 90,
+      "hullPoints": 10,
+      "speed": 1,
+      "maintenanceCost": 200,
+      "productionCost": {
+        "credits": 2500,
+        "materials": 500
+      },
+      "productionTime": 10.5,
+      "requiresTech": "tier5-union",
+      "requiresFacilityLevel": 3,
+      "specialAbility": null
+    },
+    {
+      "id": "droidCarrier",
+      "name": "Droid Carrier",
+      "description": "Automated Autoforge warship that self-repairs hull damage at the end of each engagement.",
+      "faction": "autoforge",
+      "class": "Capital",
+      "combatPower": 70,
+      "hullPoints": 8,
+      "speed": 2,
+      "maintenanceCost": 100,
+      "productionCost": {
+        "credits": 1800,
+        "materials": 400
+      },
+      "productionTime": 8,
+      "requiresTech": "tier3-autoforge",
+      "requiresFacilityLevel": 2,
+      "specialAbility": "selfRepair"
+    },
+    {
+      "id": "nexusBattleship",
+      "name": "Nexus Battleship",
+      "description": "Apex Autoforge warship specialized for destroying enemy capital-class ships in a single engagement.",
+      "faction": "autoforge",
+      "class": "Capital",
+      "combatPower": 110,
+      "hullPoints": 12,
+      "speed": 1,
+      "maintenanceCost": 220,
+      "productionCost": {
+        "credits": 2800,
+        "materials": 550
+      },
+      "productionTime": 12,
+      "requiresTech": "tier5-autoforge",
+      "requiresFacilityLevel": 3,
+      "specialAbility": "capitalKiller"
+    }
+  ],
+  "fleetRules": {
+    "maxShipsPerFleet": 12,
+    "maintenancePenaltyRate": 0.1,
+    "scrapReturnRate": 0.25
+  },
+  "commandTypes": [
+    "patrol",
+    "raid",
+    "blockade"
+  ],
+  "travelConfig": {
+    "maxTurns": 12,
+    "directTravelMinTurns": 3,
+    "laneHopTurns": 1
+  },
+  "raidModifiers": {
+    "brandAuthority": -0.15,
+    "union": 0.15,
+    "autoforge": 0
+  }
+}

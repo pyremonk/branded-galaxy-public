@@ -1,0 +1,217 @@
+/* LoginPanel.css — Standalone auth panel for use inside a layout column */
+
+.lp-box {
+  background: linear-gradient(145deg, #161b22, #21262d);
+  border: 1px solid #30363d;
+  border-radius: 10px;
+  padding: 32px 28px;
+  width: 100%;
+}
+
+/* Tab switcher */
+.lp-tabs {
+  display: flex;
+  border-bottom: 1px solid #30363d;
+  margin-bottom: 24px;
+}
+
+.lp-tab {
+  flex: 1;
+  padding: 10px;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  color: #8b949e;
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s;
+  margin-bottom: -1px;
+}
+
+.lp-tab:hover {
+  color: #c9d1d9;
+}
+
+.lp-tab--active {
+  color: #58a6ff;
+  border-bottom-color: #58a6ff;
+}
+
+/* Form fields */
+.lp-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.lp-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.lp-field label {
+  color: #8b949e;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.lp-field input {
+  width: 100%;
+  padding: 11px 13px;
+  background: #0d1117;
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  color: #c9d1d9;
+  font-size: 14px;
+  font-family: var(--font-body, 'Inter', sans-serif);
+  transition: border-color 0.15s;
+}
+
+.lp-field input:focus {
+  outline: none;
+  border-color: #58a6ff;
+}
+
+/* Buttons */
+.lp-btn {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: var(--font-body, 'Inter', sans-serif);
+}
+
+.lp-btn--main {
+  background: linear-gradient(180deg, #1f6feb, #1a5fd9);
+  color: #fff;
+  margin-top: 4px;
+}
+
+.lp-btn--main:hover {
+  background: linear-gradient(180deg, #2f80ff, #2a6fe9);
+}
+
+.lp-btn--alt {
+  background: transparent;
+  border: 1px solid #30363d;
+  color: #58a6ff;
+}
+
+.lp-btn--alt:hover {
+  background: #21262d;
+}
+
+.lp-btn--offline {
+  background: linear-gradient(180deg, #238636, #1a7f37);
+  color: #fff;
+}
+
+.lp-btn--offline:hover {
+  background: linear-gradient(180deg, #2ea043, #26a148);
+}
+
+.lp-btn--galaxy {
+  background: linear-gradient(145deg, #1c2128, #22272e);
+  border: 2px solid #30363d;
+  color: #c9d1d9;
+  margin-bottom: 12px;
+  padding: 16px;
+  text-align: left;
+  transition: all 0.2s;
+}
+
+.lp-btn--galaxy:hover {
+  border-color: #3fb950;
+  background: linear-gradient(145deg, #22272e, #2d333b);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(63, 185, 80, 0.2);
+}
+
+.lp-galaxy-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: #c9d1d9;
+  margin-bottom: 4px;
+}
+
+.lp-galaxy-desc {
+  font-size: 12px;
+  color: #6e7681;
+}
+
+/* Messages */
+.lp-msg {
+  text-align: center;
+  font-size: 13px;
+  padding: 6px 0;
+}
+
+.lp-msg--err { color: #f85149; }
+.lp-msg--ok  { color: #3fb950; }
+
+/* Offline section */
+.lp-offline {
+  margin-top: 20px;
+}
+
+.lp-divider {
+  text-align: center;
+  margin: 16px 0;
+  position: relative;
+}
+
+.lp-divider::before,
+.lp-divider::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 40%;
+  height: 1px;
+  background: #30363d;
+}
+
+.lp-divider::before { left: 0; }
+.lp-divider::after  { right: 0; }
+
+.lp-divider span {
+  color: #6e7681;
+  font-size: 11px;
+  padding: 0 10px;
+  background: linear-gradient(145deg, #161b22, #21262d);
+}
+
+.lp-offline-hint {
+  text-align: center;
+  margin-top: 8px;
+  font-size: 12px;
+  color: #6e7681;
+}
+
+/* Galaxy choice layout */
+.lp-galaxy-choice h3 {
+  text-align: center;
+  color: #3fb950;
+  font-size: 18px;
+  margin: 0 0 20px;
+  font-family: var(--font-heading, 'Orbitron', sans-serif);
+}
+
+/* Request-access view (shown when sign-ups are disabled) */
+.lp-closed-note {
+  color: #8b949e;
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.lp-letterbird iframe {
+  width: 100%;
+  border: none;
+}

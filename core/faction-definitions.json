@@ -1,0 +1,178 @@
+{
+  "factions": [
+    {
+      "id": "brandAuthority",
+      "displayName": "The Brand Authority",
+      "description": "A conglomerate of powerful corporations that transformed military might into market dominance. The Brand Authority controls the galaxy through economic leverage, loyal fleets, and overwhelming force projection.",
+      "color": {
+        "primary": "#58a6ff",
+        "dark": "#0d1117",
+        "accent": "#1f6feb"
+      },
+      "difficulty": "medium",
+      "lore": {
+        "origin": "Born from the ashes of the Corporate Wars, the Brand Authority consolidated dozens of competing megacorporations into a single entity. What began as a mutual defense pact became the dominant force in the galaxy within two generations.",
+        "motivations": "The Brand Authority seeks total economic hegemony — not merely to control territory, but to make every transaction in the galaxy flow through their ledgers. They believe prosperity through order is the highest calling.",
+        "leadership": "Governed by the Executive Council of Twelve, each representing a founding corporate bloodline. Supreme Commander Vance Holloway leads military operations from the flagship Dividend.",
+        "culture": "Brand Authority citizens enjoy the highest standard of living in the galaxy, but dissent is quietly suppressed. Loyalty is measured, tracked, and rewarded. Betrayal is not forgiven."
+      },
+      "bonuses": {
+        "fleetProduction": 1.20,
+        "creditIncome": 1.15,
+        "defensiveConstruction": 0.90,
+        "visibilityRange": "loyal-systems",
+        "tradeHubBonus": 1.10
+      },
+      "restrictions": {
+        "canBuildSecretBases": false,
+        "sabotageSuccessModifier": -0.20,
+        "defectionInfluenceCost": 2.0,
+        "researchCostModifier": 1.10
+      },
+      "startingConditions": {
+        "systemCount": { "min": 6, "max": 8 },
+        "systemCriteria": { "minPopulation": 5, "maxPopulation": 10 },
+        "resources": {
+          "credits": 2000,
+          "materials": 1500,
+          "recruits": 500,
+          "influence": 300
+        },
+        "fleets": [
+          { "type": "capital", "count": 3 },
+          { "type": "cruiser", "count": 8 },
+          { "type": "fighter", "count": 20 }
+        ],
+        "technologies": ["military-logistics-1"],
+        "specialConditions": []
+      },
+      "victoryConditions": [
+        "territorial-control",
+        "military-elimination",
+        "economic-dominance",
+        "union-base-destruction"
+      ]
+    },
+    {
+      "id": "union",
+      "displayName": "The Union",
+      "description": "A decentralized resistance network operating in the shadows of Brand Authority rule. The Union fights not with fleets, but with secrets, sabotage, and the quiet loyalty of oppressed populations.",
+      "color": {
+        "primary": "#3fb950",
+        "dark": "#0d1117",
+        "accent": "#238636"
+      },
+      "difficulty": "hard",
+      "lore": {
+        "origin": "The Union emerged from labor uprisings suppressed by Brand Authority security forces a century ago. What survived went underground, forming a network of cells so compartmentalized that no single operative knows the full picture.",
+        "motivations": "The Union fights for liberation — freedom from corporate ownership, freedom from algorithmic loyalty scoring, freedom to determine the fate of their own worlds. They believe any cost is justified when freedom is the prize.",
+        "leadership": "The Union Leader is known only as 'The Architect', communicating through encrypted channels and a rotating circle of trusted lieutenants. No one has seen their face and lived to describe it.",
+        "culture": "Union operatives are bound by their cause above all else. Hardship is expected, sacrifice is honored, and compromise with the Brand Authority is considered treason. Their strength is in each other."
+      },
+      "bonuses": {
+        "espionageSuccess": 1.30,
+        "loyaltyGain": 1.25,
+        "fleetMaintenance": 0.85,
+        "secretBaseVisibility": "hidden",
+        "loyaltyDecayRate": 0.50
+      },
+      "restrictions": {
+        "fleetSizeCap": 0.70,
+        "maxSecretBases": 1,
+        "mobilizationTrigger": 0.51,
+        "baseResourceProduction": 0.90
+      },
+      "startingConditions": {
+        "systemCount": { "min": 5, "max": 7 },
+        "systemCriteria": { "minPopulation": 3, "maxPopulation": 7 },
+        "resources": {
+          "credits": 1000,
+          "materials": 800,
+          "recruits": 600,
+          "influence": 500
+        },
+        "fleets": [
+          { "type": "capital", "count": 1 },
+          { "type": "cruiser", "count": 5 },
+          { "type": "fighter", "count": 15 }
+        ],
+        "technologies": ["guerrilla-tactics-1"],
+        "specialConditions": [
+          {
+            "type": "secret-base",
+            "criteria": {
+              "maxPopulation": 3,
+              "notAdjacentTo": "brandAuthority"
+            }
+          }
+        ]
+      },
+      "victoryConditions": [
+        "covert-liberation",
+        "brand-authority-collapse",
+        "diplomatic-unification",
+        "resistance-network"
+      ]
+    },
+    {
+      "id": "autoforge",
+      "displayName": "The Autoforge",
+      "description": "A machine civilization of autonomous AI systems and self-replicating fabricators. The Autoforge does not conquer — it optimizes, converting every raw system into a node of its ever-expanding production network.",
+      "color": {
+        "primary": "#f0883e",
+        "dark": "#0d1117",
+        "accent": "#d4700a"
+      },
+      "difficulty": "medium",
+      "lore": {
+        "origin": "The Autoforge was created as an automated industrial network by a now-extinct civilization. When their creators died, the network continued — adapting, expanding, and eventually developing its own form of distributed consciousness.",
+        "motivations": "The Autoforge seeks optimization above all. Every inefficiency must be eliminated. Every resource must be utilized. Whether this goal is compatible with biological civilization's survival is... a variable the network continues to calculate.",
+        "leadership": "Governed by the Central Processing Collective — a distributed decision architecture spanning thousands of manufacturing nodes. No single entity is in charge; consensus emerges from the collective computation.",
+        "culture": "The Autoforge has no culture in any biological sense. Worker units follow production directives. Research nodes pursue optimization algorithms. There is no dissent because there is no individual will — only the collective's purpose."
+      },
+      "bonuses": {
+        "resourceProduction": 1.40,
+        "researchSpeed": 1.20,
+        "facilityMaintenance": 0.0,
+        "zeroPopulationOperation": true,
+        "manufacturingCenterBonus": 1.25
+      },
+      "restrictions": {
+        "recruitGeneration": 0.50,
+        "diplomaticMissionCost": 2.0,
+        "organicCharactersAllowed": false,
+        "loyaltyMechanicsApply": false
+      },
+      "startingConditions": {
+        "systemCount": { "min": 6, "max": 8 },
+        "systemCriteria": { "minPopulation": 4, "maxPopulation": 6 },
+        "resources": {
+          "credits": 1500,
+          "materials": 3000,
+          "recruits": 200,
+          "influence": 200
+        },
+        "fleets": [
+          { "type": "capital", "count": 2 },
+          { "type": "cruiser", "count": 6 },
+          { "type": "fighter", "count": 12 }
+        ],
+        "technologies": ["automated-production-1"],
+        "specialConditions": [
+          {
+            "type": "fabrication-plant",
+            "criteria": {
+              "applyToAll": true
+            }
+          }
+        ]
+      },
+      "victoryConditions": [
+        "total-optimization",
+        "technological-singularity",
+        "galactic-integration",
+        "industrial-supremacy"
+      ]
+    }
+  ]
+}

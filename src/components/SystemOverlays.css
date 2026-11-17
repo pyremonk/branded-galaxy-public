@@ -1,0 +1,108 @@
+/* SystemOverlays — covers the full viewport, sits above the Phaser canvas        */
+/* but below all React UI panels (z-index 50 vs panels at 100+).                  */
+
+.sys-overlays {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;    /* never intercepts mouse events — Phaser handles those */
+  z-index: 50;
+}
+
+/* ── Name label ─────────────────────────────────────────────────────────────── */
+
+.sys-overlay-name {
+  position: absolute;
+  transform: translate(-50%, -100%);
+  white-space: nowrap;
+  font-family: 'JetBrains Mono', 'Courier New', monospace;
+  /* font-size is set inline based on zoom level */
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  /* Crisp dark halo so the label reads on any background */
+  text-shadow:
+    0 0 3px #0d1117,
+    0 0 6px #0d1117,
+    0 0 10px #0d1117;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* ── Special-type icon ──────────────────────────────────────────────────────── */
+
+.sys-overlay-special {
+  position: absolute;
+  transform: translate(-50%, 0);
+  font-size: 11px;
+  line-height: 1;
+  opacity: 0.75;
+  color: #c9d1d9;
+  text-shadow: 0 0 4px #0d1117, 0 0 8px #0d1117;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* ── Fleet faction badges — bottom-right of circle, always visible ────────── */
+
+/* Container: anchored so its bottom-right corner sits at the system's
+   bottom-right edge, items stack upward. */
+.sys-overlay-fleet-stack {
+  position: absolute;
+  transform: translate(-100%, -100%);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+  pointer-events: none;
+  user-select: none;
+}
+
+.sys-overlay-fleet-badge {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  font-family: 'JetBrains Mono', 'Courier New', monospace;
+  font-size: 9px;
+  font-weight: 700;
+  /* color is set inline per faction */
+  background: rgba(13, 17, 23, 0.82);
+  padding: 1px 4px;
+  border-radius: 3px;
+  border: 1px solid currentColor;
+  white-space: nowrap;
+  opacity: 0.9;
+  pointer-events: none;
+  user-select: none;
+}
+
+.sys-overlay-fleet-icon {
+  font-size: 8px;
+  opacity: 0.85;
+}
+
+/* ── Resource output label ──────────────────────────────────────────────────── */
+
+.sys-overlay-resource {
+  position: absolute;
+  transform: translate(-50%, 0);
+  font-family: 'JetBrains Mono', 'Courier New', monospace;
+  font-size: 9px;
+  font-weight: 600;
+  color: #8b949e;
+  text-shadow: 0 0 4px #0d1117, 0 0 8px #0d1117;
+  pointer-events: none;
+  user-select: none;
+  white-space: nowrap;
+}
+
+/* ── Intel indicator dot ────────────────────────────────────────────────────── */
+
+.sys-overlay-intel {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  font-size: 8px;
+  color: #58a6ff;
+  text-shadow: 0 0 4px #0d1117, 0 0 8px #0d1117;
+  pointer-events: none;
+  user-select: none;
+  line-height: 1;
+}

@@ -1,0 +1,158 @@
+[
+  {
+    "id": "galaxy-overview",
+    "categoryId": "galaxy",
+    "title": "Galaxy Overview",
+    "body": "The galaxy is a procedurally generated map of star systems connected by hyperspace lanes. Systems belong to sectors, and factions compete for control. Your goal is to expand your faction's influence until you meet a victory condition."
+  },
+  {
+    "id": "factions-overview",
+    "categoryId": "factions",
+    "title": "Factions",
+    "body": "Three factions contest the galaxy: **Brand Authority** (economic dominance), **The Union** (military solidarity), and **Autoforge** (industrial automation). Each faction has unique resource bonuses, unit types, and starting positions. Neutral systems belong to no faction and can be claimed through diplomacy or conquest."
+  },
+  {
+    "id": "characters-overview",
+    "categoryId": "characters",
+    "title": "Characters",
+    "body": "Characters are named individuals with stats (Command, Espionage, Diplomacy, Engineering) that affect missions and fleet performance. Assign them to fleets to boost combat, to bases to generate bonuses, or to missions to conduct covert operations. Characters can be captured and rescued during play."
+  },
+  {
+    "id": "fleets-overview",
+    "categoryId": "fleets",
+    "title": "Fleets",
+    "body": "Fleets are collections of ships that move across hyperspace lanes and engage in combat. Each fleet can be given orders (Move, Patrol, Engage) during the Action Phase. Fleet power is determined by ship composition, commander assignment, and applicable tech bonuses."
+  },
+  {
+    "id": "bases-overview",
+    "categoryId": "bases",
+    "title": "Bases & Facilities",
+    "body": "Bases are fortified installations on systems that provide passive bonuses. Facilities (Shipyards, Barracks, Research Labs, Trade Posts) are constructed over several turns and permanently enhance a system's output or defense rating."
+  },
+  {
+    "id": "missions-overview",
+    "categoryId": "missions",
+    "title": "Missions",
+    "body": "Missions are covert operations performed by characters against enemy or neutral systems. Success depends on the character's relevant stat versus the target system's counter-intelligence rating. Missions can reveal intel, shift loyalty, sabotage facilities, or extract assets."
+  },
+  {
+    "id": "diplomacy-overview",
+    "categoryId": "diplomacy",
+    "title": "Diplomacy",
+    "body": "Diplomatic actions spend Influence to shift system loyalties, form trade agreements, or negotiate ceasefires. Systems with high loyalty toward your faction produce resources more efficiently and are harder for enemies to subvert."
+  },
+  {
+    "id": "combat-overview",
+    "categoryId": "combat",
+    "title": "Combat",
+    "body": "Space combat resolves automatically during the Resolution Phase when opposing fleets occupy the same system. Combat power is compared with randomisation applied. Ground combat occurs when a fleet attempts to capture a system against defending troops."
+  },
+  {
+    "id": "research-overview",
+    "categoryId": "research",
+    "title": "Technology Research",
+    "body": "The tech tree provides upgrades across four tiers: basic improvements, advanced fleet tech, elite capabilities, and game-changing supremacy technologies. Research one project at a time; it completes after a set number of turns determined by its cost and your Research Lab output."
+  },
+  {
+    "id": "victory-overview",
+    "categoryId": "victory",
+    "title": "Victory Conditions",
+    "body": "The first faction to achieve any one victory condition wins. Conditions include: Galactic Domination (control 75% of systems), Economic Supremacy (accumulate 10,000 credits), Military Supremacy (destroy all enemy fleets), and Cultural Victory (max influence in all sectors)."
+  },
+  {
+    "id": "game-loop-overview",
+    "categoryId": "game-loop",
+    "title": "Turn Structure",
+    "body": "Each turn has three phases. **Action Phase**: all players issue orders simultaneously. **Resolution Phase**: orders execute in initiative order — combat, missions, diplomacy. **Maintenance Phase**: resources are produced, construction advances, loyalty drifts, and the turn counter increments."
+  },
+  {
+    "id": "intel-overview",
+    "categoryId": "intel",
+    "title": "Intelligence",
+    "body": "Intel reports provide information about enemy systems, fleets, and characters gathered through Reconnaissance missions and passive CI duty assignments. Intel degrades over time; older reports may be stale. Use the Intel Panel (I) to review active reports."
+  },
+  {
+    "id": "events-overview",
+    "categoryId": "events",
+    "title": "Random Events",
+    "body": "Galactic events fire periodically and can affect resources, loyalty, system populations, or trigger crises. Some events present a choice that can yield bonuses or penalties. Events are influenced by your faction's current standing and controlled systems."
+  },
+  {
+    "id": "save-load-overview",
+    "categoryId": "save-load",
+    "title": "Saving & Loading",
+    "body": "The game auto-saves at the end of each Maintenance Phase. You can manually save to any of five named slots using the Save button. To load a game, use the Load option from the Main Menu or the in-game Load Game button."
+  },
+  {
+    "id": "glossary-credits",
+    "categoryId": "glossary",
+    "title": "Credits",
+    "body": "The primary currency of the galaxy. Earned from trade systems and spent on construction, fleet upkeep, and diplomatic actions. Running out of credits will cause fleet maintenance failures."
+  },
+  {
+    "id": "glossary-materials",
+    "categoryId": "glossary",
+    "title": "Materials",
+    "body": "Industrial resources used to construct ships and facilities. Produced by manufacturing centers and resource-rich systems."
+  },
+  {
+    "id": "glossary-influence",
+    "categoryId": "glossary",
+    "title": "Influence",
+    "body": "Soft power representing political and cultural reach. Spent on diplomatic actions, missions, and cultural victory progress. Generated by high-loyalty systems and diplomatic characters."
+  },
+  {
+    "id": "glossary-loyalty",
+    "categoryId": "glossary",
+    "title": "Loyalty",
+    "body": "A 0–100 rating measuring how strongly a system's population supports a faction. High loyalty (80+) boosts resource output and grants troop bonuses. Low loyalty (below 40) risks defection."
+  },
+  {
+    "id": "glossary-turn",
+    "categoryId": "glossary",
+    "title": "Turn",
+    "body": "One full cycle of Action → Resolution → Maintenance phases. All players act simultaneously during the Action Phase, then results resolve together."
+  },
+  {
+    "id": "glossary-phase",
+    "categoryId": "glossary",
+    "title": "Phase",
+    "body": "A subdivision of a turn. The three phases are Action (player orders), Resolution (order execution), and Maintenance (upkeep and production)."
+  },
+  {
+    "id": "glossary-fleet-power",
+    "categoryId": "glossary",
+    "title": "Fleet Power",
+    "body": "A numerical rating of a fleet's combat strength, derived from ship types, quantity, commander bonuses, and applicable tech upgrades."
+  },
+  {
+    "id": "glossary-base-power",
+    "categoryId": "glossary",
+    "title": "Base Power",
+    "body": "The defensive strength of a system's ground installations. Determined by troop count, defense rating, and any constructed fortifications."
+  },
+  {
+    "id": "glossary-initiative",
+    "categoryId": "glossary",
+    "title": "Initiative",
+    "body": "The order in which factions resolve their actions during the Resolution Phase. Higher initiative means your fleet orders, missions, and combat execute before opponents'."
+  },
+  {
+    "id": "glossary-sector",
+    "categoryId": "glossary",
+    "title": "Sector",
+    "body": "A named region of the galaxy containing multiple systems. Sectors are strategic zones used for map filtering and some victory condition calculations."
+  },
+  {
+    "id": "glossary-system",
+    "categoryId": "glossary",
+    "title": "System",
+    "body": "A star system — the fundamental strategic unit of the galaxy. Systems have populations, loyalties, resources, facilities, and defense ratings. Connected to other systems via hyperspace lanes."
+  },
+  {
+    "id": "glossary-hyperspace-lane",
+    "categoryId": "glossary",
+    "title": "Hyperspace Lane",
+    "body": "A direct travel route between two star systems. Fleets can only move along hyperspace lanes. Controlling choke-point systems that connect lanes is key to strategic defence."
+  }
+]

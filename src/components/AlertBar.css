@@ -1,0 +1,102 @@
+/* AlertBar.css — compact alert display in TopBarHUD (spec 063) */
+
+.alert-bar {
+  flex: 1;
+  min-width: 0;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0 10px;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 12px;
+  color: #c9d1d9;
+  text-align: left;
+  overflow: hidden;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.alert-bar:hover {
+  background: rgba(88, 166, 255, 0.06);
+  border-color: #30363d;
+}
+
+/* Inner wrapper clips the scrolling message */
+.alert-bar-inner {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+/* Empty/placeholder text */
+.alert-bar-empty {
+  color: #484f58;
+  font-size: 11px;
+  letter-spacing: 0.3px;
+  white-space: nowrap;
+}
+
+/* Alert message row */
+.alert-bar-message {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+/* Scroll-in animation — new message slides up from below */
+@keyframes alertSlideIn {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.alert-bar-message--slide {
+  animation: alertSlideIn 0.25s ease forwards;
+}
+
+/* Category icon */
+.alert-bar-icon {
+  font-size: 12px;
+  flex-shrink: 0;
+  color: #58a6ff;
+  line-height: 1;
+}
+
+/* Message text */
+.alert-bar-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #c9d1d9;
+}
+
+/* Badge showing count of pending alerts after the current one */
+.alert-bar-count {
+  flex-shrink: 0;
+  font-size: 10px;
+  font-weight: 700;
+  color: #8b949e;
+  background: rgba(88, 166, 255, 0.12);
+  border: 1px solid #30363d;
+  border-radius: 8px;
+  padding: 1px 5px;
+  line-height: 1.4;
+  letter-spacing: 0.3px;
+}

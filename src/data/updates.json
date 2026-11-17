@@ -1,0 +1,23 @@
+[
+  {
+    "id": "v0.9.1-release",
+    "date": "2026-03-06",
+    "title": "v0.9.1 — Polish, Fixes & Quality of Life",
+    "category": "release",
+    "body": "A focused quality-of-life patch addressing player feedback since v0.9. Time is now displayed in months throughout the UI, with rebalanced durations for construction, missions, and fleet travel to match the new pacing. Build menus now dynamically disable unavailable options and show exactly why — hover to see the resource shortfall. Troop reinforcement costs are always visible without requiring a hover. The alert history panel has been redesigned as a collapsible hierarchy organised by turn, faction, and outcome severity, making it far easier to scan a busy turn at a glance. Each facility type in the build list now has an inline explainer drawer, and a new filter lets you quickly spot idle facilities. On the bug-fix side: end-of-turn notices now properly cycle through every affected system; newly built ships correctly form their own fleet; multi-stop fleet routes now display a fleet indicator while en route; non-hyperlane (direct) travel can now be planned from the galaxy map; and new games no longer incorrectly report as running in sync mode when they are async."
+  },
+  {
+    "id": "v0.9-release",
+    "date": "2026-03-01",
+    "title": "v0.9 — Alert System & Time Display",
+    "category": "release",
+    "body": "Significant quality-of-life update. A new in-game alert system now notifies you of key events — combat outcomes, mission results, fleet movements, and diplomatic shifts — via a persistent alert bar and full history panel. All time-based values (mission durations, build queues, fleet travel times) now adapt intelligently to the current game mode (turn-based/realtime), displaying as real-time countdowns in sync mode and as turn counts in async mode."
+  },
+  {
+    "id": "devlog-async-multiplayer",
+    "date": "2026-02-24",
+    "title": "Devlog: Designing Async Multiplayer for Small Groups",
+    "category": "devlog",
+    "body": "One of the hardest design problems in Branded Galaxy has been making multiplayer feel connected without requiring everyone to be online at the same time. In this post we walk through the hybrid sync/async session model: how the host election works, how turns are validated across clients, and why we chose a tick-based approach over a traditional round-trip model. Spoiler: it lets groups of 2–3 friends each take actions throughout a day asynchronously and lets them play in realtime when everyone is online together."
+  }
+]

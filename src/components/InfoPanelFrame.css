@@ -1,0 +1,231 @@
+/*
+ * InfoPanelFrame.css
+ * Shared right-side sliding panel frame used by System, Fleet,
+ * Character Roster, and Intel Reports panels.
+ * Spec: 035-information-panels-spec.md (FR-IP-008)
+ */
+
+.info-panel-frame {
+  position: fixed;
+  top: 48px;
+  right: 0;
+  width: 380px;
+  height: calc(100vh - 48px);
+  z-index: 250;
+
+  display: flex;
+  flex-direction: column;
+
+  background: rgba(13, 17, 23, 0.97);
+  border-left: 1px solid #30363d;
+  box-shadow: -8px 0 32px rgba(0, 0, 0, 0.55);
+
+  /* Slide-in from the right */
+  animation: panel-slide-in 0.2s ease-out;
+
+  /* Constrain pointer events to the panel bounds (spec constraint) */
+  pointer-events: all;
+}
+
+@keyframes panel-slide-in {
+  from { transform: translateX(100%); }
+  to   { transform: translateX(0);    }
+}
+
+/* ── Header ── */
+.info-panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+
+  padding: 12px 16px 10px;
+  border-bottom: 1px solid #21262d;
+  flex-shrink: 0;
+}
+
+.info-panel-titles {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  min-width: 0;
+}
+
+.info-panel-title {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 14px;
+  font-weight: 700;
+  color: #c9d1d9;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.info-panel-subtitle {
+  font-family: monospace;
+  font-size: 11px;
+  color: #8b949e;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.info-panel-close {
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  color: #8b949e;
+  font-size: 16px;
+  line-height: 1;
+  padding: 3px 7px;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: color 0.15s, border-color 0.15s;
+}
+
+.info-panel-close:hover {
+  color: #f85149;
+  border-color: #f85149;
+}
+
+/* ── Scrollable body ── */
+.info-panel-body {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 0;
+}
+
+.info-panel-body::-webkit-scrollbar {
+  width: 5px;
+}
+.info-panel-body::-webkit-scrollbar-track {
+  background: transparent;
+}
+.info-panel-body::-webkit-scrollbar-thumb {
+  background: #30363d;
+  border-radius: 3px;
+}
+
+/* ── Tab strip (used by subclasses) ── */
+.info-panel-tabs {
+  display: flex;
+  gap: 0;
+  border-bottom: 1px solid #21262d;
+  flex-shrink: 0;
+  background: rgba(13, 17, 23, 0.6);
+}
+
+.info-panel-tab {
+  flex: 1;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  padding: 8px 4px;
+  cursor: pointer;
+
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #8b949e;
+
+  transition: color 0.15s, border-color 0.15s;
+}
+
+.info-panel-tab:hover {
+  color: #c9d1d9;
+}
+
+.info-panel-tab--active {
+  color: #58a6ff;
+  border-bottom-color: #58a6ff;
+}
+
+/* ── Section within body ── */
+.info-panel-section {
+  padding: 14px 16px;
+  border-bottom: 1px solid #21262d;
+}
+
+.info-panel-section:last-child {
+  border-bottom: none;
+}
+
+.info-panel-section-title {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #8b949e;
+  margin: 0 0 10px;
+}
+
+/* ── Row (label: value) ── */
+.info-row {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  padding: 3px 0;
+  font-family: monospace;
+  font-size: 12px;
+}
+
+.info-row-label {
+  color: #8b949e;
+  flex-shrink: 0;
+  min-width: 90px;
+}
+
+.info-row-value {
+  color: #c9d1d9;
+}
+
+/* ── Empty state ── */
+.info-empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 36px 24px;
+  text-align: center;
+}
+
+.info-empty-icon {
+  font-size: 28px;
+  opacity: 0.4;
+}
+
+.info-empty-msg {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 12px;
+  color: #8b949e;
+  line-height: 1.6;
+}
+
+.info-empty-sub {
+  font-family: monospace;
+  font-size: 10px;
+  color: #484f58;
+  border: 1px solid #21262d;
+  border-radius: 5px;
+  padding: 4px 12px;
+}
+
+/* ── Progress bar ── */
+.info-bar-track {
+  height: 5px;
+  background: #21262d;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.info-bar-fill {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 0.3s ease;
+}

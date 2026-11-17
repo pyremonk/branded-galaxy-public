@@ -1,0 +1,456 @@
+{
+  "factionId": "autoforge",
+  "technologies": [
+    {
+      "id": "automated-production-1",
+      "tier": 1,
+      "name": "Automated Production I",
+      "description": "Self-directing fabrication arrays and adaptive assembly lines dramatically increase materials output across all Autoforge production facilities.",
+      "icon": "▦",
+      "startingTech": true,
+      "cost": {
+        "credits": 200,
+        "influence": 50,
+        "turns": 5
+      },
+      "prerequisites": [],
+      "effects": [
+        {
+          "type": "production-bonus",
+          "target": "materialProduction",
+          "value": 0.2
+        }
+      ],
+      "unlocks": {
+        "units": [],
+        "buildings": [],
+        "missions": [],
+        "victoryConditions": []
+      }
+    },
+    {
+      "id": "neural-network-expansion",
+      "tier": 1,
+      "name": "Neural Network Expansion",
+      "description": "Distributed AI cores accelerate data processing across all Autoforge systems, directly improving research throughput.",
+      "icon": "⋈",
+      "startingTech": false,
+      "cost": {
+        "credits": 250,
+        "influence": 60,
+        "turns": 5
+      },
+      "prerequisites": [],
+      "effects": [
+        {
+          "type": "research-bonus",
+          "target": "researchSpeed",
+          "value": 0.15
+        }
+      ],
+      "unlocks": {
+        "units": [],
+        "buildings": [],
+        "missions": [],
+        "victoryConditions": []
+      }
+    },
+    {
+      "id": "drone-fleet-protocols",
+      "tier": 1,
+      "name": "Drone Fleet Protocols",
+      "description": "Autonomous maintenance drones drastically cut fleet upkeep costs while automated construction lines accelerate fighter production.",
+      "icon": "▹",
+      "startingTech": false,
+      "cost": {
+        "credits": 300,
+        "influence": 75,
+        "turns": 6
+      },
+      "prerequisites": [],
+      "effects": [
+        {
+          "type": "unique-capability",
+          "target": "reduced-fleet-maintenance",
+          "value": 1
+        },
+        {
+          "type": "production-bonus",
+          "target": "fighterProduction",
+          "value": 0.1
+        }
+      ],
+      "unlocks": {
+        "units": [],
+        "buildings": [],
+        "missions": [],
+        "victoryConditions": []
+      }
+    },
+    {
+      "id": "advanced-fabrication",
+      "tier": 2,
+      "name": "Advanced Fabrication",
+      "description": "Precision nanoscale manufacturing and AI-optimized workflows massively expand materials production and unlock automated factory buildings.",
+      "icon": "▤",
+      "startingTech": false,
+      "cost": {
+        "credits": 600,
+        "influence": 125,
+        "turns": 7.5
+      },
+      "prerequisites": [
+        "automated-production-1"
+      ],
+      "effects": [
+        {
+          "type": "production-bonus",
+          "target": "materialProduction",
+          "value": 0.3
+        }
+      ],
+      "unlocks": {
+        "units": [],
+        "buildings": [
+          "automated-factory"
+        ],
+        "missions": [],
+        "victoryConditions": []
+      }
+    },
+    {
+      "id": "research-acceleration",
+      "tier": 2,
+      "name": "Research Acceleration",
+      "description": "Parallel processing arrays and shared AI research clusters allow the Autoforge to pursue two research projects simultaneously.",
+      "icon": "↯",
+      "startingTech": false,
+      "cost": {
+        "credits": 700,
+        "influence": 150,
+        "turns": 9
+      },
+      "prerequisites": [
+        "neural-network-expansion"
+      ],
+      "effects": [
+        {
+          "type": "research-bonus",
+          "target": "researchSpeed",
+          "value": 0.25
+        },
+        {
+          "type": "multi-research",
+          "target": "researchSlots",
+          "value": 2
+        }
+      ],
+      "unlocks": {
+        "units": [],
+        "buildings": [],
+        "missions": [],
+        "victoryConditions": []
+      }
+    },
+    {
+      "id": "droid-legion",
+      "tier": 2,
+      "name": "Droid Legion",
+      "description": "Mass-produced combat droids exponentially increase recruit generation and unlock the fearsome Droid Carrier unit.",
+      "icon": "⚔",
+      "startingTech": false,
+      "cost": {
+        "credits": 550,
+        "influence": 140,
+        "turns": 7.5
+      },
+      "prerequisites": [
+        "drone-fleet-protocols"
+      ],
+      "effects": [
+        {
+          "type": "production-bonus",
+          "target": "recruitGeneration",
+          "value": 0.2
+        }
+      ],
+      "unlocks": {
+        "units": [
+          "droid-carrier"
+        ],
+        "buildings": [],
+        "missions": [],
+        "victoryConditions": []
+      }
+    },
+    {
+      "id": "self-replicating-systems",
+      "tier": 3,
+      "name": "Self-Replicating Systems",
+      "description": "Buildings that repair themselves and facilities capable of constructing copies — the Autoforge becomes truly self-sustaining.",
+      "icon": "↻",
+      "startingTech": false,
+      "cost": {
+        "credits": 1300,
+        "influence": 280,
+        "turns": 11
+      },
+      "prerequisites": [
+        "advanced-fabrication",
+        "droid-legion"
+      ],
+      "effects": [
+        {
+          "type": "unique-capability",
+          "target": "building-auto-repair",
+          "value": 1
+        },
+        {
+          "type": "production-bonus",
+          "target": "facilityConstructionSpeed",
+          "value": 1
+        }
+      ],
+      "unlocks": {
+        "units": [],
+        "buildings": [],
+        "missions": [],
+        "victoryConditions": []
+      }
+    },
+    {
+      "id": "quantum-computing",
+      "tier": 3,
+      "name": "Quantum Computing",
+      "description": "Quantum processor arrays shatter computational limits — research completes faster, costs drop, and the Research Complex becomes buildable.",
+      "icon": "⊞",
+      "startingTech": false,
+      "cost": {
+        "credits": 1400,
+        "influence": 320,
+        "turns": 12
+      },
+      "prerequisites": [
+        "research-acceleration",
+        "advanced-fabrication"
+      ],
+      "effects": [
+        {
+          "type": "research-bonus",
+          "target": "researchSpeed",
+          "value": 0.35
+        },
+        {
+          "type": "cost-reduction",
+          "target": "researchCost",
+          "value": 0.15
+        }
+      ],
+      "unlocks": {
+        "units": [],
+        "buildings": [
+          "research-complex"
+        ],
+        "missions": [],
+        "victoryConditions": []
+      }
+    },
+    {
+      "id": "infrastructure-integration",
+      "tier": 3,
+      "name": "Infrastructure Integration",
+      "description": "Deep system networking increases system dependency metrics and amplifies resource output from Autoforge-optimized systems.",
+      "icon": "⊕",
+      "startingTech": false,
+      "cost": {
+        "credits": 1100,
+        "influence": 250,
+        "turns": 9.5
+      },
+      "prerequisites": [
+        "advanced-fabrication",
+        "droid-legion"
+      ],
+      "effects": [
+        {
+          "type": "production-bonus",
+          "target": "systemDependencyGain",
+          "value": 0.2
+        },
+        {
+          "type": "production-bonus",
+          "target": "autoforgeSytemOutput",
+          "value": 0.15
+        }
+      ],
+      "unlocks": {
+        "units": [],
+        "buildings": [],
+        "missions": [],
+        "victoryConditions": []
+      }
+    },
+    {
+      "id": "nexus-network",
+      "tier": 4,
+      "name": "Nexus Network",
+      "description": "The Nexus capital ship becomes the heart of the Autoforge war machine, linking all controlled systems into a single integrated network.",
+      "icon": "✶",
+      "startingTech": false,
+      "cost": {
+        "credits": 2400,
+        "influence": 480,
+        "turns": 13.5
+      },
+      "prerequisites": [
+        "self-replicating-systems",
+        "quantum-computing"
+      ],
+      "effects": [
+        {
+          "type": "unique-capability",
+          "target": "networked-systems",
+          "value": 1
+        }
+      ],
+      "unlocks": {
+        "units": [
+          "nexus-capital"
+        ],
+        "buildings": [],
+        "missions": [],
+        "victoryConditions": []
+      }
+    },
+    {
+      "id": "total-automation",
+      "tier": 4,
+      "name": "Total Automation",
+      "description": "Every production process fully automated — materials and credits flood in while fleet upkeep costs drop to zero.",
+      "icon": "⚙",
+      "startingTech": false,
+      "cost": {
+        "credits": 2800,
+        "influence": 550,
+        "turns": 14
+      },
+      "prerequisites": [
+        "self-replicating-systems",
+        "infrastructure-integration"
+      ],
+      "effects": [
+        {
+          "type": "production-bonus",
+          "target": "materialProduction",
+          "value": 0.5
+        },
+        {
+          "type": "production-bonus",
+          "target": "creditIncome",
+          "value": 0.5
+        },
+        {
+          "type": "unique-capability",
+          "target": "zero-fleet-upkeep",
+          "value": 1
+        }
+      ],
+      "unlocks": {
+        "units": [],
+        "buildings": [],
+        "missions": [],
+        "victoryConditions": []
+      }
+    },
+    {
+      "id": "technological-dependence",
+      "tier": 4,
+      "name": "Technological Dependence",
+      "description": "Deep integration of Autoforge systems makes withdrawal impossible — system dependency metrics surge, accelerating the path to Dependency Victory.",
+      "icon": "⊓",
+      "startingTech": false,
+      "cost": {
+        "credits": 2200,
+        "influence": 450,
+        "turns": 12
+      },
+      "prerequisites": [
+        "quantum-computing",
+        "infrastructure-integration"
+      ],
+      "effects": [
+        {
+          "type": "production-bonus",
+          "target": "systemDependencyGain",
+          "value": 0.3
+        }
+      ],
+      "unlocks": {
+        "units": [],
+        "buildings": [],
+        "missions": [],
+        "victoryConditions": [
+          "total-optimization"
+        ]
+      }
+    },
+    {
+      "id": "singularity-protocol",
+      "tier": 5,
+      "name": "Singularity Protocol",
+      "description": "The Autoforge achieves technological transcendence — resource overflow is eliminated, all production surges by 50%, and all previous research is instantaneously integrated. The path to Research Victory opens.",
+      "icon": "✴",
+      "startingTech": false,
+      "cost": {
+        "credits": 5500,
+        "influence": 1100,
+        "turns": 15
+      },
+      "prerequisites": [
+        "nexus-network",
+        "total-automation",
+        "technological-dependence"
+      ],
+      "effects": [
+        {
+          "type": "unique-capability",
+          "target": "zero-resource-cap-waste",
+          "value": 1
+        },
+        {
+          "type": "production-bonus",
+          "target": "creditIncome",
+          "value": 0.5
+        },
+        {
+          "type": "production-bonus",
+          "target": "materialProduction",
+          "value": 0.5
+        },
+        {
+          "type": "production-bonus",
+          "target": "recruitGeneration",
+          "value": 0.5
+        },
+        {
+          "type": "production-bonus",
+          "target": "influenceGeneration",
+          "value": 0.5
+        },
+        {
+          "type": "unique-capability",
+          "target": "auto-complete-lower-tiers",
+          "value": 1
+        }
+      ],
+      "unlocks": {
+        "units": [],
+        "buildings": [],
+        "missions": [],
+        "victoryConditions": [
+          "technological-singularity"
+        ]
+      }
+    }
+  ]
+}

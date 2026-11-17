@@ -1,0 +1,131 @@
+/* ActionLimitsHUD — Per-category action readiness panel */
+
+.action-limits-hud {
+  position: fixed;
+  bottom: 120px;      /* above ResearchProgressHUD */
+  left: 16px;
+  z-index: 150;
+
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  padding: 8px 12px;
+  font-family: monospace;
+  min-width: 152px;
+  transition: opacity 0.2s;
+}
+
+.action-limits-hud--locked {
+  opacity: 0.45;
+  pointer-events: none;
+}
+
+/* ─── Title ────────────────────────────────────────────────────────────────── */
+
+.action-limits-title {
+  font-size: 9px;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  color: #8b949e;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+  text-align: center;
+}
+
+/* ─── Generic row ──────────────────────────────────────────────────────────── */
+
+.action-limits-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3px 0;
+  font-size: 12px;
+  border-bottom: 1px solid #21262d;
+}
+
+.action-limits-row:last-of-type {
+  border-bottom: none;
+}
+
+.action-limits-row--stub {
+  opacity: 0.45;
+}
+
+.action-limits-label {
+  color: #8b949e;
+  font-size: 10px;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+  margin-right: 10px;
+}
+
+.action-limits-value {
+  color: #c9d1d9;
+  font-size: 12px;
+}
+
+.action-limits-value--exhausted {
+  color: #f85149;
+}
+
+.action-limits-value--stub {
+  color: #484f58;
+}
+
+.action-limits-sep {
+  color: #484f58;
+  margin: 0 2px;
+}
+
+/* ─── Resources block ──────────────────────────────────────────────────────── */
+
+.action-limits-resources {
+  margin-top: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.action-limits-resource-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 11px;
+  cursor: default;
+}
+
+.action-limits-resource-label {
+  font-weight: bold;
+  font-size: 10px;
+  letter-spacing: 0.04em;
+  min-width: 22px;
+}
+
+.action-limits-resource-val {
+  color: #c9d1d9;
+}
+
+.action-limits-resource-reserved {
+  color: #f0883e;
+  font-size: 10px;
+}
+
+/* ─── Phase lock overlay ───────────────────────────────────────────────────── */
+
+.action-limits-phase-lock {
+  margin-top: 6px;
+  text-align: center;
+  font-size: 9px;
+  letter-spacing: 0.08em;
+  color: #8b949e;
+  text-transform: uppercase;
+}
+
+/* When rendered inside the left-side panel container we let
+   positioning be handled by the parent, not fixed to the screen */
+.action-limits-hud--inline {
+  position: static;
+  bottom: auto;
+  left: auto;
+  min-width: 0; /* allow panel to shrink if container smaller */
+}

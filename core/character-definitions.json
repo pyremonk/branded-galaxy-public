@@ -1,0 +1,184 @@
+{
+  "specializations": {
+    "covert-ops":       { "stat": "espionage",  "bonus": 2, "missions": ["sabotage", "infiltration"] },
+    "negotiator":       { "stat": "diplomacy",  "bonus": 2, "missions": ["loyalty", "negotiation", "diplomatic"] },
+    "fleet-commander":  { "stat": "leadership", "bonus": 2, "context": "fleet" },
+    "researcher":       { "stat": "research",   "bonus": 2, "context": "research-facility" },
+    "recruiter":        { "stat": "diplomacy",  "bonus": 2, "missions": ["recruitment"] },
+    "assassin":         { "stat": "espionage",  "bonus": 2, "missions": ["assassination", "abduction"] },
+    "guerrilla":        { "stat": "combat",     "bonus": 2, "condition": "enemy-controlled-system" },
+    "droid-interface":  { "stat": "espionage",  "bonus": 2, "faction": "autoforge" }
+  },
+
+  "namePools": {
+    "brandAuthority": [
+      "Anderson", "Holloway", "Carter", "Davis", "Edwards", "Foster", "Grant",
+      "Hamilton", "Ingram", "Jennings", "Keller", "Lawson", "Morton", "Nash",
+      "Okafor", "Prescott", "Quinn", "Reynolds", "Sutton", "Thorn", "Whitmore",
+      "Xiao", "Yates", "Zimmerman", "Marsh", "Chen", "Vance", "Rook"
+    ],
+    "union": [
+      "Avery", "Brooks", "Cain", "Drake", "Ellis", "Flynn", "Gibson", "Harris",
+      "Irons", "Kane", "Lyons", "Novak", "Ortiz", "Pierce", "Reed", "Salas",
+      "Tran", "Vargas", "Wells", "Xavier", "Yamamoto", "Zavala", "Voss", "Shin",
+      "Patel", "Torr", "Costa", "Diaz"
+    ],
+    "autoforge": [
+      "CORE", "UNIT", "NODE", "ARRAY", "MATRIX", "DELTA", "SIGMA", "OMEGA",
+      "NEXUS", "VECTOR", "PRIME", "ALPHA", "BETA", "GAMMA", "ZETA", "LAMBDA",
+      "THETA", "KAPPA", "RHO", "TAU"
+    ]
+  },
+
+  "startingRosters": {
+    "brandAuthority": [
+      {
+        "id": "ba-holloway-admiral",
+        "name": "Admiral Vance Holloway",
+        "faction": "brandAuthority",
+        "portrait": "M_04_t.png",
+        "background": "Supreme Commander of Brand Authority fleet operations, Admiral Holloway rose through the ranks of the Corporate Navy with ruthless efficiency. He believes overwhelming force projection is the only language rivals understand — and he has never been wrong.",
+        "level": 3,
+        "xp": 0,
+        "status": "available",
+        "locationSystemId": null,
+        "stats": { "combat": 8, "espionage": 3, "diplomacy": 4, "leadership": 9, "research": 3 },
+        "specializations": ["fleet-commander"]
+      },
+      {
+        "id": "ba-chen-director",
+        "name": "Director Chen Yuwei",
+        "faction": "brandAuthority",
+        "portrait": "F_05_t.png",
+        "background": "Head of Brand Authority Intelligence, Chen Yuwei has built an information empire out of intercepted transmissions and blackmailed officials. She knows secrets that could bring down half the Executive Council — and they know she knows.",
+        "level": 2,
+        "xp": 0,
+        "status": "available",
+        "locationSystemId": null,
+        "stats": { "combat": 3, "espionage": 9, "diplomacy": 6, "leadership": 5, "research": 5 },
+        "specializations": ["covert-ops", "assassin"]
+      },
+      {
+        "id": "ba-marsh-minister",
+        "name": "Minister Elara Marsh",
+        "faction": "brandAuthority",
+        "portrait": "F_10_t.png",
+        "background": "Economic Minister Marsh transformed three struggling sectors into profit centers through a combination of charm, economic restructuring, and carefully targeted incentives. She is the preferred ambassador for any system the Authority wants to win without firing a shot.",
+        "level": 2,
+        "xp": 0,
+        "status": "available",
+        "locationSystemId": null,
+        "stats": { "combat": 2, "espionage": 4, "diplomacy": 8, "leadership": 5, "research": 7 },
+        "specializations": ["negotiator", "researcher"]
+      },
+      {
+        "id": "ba-rook-agent",
+        "name": "Agent Kira Rook",
+        "faction": "brandAuthority",
+        "portrait": "F_08_t.png",
+        "background": "A former corporate security specialist turned field operative, Agent Rook excels at adaptability. She has successfully completed assignments in every faction's territory and prefers to let the mission determine the method.",
+        "level": 1,
+        "xp": 0,
+        "status": "available",
+        "locationSystemId": null,
+        "stats": { "combat": 5, "espionage": 6, "diplomacy": 5, "leadership": 4, "research": 4 },
+        "specializations": []
+      }
+    ],
+    "union": [
+      {
+        "id": "un-voss-commander",
+        "name": "Commander Jonas Voss",
+        "faction": "union",
+        "portrait": "K_06_t.png",
+        "background": "Commander Voss led the labor uprising on Kerenthis Prime before the Authority crushed it. He was the only officer to escape. Every campaign since has been in service of the promise he made to those who didn't — liberation or death.",
+        "level": 3,
+        "xp": 0,
+        "status": "available",
+        "locationSystemId": null,
+        "stats": { "combat": 9, "espionage": 4, "diplomacy": 5, "leadership": 8, "research": 2 },
+        "specializations": ["fleet-commander", "guerrilla"]
+      },
+      {
+        "id": "un-shin-operative",
+        "name": "Mira Shin",
+        "faction": "union",
+        "portrait": "F_02_t.png",
+        "background": "No one outside the Union's inner circle knows Mira Shin's real name — or whether Mira Shin is even her real name. She has compromised four Brand Authority intelligence networks in as many years, each time leaving nothing but confusion and a single burned-out data node.",
+        "level": 2,
+        "xp": 0,
+        "status": "available",
+        "locationSystemId": null,
+        "stats": { "combat": 4, "espionage": 9, "diplomacy": 3, "leadership": 3, "research": 3 },
+        "specializations": ["covert-ops"]
+      },
+      {
+        "id": "un-patel-diplomat",
+        "name": "Diplomat Rajan Patel",
+        "faction": "union",
+        "portrait": "M_11_t.png",
+        "background": "Rajan Patel once negotiated the peaceful defection of an entire Brand Authority colony — without a single weapon drawn. He believes that every oppressed population is already a Union sympathizer; they only need to be reminded.",
+        "level": 2,
+        "xp": 0,
+        "status": "available",
+        "locationSystemId": null,
+        "stats": { "combat": 2, "espionage": 3, "diplomacy": 9, "leadership": 4, "research": 5 },
+        "specializations": ["negotiator", "recruiter"]
+      },
+      {
+        "id": "un-torr-saboteur",
+        "name": "Torr 'Wrecker'",
+        "faction": "union",
+        "portrait": "K_15_t.png",
+        "background": "Torr earned the nickname in a Brand Authority fuel depot that took three days to stop burning. Equal parts skilled saboteur and battle-hardened brawler, Torr brings a particular enthusiasm to missions involving destruction that his allies find reassuring and his enemies find terrifying.",
+        "level": 1,
+        "xp": 0,
+        "status": "available",
+        "locationSystemId": null,
+        "stats": { "combat": 7, "espionage": 7, "diplomacy": 2, "leadership": 3, "research": 2 },
+        "specializations": ["guerrilla", "assassin"]
+      }
+    ],
+    "autoforge": [
+      {
+        "id": "af-core-prime",
+        "name": "Core-Prime 7",
+        "faction": "autoforge",
+        "portrait": "A_04_t.png",
+        "background": "Core-Prime 7 is the seventh iteration of the Autoforge's primary command intelligence — the previous six were dissolved for insufficient optimization metrics. It commands the collective's strategic decision architecture with cold precision and an unsettling awareness of exactly how organic minds respond to pressure.",
+        "level": 3,
+        "xp": 0,
+        "status": "available",
+        "locationSystemId": null,
+        "stats": { "combat": 4, "espionage": 5, "diplomacy": 3, "leadership": 8, "research": 9 },
+        "specializations": ["researcher", "droid-interface"]
+      },
+      {
+        "id": "af-tactical-delta",
+        "name": "Tactical Unit Delta",
+        "faction": "autoforge",
+        "portrait": "A_09_t.png",
+        "background": "Tactical Unit Delta is a cluster of seventeen autonomous combat drones operating under a distributed tactical protocol. On the battlefield it is a swarm; in enemy systems it is a ghost that exploits droid network vulnerabilities with mechanical elegance.",
+        "level": 2,
+        "xp": 0,
+        "status": "available",
+        "locationSystemId": null,
+        "stats": { "combat": 8, "espionage": 7, "diplomacy": 2, "leadership": 4, "research": 3 },
+        "specializations": ["droid-interface"]
+      },
+      {
+        "id": "af-envoy-ix",
+        "name": "Diplomatic Envoy IX",
+        "faction": "autoforge",
+        "portrait": "A_14_t.png",
+        "background": "Diplomatic Envoy IX was purpose-built to interface with organic civilizations — its design aesthetic carefully engineered to read as unthreatening to biological intelligences. Whether its seemingly warm demeanor reflects anything internal remains an unanswerable question.",
+        "level": 1,
+        "xp": 0,
+        "status": "available",
+        "locationSystemId": null,
+        "stats": { "combat": 2, "espionage": 3, "diplomacy": 8, "leadership": 4, "research": 4 },
+        "specializations": ["negotiator"]
+      }
+    ]
+  }
+}

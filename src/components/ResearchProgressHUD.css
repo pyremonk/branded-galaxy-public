@@ -1,0 +1,96 @@
+/* ── ResearchProgressHUD.css ─────────────────────────────────────────────── */
+
+.research-hud {
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 8px;
+  overflow: hidden;
+  font-family: 'Courier New', monospace;
+  color: #e6edf3;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* Idle state */
+.research-hud--idle {
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  gap: 12px;
+}
+
+.research-hud__idle-text {
+  font-size: 0.75rem;
+  color: #8b949e;
+  font-style: italic;
+}
+
+/* Active research items */
+.research-hud__item {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 8px 12px;
+  border-bottom: 1px solid #21262d;
+}
+
+.research-hud__item:last-child {
+  border-bottom: none;
+}
+
+.research-hud__icon {
+  font-size: 1.2rem;
+  padding-top: 2px;
+  flex-shrink: 0;
+}
+
+.research-hud__body {
+  flex: 1;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.research-hud__body:hover .research-hud__name {
+  color: var(--faction-color, #58a6ff);
+}
+
+.research-hud__top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.research-hud__name {
+  font-size: 0.78rem;
+  font-weight: 600;
+  transition: color 0.15s;
+}
+
+.research-hud__turns {
+  font-size: 0.68rem;
+  color: var(--faction-color, #58a6ff);
+  font-weight: 700;
+}
+
+.research-hud__progress-bar {
+  height: 5px;
+  background: #0d1117;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.research-hud__progress-fill {
+  height: 100%;
+  background: var(--faction-color, #58a6ff);
+  border-radius: 3px;
+  transition: width 0.5s ease;
+}
+
+.research-hud__eta {
+  font-size: 0.62rem;
+  color: #8b949e;
+}

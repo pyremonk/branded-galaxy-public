@@ -1,0 +1,129 @@
+/* InvasionChoiceModal — Invade vs Blockade player choice overlay
+   Spec: 048-ground-combat-spec.md (FR-GC-001)
+*/
+
+.icm-scrim {
+  position: fixed;
+  inset: 0;
+  background: rgba(1, 4, 9, 0.82);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9100;
+}
+
+.icm-modal {
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 8px;
+  width: min(520px, 92vw);
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.7);
+}
+
+.icm-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.icm-badge {
+  background: #d29922;
+  color: #0d1117;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  padding: 2px 8px;
+  border-radius: 4px;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.icm-title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #e6edf3;
+}
+
+.icm-description {
+  margin: 0;
+  font-size: 14px;
+  color: #8b949e;
+  line-height: 1.6;
+}
+
+.icm-description strong {
+  color: #e6edf3;
+}
+
+.icm-troop-count {
+  font-size: 13px;
+  color: #c9d1d9;
+  background: #0d1117;
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  padding: 8px 12px;
+}
+
+.icm-troop-count strong {
+  color: #f0883e;
+}
+
+.icm-choices {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.icm-choice-btn {
+  background: #0d1117;
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  padding: 14px 16px;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.icm-choice-btn:hover {
+  background: #161b22;
+}
+
+.icm-choice-btn--invade:hover {
+  border-color: #f85149;
+}
+
+.icm-choice-btn--blockade:hover {
+  border-color: #58a6ff;
+}
+
+.icm-choice-label {
+  font-size: 15px;
+  font-weight: 600;
+  color: #e6edf3;
+  display: block;
+}
+
+.icm-choice-btn--invade .icm-choice-label {
+  color: #f85149;
+}
+
+.icm-choice-btn--blockade .icm-choice-label {
+  color: #58a6ff;
+}
+
+.icm-choice-detail {
+  font-size: 12px;
+  color: #8b949e;
+  line-height: 1.5;
+  display: block;
+}

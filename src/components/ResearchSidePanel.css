@@ -1,0 +1,32 @@
+/*
+ * ResearchSidePanel.css — Research side panel styles.
+ */
+
+.research-panel-section {
+  padding: 0 0 4px;
+  border-bottom: 1px solid #21262d;
+  margin-bottom: 0;
+}
+
+.research-panel-section:last-of-type {
+  border-bottom: none;
+}
+
+.research-panel-section-title {
+  margin: 0;
+  padding: 8px 16px 6px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: #6e7681;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+/* Strip borders/radius from child cards so they flow inline */
+.research-side-panel .research-hud,
+.research-side-panel .research-queue {
+  border: none;
+  border-radius: 0;
+  background: transparent;
+}

@@ -1,0 +1,262 @@
+/**
+ * CommandOverviewPanel.css
+ * Styles for the multi-system Command Overview panel.
+ * Spec: 019-base-management-spec.md (FR-BM-003)
+ */
+
+.cov-panel {
+  width: 380px;
+}
+
+/* Sort bar */
+.cov-sort-bar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 0 10px;
+  border-bottom: 1px solid #21262d;
+  margin-bottom: 8px;
+}
+
+.cov-sort-label {
+  font-size: 11px;
+  color: #8b949e;
+  font-family: monospace;
+}
+
+.cov-sort-btn {
+  background: transparent;
+  border: 1px solid #30363d;
+  border-radius: 4px;
+  color: #8b949e;
+  font-family: monospace;
+  font-size: 10px;
+  cursor: pointer;
+  padding: 2px 8px;
+  transition: background 0.15s, color 0.15s;
+}
+.cov-sort-btn:hover { background: rgba(88,166,255,0.08); color: #c9d1d9; }
+.cov-sort-btn--active { border-color: #58a6ff; color: #58a6ff; }
+
+/* System list */
+.cov-system-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  overflow-y: auto;
+  max-height: calc(100vh - 200px);
+}
+
+.cov-system-row {
+  background: #0d1117;
+  border: 1px solid #21262d;
+  border-radius: 6px;
+  padding: 8px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+/* Indent system rows when inside a faction group */
+.cov-faction-group .cov-system-row {
+  margin-left: 8px;
+  border-left-width: 1px;
+}
+
+.cov-system-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+
+.cov-system-name {
+  background: transparent;
+  border: none;
+  color: var(--system-name-color, #58a6ff);
+  font-family: monospace;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 0;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.cov-system-name:hover { opacity: 0.8; }
+
+/* Faction group */
+.cov-faction-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.cov-faction-header {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 5px 8px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-left: 3px solid var(--faction-color, #8b949e);
+  border-radius: 4px;
+  margin-bottom: 2px;
+}
+
+.cov-faction-header--player {
+  background: rgba(255,255,255,0.05);
+  border-color: rgba(255,255,255,0.12);
+  border-left-color: var(--faction-color, #58a6ff);
+}
+
+.cov-faction-pip {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.cov-faction-label {
+  flex: 1;
+  font-family: monospace;
+  font-size: 11px;
+  font-weight: 700;
+  color: #c9d1d9;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.cov-faction-count {
+  font-family: monospace;
+  font-size: 10px;
+  color: #8b949e;
+}
+
+.cov-faction-you {
+  font-family: monospace;
+  font-size: 9px;
+  font-weight: 700;
+  color: var(--faction-color, #58a6ff);
+  background: rgba(88,166,255,0.12);
+  border: 1px solid currentColor;
+  border-radius: 3px;
+  padding: 0 5px;
+  opacity: 0.9;
+}
+
+.cov-system-meta {
+  font-family: monospace;
+  font-size: 10px;
+  color: #8b949e;
+}
+
+/* Facility row */
+.cov-fac-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 6px;
+  border-radius: 4px;
+  background: #161b22;
+}
+.cov-fac-row--damaged  { border-left: 2px solid #d29922; }
+.cov-fac-row--critical { border-left: 2px solid #f85149; }
+
+.cov-fac-icon  { font-size: 12px; flex-shrink: 0; }
+.cov-fac-name  { flex: 1; font-family: monospace; font-size: 11px; color: #c9d1d9; min-width: 80px; }
+.cov-fac-level { font-family: monospace; font-size: 10px; color: #8b949e; min-width: 20px; }
+
+.cov-hp-track {
+  width: 40px;
+  height: 6px;
+  background: #21262d;
+  border-radius: 3px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.cov-hp-fill {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 0.3s ease;
+}
+
+.cov-fac-hp-text {
+  font-family: monospace;
+  font-size: 9px;
+  color: #8b949e;
+  min-width: 28px;
+  text-align: right;
+}
+
+.cov-fac-actions {
+  display: flex;
+  gap: 4px;
+}
+
+.cov-btn {
+  background: transparent;
+  border: 1px solid #30363d;
+  border-radius: 3px;
+  color: #58a6ff;
+  font-family: monospace;
+  font-size: 9px;
+  cursor: pointer;
+  padding: 1px 5px;
+  transition: background 0.15s;
+  white-space: nowrap;
+}
+.cov-btn:hover { background: rgba(88,166,255,0.1); border-color: #58a6ff; }
+
+/* Queue row */
+.cov-queue-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 6px;
+  border-radius: 3px;
+  border-left: 2px solid #58a6ff;
+  background: rgba(88,166,255,0.04);
+}
+.cov-queue-label {
+  flex: 1;
+  font-family: monospace;
+  font-size: 10px;
+  color: #8b949e;
+}
+.cov-queue-turns {
+  font-family: monospace;
+  font-size: 10px;
+  color: #f0883e;
+  font-weight: 700;
+}
+.cov-progress-track {
+  width: 36px;
+  height: 4px;
+  background: #21262d;
+  border-radius: 2px;
+  overflow: hidden;
+}
+.cov-progress-fill {
+  height: 100%;
+  background: #58a6ff;
+  border-radius: 2px;
+}
+
+.cov-empty-system {
+  font-family: monospace;
+  font-size: 11px;
+  color: #484f58;
+  text-align: center;
+  padding: 4px;
+}
+
+.cov-error-toast {
+  background: rgba(248,81,73,0.12);
+  border: 1px solid #f85149;
+  border-radius: 4px;
+  color: #f85149;
+  font-family: monospace;
+  font-size: 11px;
+  padding: 5px 10px;
+  margin-bottom: 8px;
+}

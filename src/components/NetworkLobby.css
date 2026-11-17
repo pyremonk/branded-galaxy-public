@@ -1,0 +1,414 @@
+/* NetworkLobby — network multiplayer lobby screen (spec 050) */
+
+.nl-screen {
+  position: fixed;
+  inset: 0;
+  background: #0d1117;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 40px 24px 24px;
+  font-family: monospace;
+  color: #c9d1d9;
+  overflow-y: auto;
+  z-index: 100;
+}
+
+/* ── Header ─────────────────────────────────────── */
+.nl-header {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.nl-title {
+  font-size: 26px;
+  font-weight: 700;
+  color: #e6edf3;
+  margin: 0 0 6px;
+  letter-spacing: 0.03em;
+}
+
+.nl-subtitle {
+  font-size: 13px;
+  color: #8b949e;
+  margin: 0;
+}
+
+/* ── Offline warning ────────────────────────────── */
+.nl-offline-banner {
+  background: rgba(248, 81, 73, 0.10);
+  border: 1px solid #f85149;
+  border-radius: 8px;
+  padding: 16px 24px;
+  color: #f85149;
+  text-align: center;
+  max-width: 480px;
+  line-height: 1.6;
+}
+
+.nl-offline-banner h2 {
+  margin: 0 0 8px;
+  font-size: 16px;
+}
+
+.nl-offline-banner p {
+  margin: 0 0 16px;
+  font-size: 13px;
+  color: #8b949e;
+}
+
+/* ── Tabs ───────────────────────────────────────── */
+.nl-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.nl-tab {
+  padding: 8px 20px;
+  border-radius: 6px;
+  border: 1px solid #30363d;
+  background: transparent;
+  color: #8b949e;
+  font-family: monospace;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.nl-tab:hover {
+  border-color: #58a6ff;
+  color: #58a6ff;
+}
+
+.nl-tab--active {
+  background: rgba(88, 166, 255, 0.12);
+  border-color: #58a6ff;
+  color: #58a6ff;
+}
+
+/* ── Card ───────────────────────────────────────── */
+.nl-card {
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 10px;
+  padding: 28px 32px;
+  width: 100%;
+  max-width: 560px;
+  margin-bottom: 16px;
+}
+
+.nl-card-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: #e6edf3;
+  margin: 0 0 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #21262d;
+}
+
+/* ── Game code display ──────────────────────────── */
+.nl-code-box {
+  text-align: center;
+  padding: 20px;
+  background: rgba(88, 166, 255, 0.06);
+  border: 1px solid rgba(88, 166, 255, 0.3);
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.nl-code-label {
+  font-size: 12px;
+  color: #8b949e;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 8px;
+}
+
+.nl-code-value {
+  font-size: 36px;
+  font-weight: 700;
+  color: #58a6ff;
+  letter-spacing: 0.15em;
+  font-family: monospace;
+}
+
+.nl-code-hint {
+  font-size: 12px;
+  color: #8b949e;
+  margin-top: 8px;
+}
+
+/* ── Join form ──────────────────────────────────── */
+.nl-field {
+  margin-bottom: 16px;
+}
+
+.nl-field label {
+  display: block;
+  font-size: 12px;
+  color: #8b949e;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 6px;
+}
+
+.nl-input {
+  width: 100%;
+  padding: 10px 12px;
+  background: #0d1117;
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  color: #e6edf3;
+  font-family: monospace;
+  font-size: 15px;
+  box-sizing: border-box;
+  transition: border-color 0.15s;
+}
+
+.nl-input:focus {
+  outline: none;
+  border-color: #58a6ff;
+}
+
+.nl-input--code {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 20px;
+  text-align: center;
+}
+
+/* ── Player list ────────────────────────────────── */
+.nl-players-title {
+  font-size: 12px;
+  color: #8b949e;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin: 0 0 10px;
+}
+
+.nl-players-list {
+  list-style: none;
+  margin: 0 0 16px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.nl-player-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  background: #0d1117;
+  border: 1px solid #21262d;
+  border-radius: 6px;
+}
+
+.nl-player-status {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #8b949e;
+  flex-shrink: 0;
+}
+
+.nl-player-status--ready {
+  background: #3fb950;
+}
+
+.nl-player-name {
+  flex: 1;
+  font-size: 14px;
+  color: #e6edf3;
+}
+
+.nl-player-faction {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.nl-player-host-badge {
+  font-size: 11px;
+  color: #f0883e;
+  margin-left: 4px;
+}
+
+.nl-player-ready-badge {
+  font-size: 11px;
+  color: #3fb950;
+}
+
+/* ── Waiting indicator ──────────────────────────── */
+.nl-waiting {
+  font-size: 13px;
+  color: #8b949e;
+  padding: 10px 0;
+  text-align: center;
+}
+
+/* ── Chat ───────────────────────────────────────── */
+.nl-chat-messages {
+  background: #0d1117;
+  border: 1px solid #21262d;
+  border-radius: 6px;
+  padding: 10px;
+  height: 120px;
+  overflow-y: auto;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.nl-chat-empty {
+  color: #484f58;
+  font-size: 12px;
+  font-style: italic;
+  margin: auto;
+}
+
+.nl-chat-msg {
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.nl-chat-msg-name {
+  color: #58a6ff;
+  font-weight: 600;
+}
+
+.nl-chat-msg-text {
+  color: #8b949e;
+}
+
+.nl-chat-input-row {
+  display: flex;
+  gap: 8px;
+}
+
+.nl-chat-input {
+  flex: 1;
+  padding: 8px 10px;
+  background: #0d1117;
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  color: #e6edf3;
+  font-family: monospace;
+  font-size: 13px;
+}
+
+.nl-chat-input:focus {
+  outline: none;
+  border-color: #58a6ff;
+}
+
+.nl-chat-send-btn {
+  padding: 8px 16px;
+  background: rgba(88, 166, 255, 0.1);
+  border: 1px solid #58a6ff;
+  border-radius: 6px;
+  color: #58a6ff;
+  font-family: monospace;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.nl-chat-send-btn:hover {
+  background: rgba(88, 166, 255, 0.2);
+}
+
+/* ── Action buttons ─────────────────────────────── */
+.nl-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+
+.nl-btn {
+  padding: 10px 22px;
+  border-radius: 6px;
+  font-family: monospace;
+  font-size: 14px;
+  cursor: pointer;
+  border: 1px solid;
+  transition: all 0.15s;
+}
+
+.nl-btn--primary {
+  background: rgba(63, 185, 80, 0.12);
+  border-color: #3fb950;
+  color: #3fb950;
+}
+
+.nl-btn--primary:hover:not(:disabled) {
+  background: rgba(63, 185, 80, 0.22);
+}
+
+.nl-btn--primary:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.nl-btn--secondary {
+  background: rgba(88, 166, 255, 0.08);
+  border-color: #58a6ff;
+  color: #58a6ff;
+}
+
+.nl-btn--secondary:hover:not(:disabled) {
+  background: rgba(88, 166, 255, 0.18);
+}
+
+.nl-btn--secondary:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.nl-btn--muted {
+  background: transparent;
+  border-color: #484f58;
+  color: #8b949e;
+}
+
+.nl-btn--muted:hover {
+  border-color: #8b949e;
+  color: #c9d1d9;
+}
+
+/* ── Error message ──────────────────────────────── */
+.nl-error {
+  background: rgba(248, 81, 73, 0.10);
+  border: 1px solid #f85149;
+  border-radius: 6px;
+  padding: 10px 14px;
+  color: #f85149;
+  font-size: 13px;
+  margin-bottom: 12px;
+}
+
+/* ── Loading spinner ────────────────────────────── */
+.nl-loading {
+  color: #8b949e;
+  font-size: 13px;
+  text-align: center;
+  padding: 12px;
+}
+
+/* ── Waiting badge overlay ──────────────────────── */
+.nl-orders-waiting {
+  background: rgba(240, 136, 62, 0.10);
+  border: 1px solid rgba(240, 136, 62, 0.4);
+  border-radius: 6px;
+  padding: 8px 14px;
+  color: #f0883e;
+  font-size: 13px;
+  text-align: center;
+  margin-bottom: 12px;
+}

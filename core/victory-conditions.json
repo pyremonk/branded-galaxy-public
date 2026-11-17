@@ -1,0 +1,177 @@
+{
+  "victoryConditions": {
+    "brandAuthority": [
+      {
+        "id": "vc-ba-territorial-control",
+        "name": "Territorial Control",
+        "description": "Establish economic and military dominance across the galaxy by converting 70% of all systems to Brand Authority loyalty.",
+        "difficulty": "medium",
+        "difficultyRating": "medium",
+        "type": "percentage",
+        "required": 70,
+        "secondaryRequired": null,
+        "unlockCondition": null,
+        "trackingNote": "Systems with loyalty=brandAuthority and loyaltyValue>=60 / total systems * 100"
+      },
+      {
+        "id": "vc-ba-military-elimination",
+        "name": "Military Elimination",
+        "description": "Crush all opposition through overwhelming military might. Destroy Union's secret base, eliminate all Union fleets, capture all Autoforge capital systems, and destroy all Autoforge fleets.",
+        "difficulty": "hard",
+        "difficultyRating": "hard",
+        "type": "boolean-composite",
+        "conditions": [
+          { "key": "unionBaseDestroyed",        "label": "Union secret base destroyed" },
+          { "key": "unionFleetsDestroyed",       "label": "All Union fleets eliminated" },
+          { "key": "autoforgeCapitalsCaptured",  "label": "All Autoforge capital systems captured" },
+          { "key": "autoforgeFleetsDestroyed",   "label": "All Autoforge fleets eliminated" }
+        ],
+        "unlockCondition": null
+      },
+      {
+        "id": "vc-ba-economic-dominance",
+        "name": "Economic Dominance",
+        "description": "Achieve unassailable economic supremacy by accumulating 500,000 credits and controlling 50% of all trade hubs in the galaxy.",
+        "difficulty": "hard",
+        "difficultyRating": "hard",
+        "type": "threshold-with-secondary",
+        "required": 500000,
+        "primaryLabel": "Credits accumulated",
+        "secondaryRequired": 50,
+        "secondaryLabel": "Trade hubs controlled (%)",
+        "unlockCondition": { "type": "technology", "techId": "galactic-administration" }
+      },
+      {
+        "id": "vc-ba-discovery",
+        "name": "Discovery Victory",
+        "description": "Eliminate the rebel threat by locating and destroying the Union's hidden stronghold. Intelligence operations and interrogation can reveal the base location.",
+        "difficulty": "medium",
+        "difficultyRating": "medium",
+        "type": "boolean-composite",
+        "conditions": [
+          { "key": "secretBaseKnown",    "label": "Union base location known" },
+          { "key": "secretBaseDestroyed", "label": "Union secret base destroyed" }
+        ],
+        "discoveryMechanics": {
+          "espionageMissionChance": 0.15,
+          "interrogationChance": 0.50,
+          "passivePerTurnChance": 0.05,
+          "description": "15% via espionage mission in Union territory, 50% via captured character interrogation, 5% per turn passive intercept"
+        },
+        "unlockCondition": null
+      }
+    ],
+    "union": [
+      {
+        "id": "vc-un-cumulative-loyalty",
+        "name": "Cumulative Loyalty",
+        "description": "Win the hearts and minds of the galaxy through persistent grassroots organizing. Accumulate 5,000 total loyalty points across all Union-influenced systems.",
+        "difficulty": "medium",
+        "difficultyRating": "medium",
+        "type": "counter",
+        "required": 5000,
+        "hiddenUntilPercent": 50,
+        "unlockCondition": null
+      },
+      {
+        "id": "vc-un-survival",
+        "name": "Survival Victory",
+        "description": "Outlast the oppressors and prove the resistance endures. Survive 100 turns with your secret base intact and maintain 30% galaxy control.",
+        "difficulty": "hard",
+        "difficultyRating": "hard",
+        "type": "composite",
+        "conditions": [
+          { "key": "turns",            "required": 100,  "label": "Turns survived",       "type": "numeric" },
+          { "key": "secretBaseIntact", "required": true, "label": "Secret base intact",   "type": "boolean" },
+          { "key": "territoryControl", "required": 30,   "label": "Galaxy control (%)",   "type": "numeric" }
+        ],
+        "unlockCondition": null
+      },
+      {
+        "id": "vc-un-liberation",
+        "name": "Liberation Victory",
+        "description": "Free the oppressed systems from corporate tyranny. Convert 50 Brand Authority systems to Union loyalty through direct liberation campaigns.",
+        "difficulty": "medium",
+        "difficultyRating": "medium",
+        "type": "counter",
+        "required": 50,
+        "hiddenUntilPercent": 50,
+        "trackingNote": "Counts Brand Authority → Union loyalty transitions only. Neutral → Union does not count.",
+        "unlockCondition": null
+      },
+      {
+        "id": "vc-un-heroic",
+        "name": "Heroic Victory",
+        "description": "Ignite the spark of revolution that liberates the entire galaxy. Complete the five-mission revolutionary chain to awaken the people.",
+        "difficulty": "hard",
+        "difficultyRating": "hard",
+        "type": "mission-chain",
+        "required": 5,
+        "missionChain": [
+          { "id": "inspire-hope",        "label": "Inspire Hope",        "order": 1 },
+          { "id": "sabotage-propaganda", "label": "Sabotage Propaganda", "order": 2 },
+          { "id": "rescue-champion",     "label": "Rescue Champion",     "order": 3 },
+          { "id": "rally-people",        "label": "Rally the People",    "order": 4 },
+          { "id": "revolutionary-spark", "label": "Revolutionary Spark", "order": 5 }
+        ],
+        "unlockCondition": { "type": "technology", "techId": "revolutionary-spark" }
+      }
+    ],
+    "autoforge": [
+      {
+        "id": "vc-af-system-dependency",
+        "name": "System Dependency",
+        "description": "Create universal dependence on automated technology. Establish deep Autoforge dependency (≥50 score) in 60% of all galaxy systems.",
+        "difficulty": "medium",
+        "difficultyRating": "medium",
+        "type": "percentage",
+        "required": 60,
+        "dependencyFormula": {
+          "facilitiesPerUnit": 15,
+          "tradeAgreement": 20,
+          "lowPopulationNotOwned": 10,
+          "autoforgeGoodsImport": 15,
+          "cap": 100,
+          "threshold": 50
+        },
+        "unlockCondition": null
+      },
+      {
+        "id": "vc-af-research",
+        "name": "Research Victory",
+        "description": "Achieve technological singularity by completing every technology in the Autoforge research tree.",
+        "difficulty": "medium",
+        "difficultyRating": "medium",
+        "type": "percentage",
+        "required": 100,
+        "trackingNote": "completedTechnologies.length / totalAutoforgeTreeTechs * 100. Requires exactly 100%.",
+        "unlockCondition": null
+      },
+      {
+        "id": "vc-af-manufacturing",
+        "name": "Manufacturing Victory",
+        "description": "Demonstrate industrial supremacy through mass production. Cumulatively produce 1,000 units — ships, facilities, and droid units all count.",
+        "difficulty": "medium",
+        "difficultyRating": "medium",
+        "type": "counter",
+        "required": 1000,
+        "hiddenUntilPercent": 50,
+        "trackingNote": "Cumulative, never decrements. Counts ships, facilities, droid units.",
+        "unlockCondition": null
+      },
+      {
+        "id": "vc-af-peaceful",
+        "name": "Peaceful Victory",
+        "description": "Prove coexistence through technological symbiosis. Maintain 75 consecutive turns without aggression while controlling 25% of the galaxy.",
+        "difficulty": "hard",
+        "difficultyRating": "hard",
+        "type": "composite",
+        "conditions": [
+          { "key": "nonAggressionTurns", "required": 75, "label": "Non-aggression turns", "type": "numeric" },
+          { "key": "territoryControl",   "required": 25, "label": "Galaxy control (%)",   "type": "numeric" }
+        ],
+        "unlockCondition": null
+      }
+    ]
+  }
+}

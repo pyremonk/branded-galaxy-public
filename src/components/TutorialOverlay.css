@@ -1,0 +1,174 @@
+/* TutorialOverlay.css */
+
+/* Main overlay card — fixed left side, above the minimap, doesn't block game interactions */
+.tut-overlay {
+  position: fixed;
+  bottom: 252px;  /* clears the minimap panel (bottom: 70px + ~176px height + 6px gap) */
+  left: 16px;
+  max-width: 310px;
+  z-index: 450;
+  pointer-events: none; /* let clicks pass through the container */
+}
+
+.tut-card {
+  background: rgba(22, 27, 34, 0.97);
+  border: 1px solid #58a6ff;
+  border-radius: 8px;
+  padding: 16px 18px;
+  font-family: monospace;
+  color: #c9d1d9;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(88, 166, 255, 0.15);
+  pointer-events: auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.tut-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.tut-step-count {
+  font-size: 11px;
+  color: #8b949e;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.tut-title {
+  font-size: 14px;
+  font-weight: bold;
+  color: #58a6ff;
+  letter-spacing: 0.04em;
+}
+
+.tut-instruction {
+  font-size: 13px;
+  line-height: 1.6;
+  color: #c9d1d9;
+  margin: 0 0 8px;
+}
+
+.tut-hint {
+  font-size: 12px;
+  color: #8b949e;
+  margin: 0 0 12px;
+  padding: 6px 10px;
+  background: rgba(88, 166, 255, 0.06);
+  border-left: 2px solid #58a6ff;
+  border-radius: 0 4px 4px 0;
+}
+
+.tut-footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.tut-skip {
+  background: none;
+  border: none;
+  color: #8b949e;
+  font-family: monospace;
+  font-size: 12px;
+  cursor: pointer;
+  text-decoration: underline;
+  padding: 0;
+  margin-right: auto;
+}
+.tut-skip:hover { color: #c9d1d9; }
+
+/* Shared button base */
+.tut-btn {
+  font-family: monospace;
+  font-size: 13px;
+  font-weight: bold;
+  padding: 7px 18px;
+  border-radius: 5px;
+  border: 1px solid;
+  cursor: pointer;
+  transition: background 0.15s, opacity 0.15s;
+}
+
+.tut-btn--primary {
+  background: rgba(88, 166, 255, 0.14);
+  border-color: #58a6ff;
+  color: #58a6ff;
+}
+.tut-btn--primary:hover:not(.tut-btn--disabled) {
+  background: rgba(88, 166, 255, 0.28);
+}
+
+.tut-btn--secondary {
+  background: rgba(63, 185, 80, 0.12);
+  border-color: #3fb950;
+  color: #3fb950;
+}
+.tut-btn--secondary:hover { background: rgba(63, 185, 80, 0.24); }
+
+.tut-btn--ghost {
+  background: transparent;
+  border-color: #484f58;
+  color: #8b949e;
+}
+.tut-btn--ghost:hover { border-color: #8b949e; color: #c9d1d9; }
+
+.tut-btn--disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+
+/* ─── Tutorial Complete modal ─────────────────────────────────────────── */
+.tut-complete-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(13, 17, 23, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 800;
+  font-family: monospace;
+}
+
+.tut-complete-modal {
+  background: #161b22;
+  border: 1px solid #3fb950;
+  border-radius: 10px;
+  padding: 36px 40px;
+  text-align: center;
+  max-width: 440px;
+  width: 90vw;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.7);
+}
+
+.tut-complete-icon {
+  font-size: 48px;
+  color: #3fb950;
+  margin-bottom: 12px;
+}
+
+.tut-complete-title {
+  font-size: 22px;
+  color: #3fb950;
+  margin: 0 0 14px;
+  letter-spacing: 0.06em;
+}
+
+.tut-complete-body {
+  color: #c9d1d9;
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0 0 24px;
+}
+
+.tut-complete-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+}

@@ -1,0 +1,1102 @@
+/*
+ * SystemDetails.css
+ * Component-specific styles for the SystemDetails panel.
+ * Panel frame/layout/tabs styles come from InfoPanelFrame.css.
+ * Spec: 035-information-panels-spec.md (FR-IP-001)
+ */
+
+/* ── placeholder: kept to avoid empty file ── */
+.system-details-panel {
+  /* frame handled by InfoPanelFrame */
+}
+
+/* ── Faction indicator ── */
+.sysdet-faction-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  display: inline-block;
+}
+
+.sysdet-loyalty-num {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 12px;
+  font-weight: 700;
+  margin-left: auto;
+}
+
+/* ── Special type / generic badge ── */
+.sysdet-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 10px;
+  font-weight: 700;
+  border: 1px solid #30363d;
+  border-radius: 5px;
+  padding: 2px 8px;
+  letter-spacing: 0.04em;
+}
+
+/* ── Connection tags ── */
+.sysdet-connections {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.sysdet-conn-tag {
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 5px;
+  color: #58a6ff;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 11px;
+  padding: 4px 10px;
+  cursor: pointer;
+  transition: background 0.12s, border-color 0.12s;
+}
+
+.sysdet-conn-tag:hover {
+  background: rgba(88, 166, 255, 0.12);
+  border-color: #58a6ff;
+}
+
+/* ── Resource rows ── */
+.sysdet-resource-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 0;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 12px;
+  border-bottom: 1px solid #21262d;
+}
+.sysdet-resource-row:last-of-type { border-bottom: none; }
+
+.sysdet-resource-icon {
+  font-size: 14px;
+  flex-shrink: 0;
+  width: 20px;
+  text-align: center;
+}
+
+.sysdet-resource-label {
+  flex: 1;
+  color: #8b949e;
+}
+
+.sysdet-resource-value {
+  font-weight: 700;
+}
+
+.sysdet-resource-base {
+  font-size: 10px;
+  color: #484f58;
+  font-weight: 400;
+}
+
+/* ── Notes ── */
+.sysdet-note {
+  font-family: monospace;
+  font-size: 10px;
+  color: #484f58;
+  margin: 8px 0 0;
+  line-height: 1.5;
+}
+
+/* ── Muted value ── */
+.sysdet-muted {
+  color: #8b949e;
+}
+
+/* ── Facility list ── */
+.sysdet-facility-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.sysdet-facility-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #161b22;
+  border: 1px solid #21262d;
+  border-radius: 5px;
+  padding: 6px 10px;
+  font-family: monospace;
+  font-size: 12px;
+  color: #c9d1d9;
+}
+
+.sysdet-facility-name {
+  flex: 1;
+  text-transform: capitalize;
+}
+
+
+
+/* ─── Construction System (specs 017–020) ─────────────────────────────────── */
+
+/* HP bar */
+.fac-hp-track {
+  position: relative;
+  height: 8px;
+  background: #21262d;
+  border-radius: 4px;
+  overflow: hidden;
+  flex: 1;
+}
+.fac-hp-fill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+.fac-hp-label {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 9px;
+  font-family: monospace;
+  color: #c9d1d9;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+/* Facility list */
+.fac-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.fac-item {
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  padding: 8px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.fac-item--damaged { border-color: #d29922; }
+.fac-item--critical { border-color: #f85149; }
+.fac-item--destroyed { border-color: #484f58; opacity: 0.6; }
+
+.fac-item-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.fac-icon {
+  font-size: 14px;
+  flex-shrink: 0;
+}
+.fac-name {
+  flex: 1;
+  font-family: monospace;
+  font-size: 12px;
+  color: #c9d1d9;
+  font-weight: 600;
+}
+.fac-level {
+  font-family: monospace;
+  font-size: 10px;
+  color: #8b949e;
+}
+.fac-badge {
+  font-size: 9px;
+  font-family: monospace;
+  font-weight: 700;
+  padding: 1px 5px;
+  border-radius: 3px;
+  letter-spacing: 0.04em;
+}
+.fac-badge--destroyed { background: rgba(248,81,73,0.15); color: #f85149; }
+.fac-badge--damaged   { background: rgba(210,153,34,0.15); color: #d29922; }
+
+.fac-actions {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.fac-action-btn {
+  background: transparent;
+  border: 1px solid #30363d;
+  border-radius: 4px;
+  color: #58a6ff;
+  font-family: monospace;
+  font-size: 10px;
+  cursor: pointer;
+  padding: 2px 8px;
+  transition: background 0.15s, border-color 0.15s;
+}
+.fac-action-btn:hover {
+  background: rgba(88,166,255,0.1);
+  border-color: #58a6ff;
+}
+.fac-action-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+.fac-action-btn:disabled:hover {
+  background: transparent;
+  border-color: #30363d;
+}
+.fac-action-btn--danger {
+  color: #f85149;
+}
+.fac-action-btn--danger:hover {
+  background: rgba(248,81,73,0.1);
+  border-color: #f85149;
+}
+.fac-action-btn--sm {
+  padding: 1px 5px;
+  font-size: 9px;
+}
+
+/* Construction queue */
+.fac-queue-list {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.fac-queue-item {
+  background: #0d1117;
+  border: 1px solid #21262d;
+  border-radius: 5px;
+  padding: 6px 8px;
+}
+
+/* ── Diplomacy Tab ── */
+
+/* Per-faction loyalty row */
+.sysdet-loyalty-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 0;
+  border-bottom: 1px solid #21262d;
+}
+.sysdet-loyalty-row:last-of-type { border-bottom: none; }
+
+.sysdet-loyalty-fname {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 11px;
+  min-width: 90px;
+  flex-shrink: 0;
+}
+
+.sysdet-loyalty-trend {
+  font-size: 10px;
+  flex-shrink: 0;
+  width: 16px;
+  text-align: center;
+}
+
+.sysdet-loyalty-bar-track {
+  flex: 1;
+  height: 6px;
+  background: #21262d;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.sysdet-loyalty-bar-fill {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 0.3s ease;
+  opacity: 0.75;
+}
+
+.sysdet-loyalty-val {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 11px;
+  font-weight: 700;
+  min-width: 24px;
+  text-align: right;
+}
+
+/* Diplomatic action cards */
+.sysdet-diplo-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sysdet-diplo-action {
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 5px;
+  padding: 8px 10px;
+}
+
+.sysdet-diplo-action--disabled {
+  opacity: 0.5;
+}
+
+.sysdet-diplo-action-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.sysdet-diplo-action-name {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 11px;
+  font-weight: 700;
+  color: #c9d1d9;
+}
+
+.sysdet-diplo-cost {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 10px;
+  color: #f0883e;
+  white-space: nowrap;
+}
+
+.sysdet-diplo-action-effect {
+  font-family: monospace;
+  font-size: 10px;
+  color: #3fb950;
+  margin-bottom: 4px;
+}
+
+.sysdet-diplo-reason {
+  font-family: monospace;
+  font-size: 10px;
+  color: #8b949e;
+  font-style: italic;
+}
+
+.sysdet-diplo-btn {
+  margin-top: 6px;
+  background: #1f6feb;
+  border: 1px solid #388bfd;
+  border-radius: 4px;
+  color: #ffffff;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 10px;
+  padding: 4px 10px;
+  cursor: pointer;
+  transition: background 0.12s;
+}
+
+.sysdet-diplo-btn:hover {
+  background: #388bfd;
+}
+
+.sysdet-diplo-btn--cancel {
+  background: #21262d;
+  border-color: #30363d;
+  margin-left: 6px;
+}
+.sysdet-diplo-btn--cancel:hover {
+  background: #30363d;
+}
+
+.sysdet-diplo-action--pending {
+  border-color: #f0883e;
+}
+
+/* Confirmation dialog */
+.sysdet-diplo-confirm {
+  background: #161b22;
+  border: 1px solid #f0883e;
+  border-radius: 5px;
+  padding: 10px 12px;
+  margin-bottom: 10px;
+}
+.sysdet-diplo-confirm-msg {
+  font-family: monospace;
+  font-size: 11px;
+  color: #c9d1d9;
+  line-height: 1.5;
+  margin-bottom: 8px;
+}
+.sysdet-diplo-confirm-btns {
+  display: flex;
+  align-items: center;
+}
+
+/* Feedback bar */
+.sysdet-diplo-feedback {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  font-family: monospace;
+  font-size: 11px;
+  border-radius: 5px;
+  padding: 6px 10px;
+  margin-bottom: 10px;
+}
+.sysdet-diplo-feedback--ok {
+  background: #0f2a13;
+  border: 1px solid #3fb950;
+  color: #3fb950;
+}
+.sysdet-diplo-feedback--err {
+  background: #2a0f0f;
+  border: 1px solid #f85149;
+  color: #f85149;
+}
+.sysdet-diplo-feedback-dismiss {
+  background: none;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 1;
+  padding: 0 2px;
+  opacity: 0.7;
+}
+.sysdet-diplo-feedback-dismiss:hover { opacity: 1; }
+
+/* Action history list */
+.sysdet-diplo-history {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.fac-queue-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: monospace;
+  font-size: 11px;
+}
+.fac-queue-pos {
+  color: #8b949e;
+  font-weight: 700;
+  min-width: 14px;
+}
+.fac-queue-label {
+  flex: 1;
+  color: #c9d1d9;
+}
+.fac-queue-turns {
+  color: #f0883e;
+  font-weight: 700;
+}
+
+.fac-progress-track {
+  height: 3px;
+  background: #21262d;
+  border-radius: 2px;
+  overflow: hidden;
+}
+.fac-progress-fill {
+  height: 100%;
+  background: #58a6ff;
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+/* Build facility list */
+.fac-build-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.fac-build-item {
+  background: #0d1117;
+  border: 1px solid #21262d;
+  border-radius: 5px;
+  overflow: hidden;
+  cursor: pointer;
+}
+.fac-build-item:hover {
+  border-color: #30363d;
+}
+
+.fac-build-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+}
+.fac-build-header:hover {
+  background: rgba(255,255,255,0.03);
+}
+
+.fac-build-body {
+  padding: 4px 10px 8px 32px;
+  border-top: 1px solid #21262d;
+}
+
+.fac-build-desc {
+  margin: 0;
+  font-size: 11px;
+  color: #8b949e;
+  line-height: 1.4;
+}
+
+.fac-build-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.fac-build-cost {
+  font-size: 10px;
+  color: #8b949e;
+  font-family: monospace;
+}
+.sysdet-diplo-history-item {
+  font-family: monospace;
+  font-size: 10px;
+  color: #8b949e;
+  padding: 3px 0;
+  border-bottom: 1px solid #21262d;
+}
+.sysdet-diplo-history-item:last-of-type { border-bottom: none; }
+
+/* Intel Tab */
+.sysdet-intel-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.sysdet-intel-item {
+  background: #0d1117;
+  border: 1px solid #21262d;
+  border-radius: 5px;
+  padding: 8px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.sysdet-intel-item-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+.sysdet-intel-data {
+  font-family: monospace;
+  font-size: 10px;
+  word-break: break-word;
+}
+
+/* ─── Mission & Fleet Action Sections (Overview Tab) ────────────────────── */
+
+.sysdet-action-section {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+/* Collapsible section toggle header */
+.sysdet-section-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  padding: 8px 0 6px;
+  border-top: 1px solid #21262d;
+  user-select: none;
+}
+.sysdet-section-toggle:focus-visible {
+  outline: 1px solid #58a6ff;
+  border-radius: 2px;
+}
+.sysdet-section-toggle-title {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 11px;
+  font-weight: 600;
+  color: #8b949e;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+.sysdet-section-toggle-chevron {
+  font-size: 8px;
+  color: #8b949e;
+}
+
+/* Body that expands below the toggle */
+.sysdet-mission-body {
+  padding-bottom: 8px;
+}
+
+/* Current missions / fleet orders list */
+.sysdet-mission-current {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 10px;
+}
+
+.sysdet-mission-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  background: #161b22;
+  border: 1px solid #21262d;
+  border-radius: 4px;
+  padding: 5px 8px;
+  font-family: monospace;
+  font-size: 11px;
+}
+.sysdet-mission-row--staged { border-color: #d29922; }
+.sysdet-mission-row--active { border-color: #3fb950; }
+
+.sysdet-mission-row-info {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex: 1;
+  min-width: 0;
+  flex-wrap: wrap;
+}
+
+.sysdet-mission-tier-dot {
+  flex-shrink: 0;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.sysdet-mission-row-name {
+  color: #c9d1d9;
+  font-size: 11px;
+  white-space: nowrap;
+}
+.sysdet-mission-row-char {
+  font-size: 10px;
+  white-space: nowrap;
+}
+
+.sysdet-mission-status-badge {
+  font-size: 9px;
+  border: 1px solid #30363d;
+  border-radius: 10px;
+  padding: 1px 6px;
+  font-family: 'Courier New', Courier, monospace;
+  white-space: nowrap;
+}
+.sysdet-mission-status-badge--staged {
+  border-color: #d29922;
+  color: #d29922;
+}
+.sysdet-mission-status-badge--active {
+  border-color: #3fb950;
+  color: #3fb950;
+}
+
+.sysdet-mission-cancel-btn {
+  flex-shrink: 0;
+  background: #21262d;
+  border: 1px solid #30363d;
+  border-radius: 4px;
+  color: #f85149;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 10px;
+  padding: 2px 8px;
+  cursor: pointer;
+  transition: background 0.12s, border-color 0.12s;
+}
+.sysdet-mission-cancel-btn:hover {
+  background: #2a1515;
+  border-color: #f85149;
+}
+
+/* Mission type selector grid */
+.sysdet-mission-type-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5px;
+  margin-bottom: 10px;
+}
+
+.sysdet-mission-type-btn {
+  background: #161b22;
+  border: 1px solid var(--tier-color, #30363d);
+  border-radius: 5px;
+  padding: 5px 8px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  transition: background 0.12s;
+  text-align: left;
+}
+.sysdet-mission-type-btn:hover {
+  background: #1c2230;
+}
+.sysdet-mission-type-btn--selected {
+  background: #1c2230;
+  border-width: 2px;
+}
+
+.sysdet-mission-type-tier {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  opacity: 0.85;
+}
+.sysdet-mission-type-name {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 10.5px;
+  color: #c9d1d9;
+  line-height: 1.3;
+}
+
+/* Assignment form */
+.sysdet-mission-assign {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  margin-top: 4px;
+}
+
+.sysdet-mission-label {
+  display: block;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 10px;
+  color: #8b949e;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 3px;
+}
+
+.sysdet-mission-select {
+  width: 100%;
+  background: #0d1117;
+  border: 1px solid #30363d;
+  border-radius: 4px;
+  color: #c9d1d9;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 11px;
+  padding: 5px 7px;
+  cursor: pointer;
+}
+.sysdet-mission-select:focus {
+  outline: none;
+  border-color: #58a6ff;
+}
+
+.sysdet-mission-assign-row {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.sysdet-mission-char-select-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  flex: 1;
+  min-width: 0;
+}
+
+.sysdet-mission-confirm-btn {
+  width: 100%;
+  background: #1f6feb;
+  border: 1px solid #388bfd;
+  border-radius: 4px;
+  color: #ffffff;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 11px;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: background 0.12s;
+}
+.sysdet-mission-confirm-btn:hover:not(:disabled) {
+  background: #388bfd;
+}
+.sysdet-mission-confirm-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+/* Character stat preview card */
+.sysdet-mission-stat-preview {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  background: #161b22;
+  border: 1px solid #21262d;
+  border-radius: 5px;
+  padding: 6px 8px;
+  min-width: 130px;
+  max-width: 150px;
+}
+
+.sysdet-mission-portrait {
+  width: 54px;
+  height: 54px;
+  object-fit: cover;
+  border-radius: 4px;
+  border: 1px solid #30363d;
+}
+
+.sysdet-mission-char-name {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 11px;
+  color: #c9d1d9;
+  text-align: center;
+}
+
+.sysdet-mission-stat-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  width: 100%;
+}
+
+.sysdet-mission-stat-row {
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 10px;
+}
+.sysdet-mission-stat-row--primary .sysdet-mission-stat-label,
+.sysdet-mission-stat-row--primary .sysdet-mission-stat-value {
+  color: #58a6ff;
+  font-weight: 700;
+}
+
+.sysdet-mission-stat-label { color: #8b949e; }
+.sysdet-mission-stat-value { color: #c9d1d9; }
+
+.sysdet-mission-specs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3px;
+  margin-top: 3px;
+  justify-content: center;
+}
+
+.sysdet-mission-spec-badge {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 8.5px;
+  background: #0d1117;
+  border: 1px solid #30363d;
+  border-radius: 10px;
+  padding: 1px 5px;
+  color: #8b949e;
+  text-transform: capitalize;
+}
+
+.sysdet-section-divider {
+  border: none;
+  border-top: 1px solid #30363d;
+  margin: 8px 0;
+}
+
+/* Fleet actions */
+.sysdet-fleet-has-orders {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  padding: 5px 0;
+  font-family: monospace;
+  font-size: 11px;
+}
+
+.sysdet-fleet-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  align-items: center;
+  margin-top: 4px;
+}
+
+/* ─── Ship Production (Facilities Tab) ─────────────────────────────────────── */
+
+.ship-prod-queue-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 6px 0;
+  border-bottom: 1px solid #21262d;
+}
+.ship-prod-queue-item:last-of-type { border-bottom: none; }
+
+.ship-prod-queue-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+}
+
+.ship-prod-queue-pos {
+  font-family: monospace;
+  font-size: 10px;
+  color: #58a6ff;
+  background: #0d1117;
+  border: 1px solid #30363d;
+  border-radius: 3px;
+  padding: 1px 5px;
+  min-width: 18px;
+  text-align: center;
+}
+
+.ship-prod-queue-label {
+  flex: 1;
+  color: #e6edf3;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ship-prod-queue-turns {
+  font-family: monospace;
+  font-size: 11px;
+  color: #8b949e;
+  flex-shrink: 0;
+}
+
+.ship-prod-class-badge {
+  font-family: monospace;
+  font-size: 10px;
+  border: 1px solid;
+  border-radius: 3px;
+  padding: 1px 5px;
+  flex-shrink: 0;
+}
+.ship-prod-class-badge--Fighter  { color: #79c0ff; border-color: #79c0ff33; }
+.ship-prod-class-badge--Corvette { color: #3fb950; border-color: #3fb95033; }
+.ship-prod-class-badge--Cruiser  { color: #f0883e; border-color: #f0883e33; }
+.ship-prod-class-badge--Capital  { color: #d29922; border-color: #d2992233; }
+
+.ship-prod-error {
+  font-size: 11px;
+  color: #f85149;
+  padding: 4px 6px;
+  border: 1px solid #f8514933;
+  border-radius: 4px;
+  background: #f8514910;
+  margin-bottom: 6px;
+}
+
+.ship-prod-build-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.ship-prod-build-item {
+  background: #0d1117;
+  border: 1px solid #21262d;
+  border-radius: 5px;
+  overflow: hidden;
+  cursor: pointer;
+}
+.ship-prod-build-item.ship-prod-locked {
+  opacity: 0.45;
+}
+
+.ship-prod-build-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 8px;
+}
+.ship-prod-build-header:hover {
+  background: rgba(255,255,255,0.03);
+}
+
+.ship-prod-build-body {
+  padding: 4px 8px 8px 32px;
+  border-top: 1px solid #21262d;
+}
+
+.ship-prod-build-icon {
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.ship-prod-build-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.ship-prod-build-name {
+  font-size: 12px;
+  color: #e6edf3;
+}
+
+.ship-prod-build-stats {
+  font-family: monospace;
+  font-size: 10px;
+  color: #8b949e;
+}
+
+.ship-prod-build-cost {
+  font-family: monospace;
+  font-size: 10px;
+  color: #8b949e;
+}
+
+.ship-prod-build-desc {
+  margin: 0 0 3px;
+  font-size: 11px;
+  color: #8b949e;
+  line-height: 1.4;
+}
+
+.ship-prod-ability {
+  margin: 2px 0;
+  font-size: 11px;
+  color: #d29922;
+}
+
+.ship-prod-maintenance {
+  margin: 2px 0 0;
+  font-size: 10px;
+  color: #8b949e;
+  font-family: monospace;
+}
+
+.ship-prod-lock-icon {
+  font-size: 12px;
+  color: #8b949e;
+  flex-shrink: 0;
+}
+
+/* ─── Accordion Chevron ──────────────────────────────────────────────────────── */
+.fac-chevron {
+  font-size: 9px;
+  color: #8b949e;
+  flex-shrink: 0;
+  transition: transform 0.15s ease;
+  display: inline-block;
+}
+.fac-chevron--expanded {
+  transform: rotate(90deg);
+}
+
+/* ─── Insufficient resource highlight ───────────────────────────────────────── */
+.cost--insufficient {
+  color: #f85149;
+}
+
+/* ─── Troop reinforce cost subtitle ─────────────────────────────────────────── */
+.fac-reinforce-cost {
+  font-size: 11px;
+  color: #8b949e;
+  margin-top: 2px;
+  padding: 0 0 2px;
+  text-align: right;
+}

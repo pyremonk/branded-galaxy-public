@@ -1,0 +1,170 @@
+[
+  {
+    "id": "end-turn-btn",
+    "name": "End Turn",
+    "description": "Submit all staged orders and advance to the Resolution Phase. All factions resolve their actions, then the Maintenance Phase runs before your next turn.",
+    "shortcut": "Enter"
+  },
+  {
+    "id": "resource-credits",
+    "name": "Credits",
+    "description": "The primary currency of the galaxy. Used to build facilities, maintain fleets, and fund diplomatic missions. Earned each turn from controlled trade systems.",
+    "resourceCost": null
+  },
+  {
+    "id": "resource-materials",
+    "name": "Materials",
+    "description": "Raw industrial goods used to construct ships and facilities. Manufacturing centers produce materials each turn.",
+    "resourceCost": null
+  },
+  {
+    "id": "resource-influence",
+    "name": "Influence",
+    "description": "Soft power that sways loyalty and unlocks diplomatic options. High-loyalty systems passively generate influence each turn.",
+    "resourceCost": null
+  },
+  {
+    "id": "resource-recruits",
+    "name": "Recruits",
+    "description": "Personnel used to staff troops, crew ships, and train characters. Population-rich systems generate recruits.",
+    "resourceCost": null
+  },
+  {
+    "id": "fleet-nav",
+    "name": "Fleet Panel",
+    "description": "Opens the Fleet Status panel. View all your fleets, their compositions, current orders, and combat readiness.",
+    "shortcut": "F"
+  },
+  {
+    "id": "chars-nav",
+    "name": "Characters Panel",
+    "description": "Opens the Character Roster. Assign characters to fleets, bases, or missions to leverage their special abilities.",
+    "shortcut": "C"
+  },
+  {
+    "id": "intel-nav",
+    "name": "Intel Panel",
+    "description": "Opens the Intel Reports panel. View gathered intelligence on enemy systems, fleets, and characters.",
+    "shortcut": "I"
+  },
+  {
+    "id": "missions-nav",
+    "name": "Active Missions",
+    "description": "Opens the Active Missions panel. Track all ongoing covert operations assigned to your characters.",
+    "shortcut": "M"
+  },
+  {
+    "id": "cmd-nav",
+    "name": "Command Overview",
+    "description": "Opens the Command Overview panel. A high-level summary of all faction military and economic activity.",
+    "shortcut": null
+  },
+  {
+    "id": "notification-bell",
+    "name": "Notifications",
+    "description": "Displays recent notifications and alerts. Critical events like system capture or mission outcomes appear here.",
+    "shortcut": "N"
+  },
+  {
+    "id": "tech-tree-btn",
+    "name": "Tech Tree",
+    "description": "Opens the Technology Research Tree. Queue research projects to unlock new ships, facilities, and faction abilities.",
+    "shortcut": "T"
+  },
+  {
+    "id": "victory-hud",
+    "name": "Victory Progress",
+    "description": "Shows compact progress toward each victory condition. Press V to open the full Victory screen.",
+    "shortcut": "V"
+  },
+  {
+    "id": "map-filter-hud",
+    "name": "Map Filters",
+    "description": "Toggle between map views: Faction Control, Loyalty Levels, Fleet Positions, and Resource Output overlays.",
+    "shortcut": null
+  },
+  {
+    "id": "save-btn",
+    "name": "Save Game",
+    "description": "Save your current game to a named slot. The game also auto-saves at the end of each Maintenance Phase.",
+    "shortcut": null
+  },
+  {
+    "id": "load-btn",
+    "name": "Load Game",
+    "description": "Load a previously saved game. Warning: loading mid-game will discard all unsaved progress.",
+    "shortcut": null
+  },
+  {
+    "id": "facility-shipyard",
+    "name": "Shipyard",
+    "description": "Constructs new ships for your fleets each turn. Required to build capital ships. Increases fleet capacity at this system.",
+    "resourceCost": "800 Credits, 600 Materials"
+  },
+  {
+    "id": "facility-barracks",
+    "name": "Barracks",
+    "description": "Trains ground troops each maintenance phase. Increases system defense rating and recruit generation.",
+    "resourceCost": "400 Credits, 300 Materials"
+  },
+  {
+    "id": "facility-research-lab",
+    "name": "Research Lab",
+    "description": "Boosts technology research output for this system. Multiple labs stack to accelerate tech completion.",
+    "resourceCost": "600 Credits, 400 Materials"
+  },
+  {
+    "id": "facility-trade-post",
+    "name": "Trade Post",
+    "description": "Increases credit and materials output from this system. Works best on trade hub systems.",
+    "resourceCost": "500 Credits, 200 Materials"
+  },
+  {
+    "id": "fleet-capital-ship",
+    "name": "Capital Ship",
+    "description": "The backbone of any battle fleet. High firepower and durability. Requires a Shipyard to produce.",
+    "resourceCost": "1200 Credits, 800 Materials"
+  },
+  {
+    "id": "fleet-cruiser",
+    "name": "Cruiser",
+    "description": "A versatile medium warship balancing offense and defense. The workhorse of fleet engagements.",
+    "resourceCost": "600 Credits, 400 Materials"
+  },
+  {
+    "id": "fleet-corvette",
+    "name": "Corvette",
+    "description": "Fast and lightly armed. Excellent for scouting, patrol, and rapid response missions.",
+    "resourceCost": "300 Credits, 200 Materials"
+  },
+  {
+    "id": "fleet-fighter",
+    "name": "Fighter Squadron",
+    "description": "Small, cheap strike craft that excel in swarms. Low individual power but high volume of attacks.",
+    "resourceCost": "120 Credits, 80 Materials"
+  },
+  {
+    "id": "mission-recon",
+    "name": "Reconnaissance Mission",
+    "description": "A covert intelligence-gathering operation. Reveals enemy system details, fleet compositions, and character locations.",
+    "resourceCost": "50 Influence"
+  },
+  {
+    "id": "mission-sabotage",
+    "name": "Sabotage Mission",
+    "description": "Destroys or damages enemy facilities and fleets. High-risk, high-reward covert operation.",
+    "resourceCost": "100 Influence, 50 Credits"
+  },
+  {
+    "id": "mission-diplomacy",
+    "name": "Diplomatic Mission",
+    "description": "Sways a neutral or enemy system toward your faction. Increases system loyalty by a significant amount on success.",
+    "resourceCost": "150 Influence"
+  },
+  {
+    "id": "mission-extraction",
+    "name": "Extraction Mission",
+    "description": "Rescues a captured character or extracts a high-value asset from enemy territory.",
+    "resourceCost": "80 Influence, 100 Credits"
+  }
+]

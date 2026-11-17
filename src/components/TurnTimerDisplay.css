@@ -1,0 +1,49 @@
+/* TurnTimerDisplay — compact countdown styles. */
+
+.turn-timer-display {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+  user-select: none;
+  background: rgba(88, 166, 255, 0.15);
+  color: #58a6ff;
+  border: 1px solid rgba(88, 166, 255, 0.3);
+}
+
+.turn-timer-display--warning {
+  background: rgba(240, 136, 62, 0.2);
+  color: #f0883e;
+  border-color: rgba(240, 136, 62, 0.4);
+}
+
+.turn-timer-display--critical {
+  background: rgba(248, 81, 73, 0.2);
+  color: #f85149;
+  border-color: rgba(248, 81, 73, 0.4);
+  animation: timer-pulse 0.6s ease-in-out infinite alternate;
+}
+
+.turn-timer-display--expired {
+  background: rgba(139, 148, 158, 0.15);
+  color: #8b949e;
+  border-color: rgba(139, 148, 158, 0.3);
+}
+
+.turn-timer-display__icon {
+  font-size: 12px;
+}
+
+.turn-timer-display__time {
+  font-family: 'Courier New', Courier, monospace;
+}
+
+@keyframes timer-pulse {
+  from { opacity: 1; }
+  to   { opacity: 0.5; }
+}

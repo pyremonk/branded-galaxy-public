@@ -1,0 +1,149 @@
+{
+  "sectors": [
+    {
+      "name": "Kepler Sector",
+      "systems": ["Kepler Prime", "New Meridian", "Vanguard Station", "Prosperity", "Iron Gate"]
+    },
+    {
+      "name": "Nova Sector",
+      "systems": ["Nova Holdings", "Synthesis", "Silverline", "Aurora Station"]
+    },
+    {
+      "name": "Forge Alpha Sector",
+      "systems": ["Forge World Alpha", "Liberty Point", "Titan's Rest", "Axis Central", "Cobalt Reach", "Terminus"]
+    },
+    {
+      "name": "Pinnacle Sector",
+      "systems": ["Pinnacle", "Valor's Edge", "Diamond Forge", "Resilience"]
+    },
+    {
+      "name": "Nexus Sector",
+      "systems": ["Nexus Prime", "Crimson Harbor", "Sentinel Watch", "Prosperity Wells", "Ironclad"]
+    },
+    {
+      "name": "Meridian Sector",
+      "systems": ["Meridian Gate", "Obsidian Point", "Unity Station", "Frontier's End", "Golden Reach"]
+    },
+    {
+      "name": "Azure Sector",
+      "systems": ["Azure Holdings", "Mechanica", "Haven's Rest", "Cornerstone", "Beacon", "Stalwart"]
+    },
+    {
+      "name": "Vanguard Sector",
+      "systems": ["Vanguard Outpost", "Sterling", "Crucible", "Pioneer's Hope"]
+    },
+    {
+      "name": "Citadel Sector",
+      "systems": ["Citadel", "Emerald Gate", "Forge Station Beta", "Legacy Prime", "Resolute"]
+    },
+    {
+      "name": "Quantum Sector",
+      "systems": ["Quantum Nexus", "Copper Basin", "Freedom's Star", "Ascent", "Waypoint"]
+    },
+    {
+      "name": "Chrome Sector",
+      "systems": ["Chrome Spire", "Defiance", "Prosperity Nova", "Rampart"]
+    },
+    {
+      "name": "Celestial Sector",
+      "systems": ["Celestial Junction", "Forge World Gamma", "Independence", "Sovereign", "Platinum Heights"]
+    },
+    {
+      "name": "Symmetry Sector",
+      "systems": ["Symmetry", "Harborpoint", "Bastion", "Sapphire Station", "Protocol"]
+    },
+    {
+      "name": "Frontier Sector",
+      "systems": ["New Frontier", "Apex", "Convergence", "Iron Bastion", "Tribute", "Crystal Gate"]
+    },
+    {
+      "name": "Manufactory Sector",
+      "systems": ["Manufactory Prime", "Redemption", "Vantage Point", "Bronze Keep", "Eclipse"]
+    },
+    {
+      "name": "Prosperity Sector",
+      "systems": ["Prosperity Hub", "Stronghold", "Safe Harbor", "Catalyst", "Prosperity Junction"]
+    },
+    {
+      "name": "Horizon Sector",
+      "systems": ["New Horizon", "Meridian Star", "Foundation", "Ruby Point"]
+    },
+    {
+      "name": "Assembly Sector",
+      "systems": ["Assembly Prime", "Valiant", "Crossroads", "Steel Harbor", "Renaissance"]
+    },
+    {
+      "name": "Jade Sector",
+      "systems": ["Jade Station", "Chronos", "Last Chance", "Pinnacle Station", "Endeavor"]
+    },
+    {
+      "name": "Topaz Sector",
+      "systems": ["Topaz Gate", "Forge World Delta", "Sanctuary", "Overlook", "Tungsten Deep"]
+    },
+    {
+      "name": "Enlightenment Sector",
+      "systems": ["Enlightenment", "Prosperity Hub Alpha", "Paragon", "Amethyst Heights"]
+    },
+    {
+      "name": "Integration Sector",
+      "systems": ["Integration", "Frontier Junction", "Summit", "Covenant", "Cobalt Fortress", "Awakening"]
+    },
+    {
+      "name": "Diamond Sector",
+      "systems": ["Diamond Station", "Nexus Beta", "Triumph", "Silver Gate"]
+    },
+    {
+      "name": "Industrial Sector",
+      "systems": ["Industrial Gamma", "Perseverance", "Confluence", "Brass Harbor", "Horizon"]
+    },
+    {
+      "name": "Trade Hub Sector",
+      "systems": ["Trade Hub Prime", "Guardian", "Opal Point", "Manufactory Beta", "Revolution"]
+    },
+    {
+      "name": "Prospect Sector",
+      "systems": ["Prospect", "Aluminum Reach", "Glory", "Prosperity Central", "Fortress"]
+    },
+    {
+      "name": "Quartz Sector",
+      "systems": ["Quartz Station", "Systems Override", "Pioneer Station", "Paramount"]
+    },
+    {
+      "name": "Venture Sector",
+      "systems": ["Venture", "Chromium Deep", "Destiny", "Onyx Gate", "Protocol Prime"]
+    },
+    {
+      "name": "Resurgence Sector",
+      "systems": ["Resurgence", "Milestone", "Nickel Basin", "Tomorrow"]
+    },
+    {
+      "name": "Commerce Sector",
+      "systems": ["Commerce Hub Alpha", "Sentinel Prime", "Crystal Spire", "Revolution Point", "Honor"]
+    },
+    {
+      "name": "Junction Sector",
+      "systems": ["Junction Prime", "Titanium Core", "Serenity", "Trade Central", "Champion", "Beryl Station"]
+    }
+  ],
+  "metadata": {
+    "version": "2.0",
+    "description": "Static sector groupings for Branded Galaxy with fixed system associations",
+    "theme": "Corporate/industrial sci-fi setting with emphasis on trade, manufacturing, and territorial control",
+    "structure": {
+      "sectors": "31 predefined sectors with 4-6 systems each (average 5)",
+      "systems": "150 total systems distributed across sectors",
+      "sector_naming": "Each sector named after a prominent system within it (e.g., 'Kepler Sector' contains 'Kepler Prime')"
+    },
+    "usage": {
+      "small_galaxy": "Pick 6-8 sectors (24-48 systems)",
+      "medium_galaxy": "Pick 10-14 sectors (40-70 systems)",
+      "large_galaxy": "Pick 16-24 sectors (64-120 systems)",
+      "selection": "Sectors selected randomly during generation but associations remain static across all games"
+    },
+    "design_rationale": {
+      "static_associations": "Systems always belong to the same sector for game-to-game cohesiveness and player familiarity",
+      "sector_naming": "Naming sectors after member systems creates thematic coherence and makes sectors memorable",
+      "varied_sizes": "Sectors contain 4-6 systems each for balanced gameplay and interesting strategic layouts"
+    }
+  }
+}

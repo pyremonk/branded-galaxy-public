@@ -1,0 +1,198 @@
+/* TransactionLog.css */
+
+.txlog-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 500;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeInOverlay 0.15s ease;
+}
+
+.txlog-panel {
+  background: #0d1117;
+  border: 1px solid #21262d;
+  border-radius: 12px;
+  width: min(820px, 96vw);
+  max-height: 84vh;
+  display: flex;
+  flex-direction: column;
+  font-family: monospace;
+  color: #c9d1d9;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.9);
+  animation: slideUp 0.18s ease;
+}
+
+@keyframes fadeInOverlay { from { opacity: 0; } to { opacity: 1; } }
+@keyframes slideUp {
+  from { transform: translateY(12px); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+
+/* Header */
+.txlog-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px 12px;
+  border-bottom: 1px solid #21262d;
+  flex-shrink: 0;
+}
+
+.txlog-title {
+  font-size: 16px;
+  color: #58a6ff;
+  margin: 0;
+  font-weight: bold;
+}
+
+.txlog-header-actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.txlog-export-btn {
+  background: none;
+  border: 1px solid #30363d;
+  color: #3fb950;
+  font-family: monospace;
+  font-size: 12px;
+  cursor: pointer;
+  padding: 4px 10px;
+  border-radius: 5px;
+  transition: border-color 0.15s;
+}
+
+.txlog-export-btn:hover { border-color: #3fb950; }
+
+.txlog-close {
+  background: none;
+  border: 1px solid #30363d;
+  color: #8b949e;
+  font-family: monospace;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 3px 9px;
+  border-radius: 5px;
+  transition: border-color 0.15s, color 0.15s;
+}
+
+.txlog-close:hover { border-color: #f85149; color: #f85149; }
+
+/* Filters */
+.txlog-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  padding: 10px 20px;
+  border-bottom: 1px solid #21262d;
+  flex-shrink: 0;
+}
+
+.txlog-filter-group {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: #8b949e;
+}
+
+.txlog-filter-group select,
+.txlog-turn-input {
+  background: #161b22;
+  border: 1px solid #30363d;
+  color: #c9d1d9;
+  font-family: monospace;
+  font-size: 12px;
+  padding: 3px 6px;
+  border-radius: 4px;
+}
+
+.txlog-turn-input { width: 64px; }
+
+.txlog-count {
+  margin-left: auto;
+  font-size: 12px;
+  color: #484f58;
+}
+
+/* Scrollable table area */
+.txlog-scroll {
+  flex: 1;
+  overflow-y: auto;
+  padding: 0 4px;
+}
+
+.txlog-empty {
+  padding: 24px;
+  text-align: center;
+  color: #484f58;
+  font-size: 13px;
+}
+
+/* Table */
+.txlog-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+}
+
+.txlog-table th {
+  position: sticky;
+  top: 0;
+  background: #0d1117;
+  color: #8b949e;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 6px 8px;
+  border-bottom: 1px solid #21262d;
+  text-align: left;
+  z-index: 1;
+}
+
+.txlog-table td {
+  padding: 4px 8px;
+  border-bottom: 1px solid #0d1117;
+  vertical-align: middle;
+}
+
+.txlog-table tr:hover td {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+/* Type-based row colors */
+.tx-production .txlog-amount  { color: #3fb950; }
+.tx-spending   .txlog-amount  { color: #f85149; }
+.tx-refund     .txlog-amount  { color: #d29922; }
+.tx-adjustment .txlog-amount  { color: #58a6ff; }
+
+.txlog-turn    { color: #484f58; width: 40px; }
+.txlog-type    { text-transform: capitalize; width: 90px; color: #8b949e; }
+.txlog-icon    { width: 20px; text-align: center; }
+.txlog-resource { text-transform: capitalize; width: 80px; }
+.txlog-amount  { text-align: right; width: 80px; font-weight: bold; }
+.txlog-source  { color: #8b949e; font-size: 11px; }
+
+/* Footer */
+.txlog-footer {
+  padding: 10px 20px;
+  border-top: 1px solid #21262d;
+  font-size: 11px;
+  color: #484f58;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.txlog-footer kbd {
+  background: #21262d;
+  border: 1px solid #30363d;
+  border-radius: 3px;
+  padding: 1px 4px;
+  font-family: monospace;
+  font-size: 9px;
+}

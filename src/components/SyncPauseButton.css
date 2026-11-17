@@ -1,0 +1,58 @@
+/**
+ * SyncPauseButton styles — GitHub-inspired dark theme.
+ */
+
+.sync-pause-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 10px;
+  border: 1px solid #30363d;
+  border-radius: 4px;
+  background: #21262d;
+  color: #c9d1d9;
+  font-family: 'Courier New', monospace;
+  font-size: 11px;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+  white-space: nowrap;
+}
+
+.sync-pause-btn:hover:not(:disabled) {
+  background: #30363d;
+  border-color: #58a6ff;
+  color: #e6edf3;
+}
+
+/* Paused state — amber accent with subtle pulse */
+.sync-pause-btn--paused {
+  border-color: #f0883e66;
+  color: #f0883e;
+  animation: sync-pause-pulse 1.8s ease-in-out infinite;
+}
+
+.sync-pause-btn--paused:hover:not(:disabled) {
+  border-color: #f0883e;
+  background: #f0883e1a;
+  color: #f0883e;
+}
+
+.sync-pause-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.sync-pause-btn__icon {
+  font-size: 12px;
+  line-height: 1;
+}
+
+.sync-pause-btn__label {
+  font-size: 11px;
+  line-height: 1;
+}
+
+@keyframes sync-pause-pulse {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0.6; }
+}

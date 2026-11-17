@@ -1,0 +1,91 @@
+/* HelpTooltip.css */
+
+.htip-wrap {
+  display: contents; /* transparent wrapper — children render as-is */
+}
+
+@keyframes htipFadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.htip-tooltip {
+  max-width: 280px;
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  padding: 10px 13px;
+  font-family: monospace;
+  font-size: 12px;
+  color: #c9d1d9;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.55);
+  z-index: 9999;
+  pointer-events: none;
+  animation: htipFadeIn 0.15s ease-out;
+  /* Arrow pointing up (tooltip is above the element by default) */
+  transform: translateY(-100%);
+}
+
+.htip-tooltip--below {
+  transform: translateY(0);
+}
+
+/* Arrow pseudo-element */
+.htip-tooltip::after {
+  content: '';
+  position: absolute;
+  left: 16px;
+  bottom: -6px;
+  width: 10px;
+  height: 6px;
+  background: #161b22;
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+  border-top: 1px solid #30363d;
+}
+
+.htip-tooltip--below::after {
+  bottom: auto;
+  top: -6px;
+  clip-path: polygon(50% 0, 0 100%, 100% 100%);
+}
+
+.htip-name {
+  font-weight: bold;
+  color: #c9d1d9;
+  margin-bottom: 5px;
+  font-size: 13px;
+}
+
+.htip-desc {
+  color: #8b949e;
+  line-height: 1.5;
+  margin-bottom: 4px;
+}
+
+.htip-meta {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 6px;
+}
+
+.htip-shortcut-label,
+.htip-cost-label {
+  font-size: 11px;
+  color: #6e7681;
+}
+
+.htip-kbd {
+  background: #21262d;
+  border: 1px solid #484f58;
+  border-radius: 3px;
+  padding: 1px 5px;
+  font-family: monospace;
+  font-size: 11px;
+  color: #c9d1d9;
+}
+
+.htip-cost {
+  font-size: 11px;
+  color: #f0883e;
+}

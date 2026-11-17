@@ -1,0 +1,436 @@
+{
+  "factionId": "union",
+  "technologies": [
+    {
+      "id": "guerrilla-tactics-1",
+      "tier": 1,
+      "name": "Guerrilla Tactics I",
+      "description": "Decentralized strike teams and asymmetric warfare doctrines dramatically improve sabotage and covert operation success rates.",
+      "icon": "⚔",
+      "startingTech": true,
+      "cost": {
+        "credits": 200,
+        "influence": 50,
+        "turns": 5
+      },
+      "prerequisites": [],
+      "effects": [
+        {
+          "type": "mission-bonus",
+          "target": "sabotageSuccess",
+          "value": 0.15
+        }
+      ],
+      "unlocks": {
+        "units": [],
+        "buildings": [],
+        "missions": [],
+        "victoryConditions": []
+      }
+    },
+    {
+      "id": "underground-networks",
+      "tier": 1,
+      "name": "Underground Networks",
+      "description": "Clandestine communication webs and resistance cells improve diplomatic reach while reducing operational mission costs.",
+      "icon": "◉",
+      "startingTech": false,
+      "cost": {
+        "credits": 250,
+        "influence": 75,
+        "turns": 5
+      },
+      "prerequisites": [],
+      "effects": [
+        {
+          "type": "mission-bonus",
+          "target": "diplomacySuccess",
+          "value": 0.2
+        },
+        {
+          "type": "cost-reduction",
+          "target": "missionCost",
+          "value": 0.1
+        }
+      ],
+      "unlocks": {
+        "units": [],
+        "buildings": [],
+        "missions": [],
+        "victoryConditions": []
+      }
+    },
+    {
+      "id": "improvised-manufacturing",
+      "tier": 1,
+      "name": "Improvised Manufacturing",
+      "description": "Makeshift fabrication techniques and scavenged components keep Union fleets operational at a fraction of the cost.",
+      "icon": "⚙",
+      "startingTech": false,
+      "cost": {
+        "credits": 300,
+        "influence": 60,
+        "turns": 6
+      },
+      "prerequisites": [],
+      "effects": [
+        {
+          "type": "production-bonus",
+          "target": "materialProduction",
+          "value": 0.15
+        },
+        {
+          "type": "unique-capability",
+          "target": "reduced-ship-maintenance",
+          "value": 1
+        }
+      ],
+      "unlocks": {
+        "units": [],
+        "buildings": [],
+        "missions": [],
+        "victoryConditions": []
+      }
+    },
+    {
+      "id": "stealth-technology",
+      "tier": 2,
+      "name": "Stealth Technology",
+      "description": "Sensor-dampening hulls and light-bending fields give Union operatives a decisive advantage in covert infiltrations.",
+      "icon": "◈",
+      "startingTech": false,
+      "cost": {
+        "credits": 550,
+        "influence": 125,
+        "turns": 7.5
+      },
+      "prerequisites": [
+        "guerrilla-tactics-1"
+      ],
+      "effects": [
+        {
+          "type": "mission-bonus",
+          "target": "espionageSuccess",
+          "value": 0.25
+        }
+      ],
+      "unlocks": {
+        "units": [
+          "stealth-ship"
+        ],
+        "buildings": [],
+        "missions": [],
+        "victoryConditions": []
+      }
+    },
+    {
+      "id": "popular-support",
+      "tier": 2,
+      "name": "Popular Support",
+      "description": "Grassroots organizing and community welfare programs slow loyalty erosion and amplify influence from liberated populations.",
+      "icon": "♟",
+      "startingTech": false,
+      "cost": {
+        "credits": 600,
+        "influence": 150,
+        "turns": 7.5
+      },
+      "prerequisites": [
+        "underground-networks"
+      ],
+      "effects": [
+        {
+          "type": "unique-capability",
+          "target": "reduced-loyalty-decay",
+          "value": 1
+        },
+        {
+          "type": "production-bonus",
+          "target": "influenceGeneration",
+          "value": 0.15
+        }
+      ],
+      "unlocks": {
+        "units": [],
+        "buildings": [],
+        "missions": [],
+        "victoryConditions": []
+      }
+    },
+    {
+      "id": "sabotage-techniques",
+      "tier": 2,
+      "name": "Sabotage Techniques",
+      "description": "Advanced demolitions training and target analysis increase the destructive impact of Union sabotage operations.",
+      "icon": "✸",
+      "startingTech": false,
+      "cost": {
+        "credits": 500,
+        "influence": 140,
+        "turns": 6.5
+      },
+      "prerequisites": [
+        "improvised-manufacturing"
+      ],
+      "effects": [
+        {
+          "type": "mission-bonus",
+          "target": "sabotageSuccess",
+          "value": 0.3
+        }
+      ],
+      "unlocks": {
+        "units": [],
+        "buildings": [],
+        "missions": [
+          "incite-uprising"
+        ],
+        "victoryConditions": []
+      }
+    },
+    {
+      "id": "deep-cover-operations",
+      "tier": 3,
+      "name": "Deep Cover Operations",
+      "description": "Long-term infiltration programs place Union agents at every level of enemy command, improving all covert mission outcomes.",
+      "icon": "◐",
+      "startingTech": false,
+      "cost": {
+        "credits": 1100,
+        "influence": 275,
+        "turns": 9.5
+      },
+      "prerequisites": [
+        "stealth-technology",
+        "sabotage-techniques"
+      ],
+      "effects": [
+        {
+          "type": "mission-bonus",
+          "target": "espionageSuccess",
+          "value": 0.2
+        },
+        {
+          "type": "mission-bonus",
+          "target": "sabotageSuccess",
+          "value": 0.2
+        }
+      ],
+      "unlocks": {
+        "units": [],
+        "buildings": [],
+        "missions": [
+          "deep-cover"
+        ],
+        "victoryConditions": []
+      }
+    },
+    {
+      "id": "decentralized-command",
+      "tier": 3,
+      "name": "Decentralized Command",
+      "description": "Autonomous cell leadership and redundant communication allows the Union to maintain multiple hidden bases simultaneously.",
+      "icon": "⋈",
+      "startingTech": false,
+      "cost": {
+        "credits": 1300,
+        "influence": 300,
+        "turns": 11
+      },
+      "prerequisites": [
+        "popular-support",
+        "sabotage-techniques"
+      ],
+      "effects": [
+        {
+          "type": "production-bonus",
+          "target": "recruitGeneration",
+          "value": 0.25
+        },
+        {
+          "type": "unique-capability",
+          "target": "extra-secret-bases",
+          "value": 1
+        }
+      ],
+      "unlocks": {
+        "units": [],
+        "buildings": [],
+        "missions": [],
+        "victoryConditions": []
+      }
+    },
+    {
+      "id": "hit-and-run-tactics",
+      "tier": 3,
+      "name": "Hit and Run Tactics",
+      "description": "Precision strike protocols and rapid disengagement maneuvers make Union forces lethal in defensive engagements while preserving fleet strength.",
+      "icon": "↯",
+      "startingTech": false,
+      "cost": {
+        "credits": 1000,
+        "influence": 250,
+        "turns": 9.5
+      },
+      "prerequisites": [
+        "stealth-technology",
+        "popular-support"
+      ],
+      "effects": [
+        {
+          "type": "military-bonus",
+          "target": "defensiveCombatPower",
+          "value": 0.2
+        },
+        {
+          "type": "unique-capability",
+          "target": "free-combat-retreat",
+          "value": 1
+        }
+      ],
+      "unlocks": {
+        "units": [],
+        "buildings": [],
+        "missions": [],
+        "victoryConditions": []
+      }
+    },
+    {
+      "id": "liberation-fleet",
+      "tier": 4,
+      "name": "Liberation Fleet",
+      "description": "The Liberation-class capital ship becomes the symbol of freedom for oppressed systems, and its arrival triggers mass rallying of liberated populations.",
+      "icon": "▲",
+      "startingTech": false,
+      "cost": {
+        "credits": 2200,
+        "influence": 450,
+        "turns": 12
+      },
+      "prerequisites": [
+        "deep-cover-operations",
+        "hit-and-run-tactics"
+      ],
+      "effects": [
+        {
+          "type": "production-bonus",
+          "target": "liberationLoyaltyGain",
+          "value": 0.3
+        }
+      ],
+      "unlocks": {
+        "units": [
+          "liberation-capital"
+        ],
+        "buildings": [],
+        "missions": [],
+        "victoryConditions": []
+      }
+    },
+    {
+      "id": "mass-mobilization",
+      "tier": 4,
+      "name": "Mass Mobilization",
+      "description": "A galaxy-wide call to arms mobilizes the oppressed masses, massively increasing recruit generation and enabling militia units.",
+      "icon": "⬡",
+      "startingTech": false,
+      "cost": {
+        "credits": 2000,
+        "influence": 400,
+        "turns": 11
+      },
+      "prerequisites": [
+        "decentralized-command",
+        "hit-and-run-tactics"
+      ],
+      "effects": [
+        {
+          "type": "production-bonus",
+          "target": "recruitGeneration",
+          "value": 0.5
+        }
+      ],
+      "unlocks": {
+        "units": [
+          "militia"
+        ],
+        "buildings": [],
+        "missions": [],
+        "victoryConditions": []
+      }
+    },
+    {
+      "id": "revolutionary-ideology",
+      "tier": 4,
+      "name": "Revolutionary Ideology",
+      "description": "A coherent ideological framework allows Union diplomats to instantly convert wavering populations and dramatically amplifies influence output.",
+      "icon": "≡",
+      "startingTech": false,
+      "cost": {
+        "credits": 2600,
+        "influence": 520,
+        "turns": 13.5
+      },
+      "prerequisites": [
+        "deep-cover-operations",
+        "decentralized-command"
+      ],
+      "effects": [
+        {
+          "type": "production-bonus",
+          "target": "influenceGeneration",
+          "value": 0.4
+        },
+        {
+          "type": "unique-capability",
+          "target": "instant-loyalty-chance",
+          "value": 1
+        }
+      ],
+      "unlocks": {
+        "units": [],
+        "buildings": [],
+        "missions": [],
+        "victoryConditions": []
+      }
+    },
+    {
+      "id": "revolutionary-spark",
+      "tier": 5,
+      "name": "Revolutionary Spark",
+      "description": "The Union broadcasts the signal that ignites a galaxy-wide uprising. Every oppressed system shifts toward the Union cause, diplomatic effects double, and the path to Heroic Victory opens.",
+      "icon": "✶",
+      "startingTech": false,
+      "cost": {
+        "credits": 4500,
+        "influence": 900,
+        "turns": 15
+      },
+      "prerequisites": [
+        "liberation-fleet",
+        "mass-mobilization",
+        "revolutionary-ideology"
+      ],
+      "effects": [
+        {
+          "type": "unique-capability",
+          "target": "galaxy-wide-uprising",
+          "value": 1
+        },
+        {
+          "type": "production-bonus",
+          "target": "diplomacyEffectiveness",
+          "value": 1
+        }
+      ],
+      "unlocks": {
+        "units": [],
+        "buildings": [],
+        "missions": [],
+        "victoryConditions": [
+          "heroic-victory"
+        ]
+      }
+    }
+  ]
+}

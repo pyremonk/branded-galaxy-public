@@ -1,0 +1,72 @@
+/* InitiativeIndicator — Small persistent HUD badge for faction initiative order */
+
+.initiative-indicator {
+  position: fixed;
+  top: 76px;       /* below the Phaser top bar (64px) */
+  right: 16px;
+  z-index: 150;
+
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  padding: 6px 10px;
+  font-family: monospace;
+  user-select: none;
+}
+
+.initiative-indicator__label {
+  font-size: 9px;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  color: #8b949e;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+  text-align: center;
+}
+
+.initiative-indicator__list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.initiative-indicator__entry {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  color: #8b949e;
+}
+
+.initiative-indicator__entry--player {
+  color: #c9d1d9;
+}
+
+.initiative-indicator__rank {
+  min-width: 14px;
+  color: #484f58;
+  font-size: 10px;
+}
+
+.initiative-indicator__badge {
+  display: inline-block;
+  border-radius: 3px;
+  padding: 1px 5px;
+  font-size: 10px;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+  line-height: 1.4;
+}
+
+/* Highlight player faction entry */
+.initiative-indicator__entry--player .initiative-indicator__rank {
+  color: #8b949e;
+}
+
+/* Inline container mode (when placed inside a side panel) */
+.initiative-indicator--inline {
+  position: static;
+  top: auto;
+  right: auto;
+  margin: 0;
+}

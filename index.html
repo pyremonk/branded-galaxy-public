@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Branded Galaxy</title>
+  <!-- Google Fonts: Orbitron (headings), Inter (body), JetBrains Mono (code/numbers) -->
+  <!-- Spec: 051-visual-style-spec.md FR-VS-004 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;700&family=Orbitron:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html {
+      overflow: hidden;
+      overscroll-behavior: none;
+    }
+    body { 
+      background: #0d1117; 
+      font-family: 'Consolas', 'Monaco', monospace;
+      color: #c9d1d9;
+      overflow: hidden;
+      overscroll-behavior: none;
+    }
+    #root, #galaxy-app { width: 100vw; height: 100vh; position: relative; }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.tsx"></script>
+</body>
+</html>

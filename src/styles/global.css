@@ -1,0 +1,86 @@
+/*
+ * global.css — CSS custom properties (design tokens) and global typography.
+ * Spec: 051-visual-style-spec.md (FR-VS-001, FR-VS-004)
+ */
+
+/* ── Google Fonts are imported via <link> in index.html ── */
+
+/* ── Design Tokens (FR-VS-001) ────────────────────────────────────────────── */
+
+:root {
+  /* Base dark theme */
+  --color-bg-deep:   #0d1117;
+  --color-surface:   #161b22;
+  --color-border:    #30363d;
+  --color-text-primary:   #e6edf3;
+  --color-text-secondary: #8b949e;
+  --color-text-muted:     #484f58;
+
+  /* Accent colors */
+  --color-blue:   #58a6ff;
+  --color-green:  #3fb950;
+  --color-red:    #f85149;
+  --color-yellow: #d29922;
+  --color-purple: #bc8cff;
+  --color-orange: #e3b341;
+
+  /* Interactive surface (used for buttons, panel headers) */
+  --color-surface-raised: #21262d;
+
+  /* Typography (FR-VS-004) */
+  --font-heading: 'Orbitron', sans-serif;
+  --font-body:    'Inter', sans-serif;
+  --font-mono:    'JetBrains Mono', 'Courier New', monospace;
+
+  /* Type scale */
+  --text-h1:      2.0rem;
+  --text-h2:      1.5rem;
+  --text-h3:      1.25rem;
+  --text-body:    1.0rem;
+  --text-caption: 0.875rem;
+}
+
+/* ── Global Resets ─────────────────────────────────────────────────────────── */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* ── Typography Baseline (FR-VS-004) ──────────────────────────────────────── */
+
+body {
+  font-family: var(--font-body);
+  font-size:   var(--text-body);
+  color:       var(--color-text-primary);
+  background:  var(--color-bg-deep);
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-heading);
+}
+
+code, pre, .mono {
+  font-family: var(--font-mono);
+}
+
+/* ── Scrollbar Theming ─────────────────────────────────────────────────────── */
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover { background: var(--color-text-muted); }
+
+/* ── Accessibility: reduce motion ─────────────────────────────────────────── */
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

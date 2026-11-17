@@ -1,0 +1,491 @@
+{
+  "missionTypes": [
+    {
+      "id": "diplomatic",
+      "name": "Diplomatic Mission",
+      "description": "Conduct diplomatic outreach to shift a system's loyalty toward your faction.",
+      "phase": "1B",
+      "primaryStat": "diplomacy",
+      "secondaryStat": null,
+      "targetType": "system",
+      "minCharacters": 1,
+      "duration": 3,
+      "factionRestrictions": [],
+      "tier": "support",
+      "effects": {
+        "critical_success": [
+          {
+            "type": "loyalty_shift",
+            "amount": 25
+          }
+        ],
+        "success": [
+          {
+            "type": "loyalty_shift",
+            "amount": 15
+          }
+        ],
+        "failure": [],
+        "critical_failure": [
+          {
+            "type": "loyalty_shift",
+            "amount": -5
+          },
+          {
+            "type": "capture_risk"
+          }
+        ]
+      }
+    },
+    {
+      "id": "espionage",
+      "name": "Espionage Mission",
+      "description": "Infiltrate an enemy system to gather intelligence on its facilities, troops, and fleets.",
+      "phase": "1B",
+      "primaryStat": "espionage",
+      "secondaryStat": null,
+      "targetType": "system",
+      "minCharacters": 1,
+      "duration": 2.5,
+      "factionRestrictions": [],
+      "tier": "support",
+      "effects": {
+        "critical_success": [
+          {
+            "type": "intel_reveal",
+            "items": [
+              "troop_count",
+              "facilities",
+              "fleet_details"
+            ]
+          }
+        ],
+        "success": [
+          {
+            "type": "intel_reveal",
+            "items": [
+              "facilities",
+              "troop_count"
+            ]
+          }
+        ],
+        "failure": [
+          {
+            "type": "detection_chance",
+            "probability": 0.25
+          }
+        ],
+        "critical_failure": [
+          {
+            "type": "detection_chance",
+            "probability": 0.75
+          },
+          {
+            "type": "capture_risk"
+          }
+        ]
+      }
+    },
+    {
+      "id": "sabotage",
+      "name": "Sabotage Mission",
+      "description": "Destroy or damage enemy infrastructure at a targeted facility.",
+      "phase": "1B",
+      "primaryStat": "espionage",
+      "secondaryStat": "combat",
+      "targetType": "facility",
+      "minCharacters": 1,
+      "duration": 2.5,
+      "factionRestrictions": [],
+      "tier": "offensive",
+      "brandAuthorityPenalty": -0.1,
+      "effects": {
+        "critical_success": [
+          {
+            "type": "facility_damage",
+            "amount": 3
+          }
+        ],
+        "success": [
+          {
+            "type": "facility_damage",
+            "amount": 2
+          }
+        ],
+        "failure": [
+          {
+            "type": "detection_chance",
+            "probability": 0.3
+          }
+        ],
+        "critical_failure": [
+          {
+            "type": "detection_chance",
+            "probability": 0.8
+          },
+          {
+            "type": "capture_risk"
+          }
+        ]
+      }
+    },
+    {
+      "id": "recruitment",
+      "name": "Recruitment Mission",
+      "description": "Recruit a new operative from neutral or enemy territory.",
+      "phase": "1B",
+      "primaryStat": "diplomacy",
+      "secondaryStat": null,
+      "targetType": "system",
+      "minCharacters": 1,
+      "duration": 3,
+      "factionRestrictions": [],
+      "tier": "support",
+      "rosterMaxSize": 12,
+      "effects": {
+        "critical_success": [
+          {
+            "type": "recruit_character",
+            "tier": 3
+          }
+        ],
+        "success": [
+          {
+            "type": "recruit_character",
+            "tier": 2
+          }
+        ],
+        "failure": [
+          {
+            "type": "xp_gain",
+            "amount": 5
+          }
+        ],
+        "critical_failure": [
+          {
+            "type": "detection_chance",
+            "probability": 0.4
+          },
+          {
+            "type": "capture_risk"
+          }
+        ]
+      }
+    },
+    {
+      "id": "research-assist",
+      "name": "Research Assist Mission",
+      "description": "Accelerate ongoing research at a friendly Research Facility.",
+      "phase": "1B",
+      "primaryStat": "research",
+      "secondaryStat": "diplomacy",
+      "targetType": "system",
+      "minCharacters": 1,
+      "duration": 2,
+      "factionRestrictions": [],
+      "tier": "support",
+      "ownFactionOnly": true,
+      "effects": {
+        "critical_success": [
+          {
+            "type": "research_advance",
+            "turns": 2
+          }
+        ],
+        "success": [
+          {
+            "type": "research_advance",
+            "turns": 1
+          }
+        ],
+        "failure": [],
+        "critical_failure": [
+          {
+            "type": "research_advance",
+            "turns": -1
+          }
+        ]
+      }
+    },
+    {
+      "id": "incite-uprising",
+      "name": "Incite Uprising",
+      "description": "Foment unrest in a weakly-held enemy system to trigger a revolt.",
+      "phase": "1B",
+      "primaryStat": "diplomacy",
+      "secondaryStat": "espionage",
+      "targetType": "system",
+      "minCharacters": 1,
+      "duration": 4,
+      "factionRestrictions": [],
+      "tier": "offensive",
+      "loyaltyThreshold": 50,
+      "effects": {
+        "critical_success": [
+          {
+            "type": "system_revolt",
+            "duration": 3
+          },
+          {
+            "type": "troop_reduction",
+            "amount": 5
+          }
+        ],
+        "success": [
+          {
+            "type": "loyalty_shift",
+            "amount": -20,
+            "target": "controlling"
+          }
+        ],
+        "failure": [
+          {
+            "type": "detection_chance",
+            "probability": 0.2
+          }
+        ],
+        "critical_failure": [
+          {
+            "type": "loyalty_shift",
+            "amount": 5,
+            "target": "controlling"
+          },
+          {
+            "type": "capture_risk"
+          }
+        ]
+      }
+    },
+    {
+      "id": "abduction",
+      "name": "Abduction Mission",
+      "description": "Capture a specific enemy character using a two-person team.",
+      "phase": "1B",
+      "primaryStat": "espionage",
+      "secondaryStat": "combat",
+      "targetType": "character",
+      "minCharacters": 2,
+      "duration": 2.5,
+      "factionRestrictions": [],
+      "tier": "offensive",
+      "effects": {
+        "critical_success": [
+          {
+            "type": "character_status",
+            "status": "captured",
+            "location": "abductor_base"
+          }
+        ],
+        "success": [
+          {
+            "type": "character_status",
+            "status": "captured",
+            "location": "target_system"
+          }
+        ],
+        "failure": [
+          {
+            "type": "detection_chance",
+            "probability": 0.5
+          },
+          {
+            "type": "capture_risk",
+            "probability": 0.3,
+            "affectsTeam": true
+          }
+        ],
+        "critical_failure": [
+          {
+            "type": "character_status",
+            "status": "captured",
+            "target": "mission_characters"
+          }
+        ]
+      }
+    },
+    {
+      "id": "assassination",
+      "name": "Assassination Mission",
+      "description": "Eliminate a key enemy leader or operative.",
+      "phase": "1B",
+      "primaryStat": "espionage",
+      "secondaryStat": "combat",
+      "targetType": "character",
+      "minCharacters": 1,
+      "duration": 2.5,
+      "factionRestrictions": [],
+      "tier": "offensive",
+      "effects": {
+        "critical_success": [
+          {
+            "type": "character_status",
+            "status": "dead"
+          },
+          {
+            "type": "diplomatic_consequence",
+            "amount": 25,
+            "faction": "opposing"
+          }
+        ],
+        "success": [
+          {
+            "type": "character_status",
+            "status": "wounded",
+            "statPenalty": 2,
+            "penaltyDuration": 1
+          },
+          {
+            "type": "diplomatic_consequence",
+            "amount": 25,
+            "faction": "opposing"
+          }
+        ],
+        "failure": [
+          {
+            "type": "detection_chance",
+            "probability": 0.6
+          }
+        ],
+        "critical_failure": [
+          {
+            "type": "capture_risk"
+          },
+          {
+            "type": "target_alert",
+            "stat": "espionage",
+            "amount": 2,
+            "probability": 0.1
+          }
+        ]
+      }
+    },
+    {
+      "id": "reconnaissance",
+      "name": "Reconnaissance Mission",
+      "description": "Scout enemy or neutral territory to gather strategic intelligence.",
+      "phase": "1C",
+      "primaryStat": "espionage",
+      "secondaryStat": null,
+      "targetType": "system",
+      "minCharacters": 1,
+      "duration": 2,
+      "factionRestrictions": [],
+      "tier": "recon",
+      "effects": {
+        "critical_success": [
+          {
+            "type": "recon_intel",
+            "tier": "critical-success"
+          }
+        ],
+        "success": [
+          {
+            "type": "recon_intel",
+            "tier": "success"
+          }
+        ],
+        "failure": [],
+        "critical_failure": [
+          {
+            "type": "detection_chance",
+            "probability": 0.5
+          },
+          {
+            "type": "capture_risk"
+          }
+        ]
+      }
+    },
+    {
+      "id": "false_intel",
+      "name": "False Intel Operation",
+      "description": "Plant fabricated intelligence in an enemy faction's intel store.",
+      "phase": "1C",
+      "primaryStat": "espionage",
+      "secondaryStat": null,
+      "targetType": "system",
+      "minCharacters": 1,
+      "duration": 3,
+      "factionRestrictions": [],
+      "tier": "offensive",
+      "minEspionage": 7,
+      "effects": {
+        "critical_success": [
+          {
+            "type": "plant_false_intel",
+            "intelType": "fleet_composition"
+          },
+          {
+            "type": "plant_false_intel",
+            "intelType": "facility_status"
+          }
+        ],
+        "success": [
+          {
+            "type": "plant_false_intel",
+            "intelType": "fleet_composition"
+          }
+        ],
+        "failure": [
+          {
+            "type": "detection_chance",
+            "probability": 0.3
+          }
+        ],
+        "critical_failure": [
+          {
+            "type": "detection_chance",
+            "probability": 0.7
+          },
+          {
+            "type": "capture_risk"
+          }
+        ]
+      }
+    },
+    {
+      "id": "rescue",
+      "name": "Rescue Mission",
+      "description": "Recover a captured friendly character from enemy custody.",
+      "phase": "1B",
+      "primaryStat": "combat",
+      "secondaryStat": "espionage",
+      "targetType": "system",
+      "minCharacters": 1,
+      "duration": 2.5,
+      "factionRestrictions": [],
+      "tier": "defensive",
+      "effects": {
+        "critical_success": [
+          {
+            "type": "character_status",
+            "status": "rescued",
+            "target": "held_character"
+          }
+        ],
+        "success": [
+          {
+            "type": "character_status",
+            "status": "rescued",
+            "target": "held_character"
+          }
+        ],
+        "failure": [
+          {
+            "type": "detection_chance",
+            "probability": 0.4
+          }
+        ],
+        "critical_failure": [
+          {
+            "type": "capture_risk"
+          },
+          {
+            "type": "detection_chance",
+            "probability": 0.7
+          }
+        ]
+      }
+    }
+  ]
+}

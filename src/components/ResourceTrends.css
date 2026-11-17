@@ -1,0 +1,39 @@
+/* ResourceTrends.css */
+
+.resource-trends {
+  font-family: monospace;
+}
+
+.trends-empty {
+  color: #8b949e;
+  font-size: 12px;
+  font-style: italic;
+  padding: 12px 0;
+}
+
+.trends-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.trends-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  color: #c9d1d9;
+}
+
+.trends-legend-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.trends-chart {
+  display: block;
+  overflow: visible;
+}

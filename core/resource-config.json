@@ -1,0 +1,65 @@
+{
+  "baseProduction": {
+    "credits":   { "formula": "population * 10" },
+    "materials": { "formula": "population * 5" },
+    "recruits":  { "formula": "population * 2" },
+    "influence": { "formula": "(loyaltyValue - 50) / 10" }
+  },
+  "loyaltyModifiers": [
+    { "min": 80, "max": 100, "multiplier": 1.0  },
+    { "min": 60, "max": 79,  "multiplier": 0.85 },
+    { "min": 40, "max": 59,  "multiplier": 0.70 },
+    { "min": 30, "max": 39,  "multiplier": 0.60 },
+    { "min": 0,  "max": 29,  "multiplier": 0.50 }
+  ],
+  "specialLocationBonuses": {
+    "manufacturingCenter":  { "materials": 1.50 },
+    "researchFacility":     { "influence": 1.30, "researchCostMod": 0.90 },
+    "tradeHub":             { "credits":   1.40 },
+    "strategicChokepoint":  { "influence": 1.20, "defenseMod": 1.10 }
+  },
+  "defaultCaps": {
+    "credits":   100000,
+    "materials":  50000,
+    "recruits":   10000,
+    "influence":   5000
+  },
+  "shipCosts": {
+    "fighter":  { "credits":  50, "materials":  30 },
+    "corvette": { "credits": 100, "materials":  60, "recruits":  5 },
+    "cruiser":  { "credits": 250, "materials": 150, "recruits": 15 },
+    "capital":  { "credits": 800, "materials": 500, "recruits": 50 }
+  },
+  "buildingCosts": {
+    "shipyard":           { "credits": 500, "materials": 300 },
+    "researchLab":        { "credits": 400, "materials": 200 },
+    "trainingFacility":   { "credits": 300, "materials": 150, "recruits": 20 },
+    "defensePlatform":    { "credits": 600, "materials": 400 },
+    "resourceExtractor":  { "credits": 250, "materials": 150 },
+    "tradeCenter":        { "credits": 350, "materials": 100 }
+  },
+  "missionCosts": {
+    "diplomacy":    { "influence":  50, "credits": 100 },
+    "espionage":    { "influence":  75 },
+    "sabotage":     { "influence": 100, "credits":  50 },
+    "recruitment":  { "credits":  150, "influence": 25 },
+    "assassination":{ "influence": 200, "credits": 300 }
+  },
+  "researchCosts": {
+    "tier1": { "credits": { "min": 200, "max": 400 }, "influence": { "min":  50, "max": 100 } },
+    "tier2": { "credits": { "min": 500, "max": 800 }, "influence": { "min": 100, "max": 200 } },
+    "tier3": { "credits": { "min": 1000,"max": 1500}, "influence": { "min": 200, "max": 350 } },
+    "tier4": { "credits": { "min": 2000,"max": 3000}, "influence": { "min": 400, "max": 600 } },
+    "tier5": { "credits": { "min": 4000,"max": 6000}, "influence": { "min": 800, "max":1200 } }
+  },
+  "emergencyActionCosts": {
+    "rushConstruction":     { "costMultiplier": 2.0 },
+    "emergencyRecruitment": { "costMultiplier": 3.0 },
+    "forcedLoyalty":        { "influence": 500, "credits": 1000 }
+  },
+  "refundRates": {
+    "constructionEarlyCancel": 0.75,
+    "constructionLateCancel":  0.0,
+    "researchCancel":          0.0
+  }
+}

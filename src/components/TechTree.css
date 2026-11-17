@@ -1,0 +1,240 @@
+/* ── TechTree.css ─────────────────────────────────────────────────────────── */
+
+.tech-tree {
+  position: fixed;
+  inset: 0;
+  z-index: 300;
+  background: rgba(13, 17, 23, 0.96);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  font-family: 'Courier New', monospace;
+  color: #e6edf3;
+}
+
+.tech-tree--loading {
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  color: #58a6ff;
+}
+
+/* Header */
+.tech-tree__header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 12px 20px;
+  background: #161b22;
+  border-bottom: 2px solid var(--faction-color, #58a6ff);
+  flex-shrink: 0;
+}
+
+.tech-tree__title {
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  flex: 1;
+}
+
+.tech-tree__meta {
+  display: flex;
+  gap: 1.5rem;
+  font-size: 0.78rem;
+  color: #8b949e;
+}
+
+.tech-tree__close {
+  background: none;
+  border: none;
+  color: #8b949e;
+  font-size: 1.3rem;
+  cursor: pointer;
+  padding: 0 4px;
+  line-height: 1;
+  transition: color 0.15s;
+}
+
+.tech-tree__close:hover {
+  color: #e6edf3;
+}
+
+/* Body + SVG layer */
+.tech-tree__body {
+  position: relative;
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 16px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.tech-tree-svg-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+/* Connection lines */
+.tech-line {
+  stroke-width: 2;
+  fill: none;
+}
+
+.line-completed  { stroke: #3fb950; opacity: 0.7; }
+.line-active     { stroke: #58a6ff; opacity: 0.9; }
+.line-available  { stroke: #58a6ff; opacity: 0.55; }
+.line-locked     { stroke: #444;    opacity: 0.4; stroke-dasharray: 5 4; }
+
+/* Tier rows */
+.tech-tree__tier-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 90px;
+}
+
+.tech-tree__tier-label {
+  width: 52px;
+  font-size: 0.68rem;
+  color: #8b949e;
+  letter-spacing: 0.05em;
+  flex-shrink: 0;
+  text-align: right;
+}
+
+.tech-tree__tier-nodes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  flex: 1;
+}
+
+/* Individual tech nodes */
+.tech-node {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  width: 120px;
+  min-height: 80px;
+  padding: 10px 8px 8px;
+  border-radius: 8px;
+  border: 2px solid transparent;
+  background: #161b22;
+  cursor: pointer;
+  font-family: inherit;
+  transition: transform 0.15s, border-color 0.15s, box-shadow 0.15s;
+  text-align: center;
+  color: #e6edf3;
+}
+
+/* State variants */
+.tech-node--locked {
+  opacity: 0.45;
+  border-color: #30363d;
+  cursor: not-allowed;
+  color: #8b949e;
+}
+
+.tech-node--available {
+  border-color: var(--faction-color, #58a6ff);
+}
+
+.tech-node--available:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 12px var(--faction-color, #58a6ff);
+}
+
+.tech-node--researching {
+  border-color: var(--faction-color, #58a6ff);
+  box-shadow: 0 0 8px var(--faction-color, #58a6ff);
+  animation: pulse-research 2s ease-in-out infinite;
+}
+
+.tech-node--completed {
+  border-color: #3fb950;
+  background: rgba(63, 185, 80, 0.08);
+}
+
+@keyframes pulse-research {
+  0%, 100% { box-shadow: 0 0 6px var(--faction-color, #58a6ff); }
+  50%       { box-shadow: 0 0 18px var(--faction-color, #58a6ff); }
+}
+
+.tech-node__icon {
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.tech-node__name {
+  font-size: 0.66rem;
+  line-height: 1.25;
+  font-weight: 600;
+  color: inherit;
+}
+
+.tech-node__checkmark {
+  position: absolute;
+  top: 4px;
+  right: 6px;
+  font-size: 0.8rem;
+  color: #3fb950;
+  font-weight: 700;
+}
+
+/* Progress bar inside researching node */
+.tech-node__progress {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: #0d1117;
+  border-radius: 0 0 6px 6px;
+  overflow: hidden;
+}
+
+.tech-node__progress-fill {
+  height: 100%;
+  background: var(--faction-color, #58a6ff);
+  transition: width 0.4s ease;
+}
+
+.tech-node__progress-label {
+  position: absolute;
+  top: -18px;
+  right: 4px;
+  font-size: 0.58rem;
+  color: var(--faction-color, #58a6ff);
+}
+
+/* ── Inline variant (embedded inside Research panel) ──────────────────────── */
+
+.tech-tree--inline {
+  position: relative;
+  inset: auto;
+  z-index: auto;
+  background: transparent;
+  width: 100%;
+  min-height: 260px;
+}
+
+.tech-tree--inline .tech-tree__header {
+  display: none;
+}
+
+.tech-tree--inline .tech-tree__body {
+  flex: unset;
+  min-height: 260px;
+  overflow-x: auto;
+  padding: 8px 12px;
+}

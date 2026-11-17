@@ -1,0 +1,52 @@
+/* ModeIndicatorBadge — pill badge for ASYNC / SYNC mode display. */
+
+.mode-indicator-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  line-height: 1.4;
+  white-space: nowrap;
+  user-select: none;
+}
+
+.mode-indicator-badge--async {
+  background: rgba(240, 136, 62, 0.25);
+  color: #f0883e;
+  border: 1px solid rgba(240, 136, 62, 0.4);
+}
+
+.mode-indicator-badge--sync {
+  background: rgba(63, 185, 80, 0.25);
+  color: #3fb950;
+  border: 1px solid rgba(63, 185, 80, 0.4);
+}
+
+.mode-indicator-badge--paused {
+  background: rgba(240, 136, 62, 0.25);
+  color: #f0883e;
+  border: 1px solid rgba(240, 136, 62, 0.4);
+  animation: mode-badge-pause-pulse 1.8s ease-in-out infinite;
+}
+
+@keyframes mode-badge-pause-pulse {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0.55; }
+}
+
+.mode-indicator-badge__icon {
+  font-size: 13px;
+}
+
+.mode-indicator-badge__label {
+  font-weight: 700;
+}
+
+.mode-indicator-badge__detail {
+  font-weight: 400;
+  opacity: 0.85;
+}

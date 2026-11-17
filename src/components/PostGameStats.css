@@ -1,0 +1,145 @@
+.post-game-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(13, 17, 23, 0.96);
+  z-index: 950;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: monospace;
+  animation: pgOverlayIn 0.2s ease;
+}
+
+@keyframes pgOverlayIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.post-game-panel {
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 10px;
+  width: min(780px, 96vw);
+  max-height: 88vh;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.pg-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 22px;
+  border-bottom: 1px solid #30363d;
+}
+
+.pg-header h2 {
+  margin: 0;
+  font-size: 16px;
+  color: #f0883e;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.pg-close-btn {
+  background: none;
+  border: 1px solid #30363d;
+  color: #8b949e;
+  cursor: pointer;
+  font-size: 15px;
+  width: 27px;
+  height: 27px;
+  border-radius: 4px;
+}
+.pg-close-btn:hover { color: #f85149; border-color: #f85149; }
+
+/* ── Tabs ───────────────────────────────────────────────────────── */
+
+.pg-tabs {
+  display: flex;
+  border-bottom: 1px solid #21262d;
+  overflow-x: auto;
+}
+
+.pg-tab {
+  padding: 9px 18px;
+  font-family: monospace;
+  font-size: 12px;
+  color: #8b949e;
+  cursor: pointer;
+  border: none;
+  background: none;
+  border-bottom: 2px solid transparent;
+  white-space: nowrap;
+  transition: color 0.15s;
+}
+.pg-tab:hover { color: #c9d1d9; }
+.pg-tab.active {
+  color: #58a6ff;
+  border-bottom-color: #58a6ff;
+}
+
+/* ── Content ─────────────────────────────────────────────────────── */
+
+.pg-content {
+  padding: 20px 24px;
+  flex: 1;
+}
+
+.pg-section-title {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #8b949e;
+  margin: 0 0 12px;
+}
+
+.pg-stat-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.pg-stat-table th {
+  text-align: left;
+  padding: 5px 10px;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #8b949e;
+  border-bottom: 1px solid #21262d;
+}
+
+.pg-stat-table td {
+  padding: 7px 10px;
+  color: #c9d1d9;
+  border-bottom: 1px solid #161b22;
+}
+
+.pg-stat-table tr:hover td {
+  background: #0d1117;
+}
+
+.pg-highlight {
+  color: #3fb950;
+  font-weight: bold;
+}
+
+/* ── Export button ───────────────────────────────────────────────── */
+
+.pg-export-btn {
+  margin: 18px 0 4px;
+  padding: 8px 18px;
+  background: #1c2128;
+  border: 1px solid #30363d;
+  border-radius: 5px;
+  color: #8b949e;
+  font-family: monospace;
+  font-size: 12px;
+  cursor: pointer;
+}
+.pg-export-btn:hover {
+  background: #21262d;
+  color: #c9d1d9;
+}

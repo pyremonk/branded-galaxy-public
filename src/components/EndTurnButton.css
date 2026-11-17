@@ -1,0 +1,27 @@
+/* EndTurnButton — Standalone end-turn button styles. */
+
+.end-turn-btn {
+  background: none;
+  border: 1px solid rgba(88, 166, 255, 0.4);
+  color: #58a6ff;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  padding: 4px 10px;
+  cursor: pointer;
+  transition: background-color 0.15s, border-color 0.15s, color 0.15s;
+  white-space: nowrap;
+}
+
+.end-turn-btn:hover:not(:disabled) {
+  background: rgba(88, 166, 255, 0.15);
+  border-color: #58a6ff;
+}
+
+.end-turn-btn--locked {
+  color: #8b949e;
+  border-color: rgba(139, 148, 158, 0.3);
+  cursor: default;
+  opacity: 0.7;
+}

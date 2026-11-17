@@ -1,0 +1,113 @@
+/* PassDeviceInterstitial — hot-seat pass-device overlay
+   Spec: 049-multiplayer-modes-spec.md (FR-MP-002, FR-MP-003) */
+
+/* ── Overlay (covers entire viewport, sits above all game UI) ─────────────── */
+.pdi-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9900;
+  background: #0d1117;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: monospace;
+  /* Prevent clicks / touch events from reaching Phaser canvas below */
+  pointer-events: all;
+}
+
+/* ── Card ─────────────────────────────────────────────────────────────────── */
+.pdi-card {
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 12px;
+  padding: 48px 56px;
+  text-align: center;
+  max-width: 480px;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
+}
+
+/* ── Icon ─────────────────────────────────────────────────────────────────── */
+.pdi-icon {
+  font-size: 56px;
+  line-height: 1;
+}
+
+/* ── Heading ──────────────────────────────────────────────────────────────── */
+.pdi-title {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 700;
+  color: #c9d1d9;
+  letter-spacing: 0.03em;
+}
+
+/* ── Player badge ─────────────────────────────────────────────────────────── */
+.pdi-player-badge {
+  background: rgba(88, 166, 255, 0.08);
+  border: 1px solid rgba(88, 166, 255, 0.3);
+  border-radius: 8px;
+  padding: 14px 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  width: 100%;
+}
+
+.pdi-player-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #58a6ff;
+  opacity: 0.7;
+}
+
+.pdi-player-name {
+  font-size: 22px;
+  font-weight: 700;
+  color: #58a6ff;
+}
+
+.pdi-faction-name {
+  font-size: 13px;
+  color: #8b949e;
+}
+
+/* ── Hint text ────────────────────────────────────────────────────────────── */
+.pdi-hint {
+  margin: 0;
+  font-size: 14px;
+  color: #6e7681;
+  line-height: 1.6;
+}
+
+/* ── Ready button ─────────────────────────────────────────────────────────── */
+.pdi-ready-btn {
+  font-family: monospace;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  background: rgba(63, 185, 80, 0.12);
+  border: 1px solid #3fb950;
+  color: #3fb950;
+  border-radius: 6px;
+  padding: 12px 36px;
+  transition: background 0.15s, color 0.15s;
+  margin-top: 4px;
+}
+
+.pdi-ready-btn:hover,
+.pdi-ready-btn:focus {
+  background: rgba(63, 185, 80, 0.22);
+  color: #4dca60;
+  outline: none;
+}
+
+.pdi-ready-btn:active {
+  background: rgba(63, 185, 80, 0.32);
+}

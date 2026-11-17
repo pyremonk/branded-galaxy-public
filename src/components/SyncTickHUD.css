@@ -1,0 +1,160 @@
+/**
+ * SyncTickHUD styles — GitHub-inspired dark theme.
+ * Spec: 058-sync-mode-tick-loop-spec.md
+ */
+
+.sync-tick-hud {
+  position: fixed;
+  top: 48px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 610;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 4px 12px;
+  background: rgba(13, 17, 23, 0.92);
+  border: 1px solid rgba(88, 166, 255, 0.3);
+  border-radius: 6px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  color: #c9d1d9;
+  pointer-events: auto;
+  user-select: none;
+}
+
+/* Sync mode badge */
+.sync-tick-badge {
+  background: rgba(88, 166, 255, 0.2);
+  color: #58a6ff;
+  font-weight: 700;
+  font-size: 10px;
+  letter-spacing: 1px;
+  padding: 2px 6px;
+  border-radius: 3px;
+  border: 1px solid rgba(88, 166, 255, 0.4);
+}
+
+/* Tick counter */
+.sync-tick-counter {
+  font-size: 12px;
+  color: #8b949e;
+}
+
+.sync-tick-num {
+  color: #f0f6fc;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Speed controls */
+.sync-tick-speed {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.sync-tick-speed-btn {
+  background: rgba(48, 54, 61, 0.8);
+  border: 1px solid rgba(139, 148, 158, 0.3);
+  border-radius: 3px;
+  color: #c9d1d9;
+  font-size: 9px;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.sync-tick-speed-btn:hover:not(:disabled) {
+  background: rgba(63, 185, 80, 0.2);
+  border-color: rgba(63, 185, 80, 0.5);
+  color: #3fb950;
+}
+
+.sync-tick-speed-btn:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+.sync-tick-speed-value {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: #3fb950;
+  font-weight: 600;
+  font-size: 12px;
+  min-width: 22px;
+  text-align: center;
+}
+
+.sync-tick-speed-pips {
+  display: flex;
+  gap: 2px;
+  align-items: center;
+}
+
+.sync-tick-pip {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: rgba(139, 148, 158, 0.3);
+  transition: background 0.2s;
+}
+
+.sync-tick-pip.active {
+  background: #3fb950;
+}
+
+/* Turn progress bar */
+.sync-tick-turn-progress {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.sync-tick-turn-bar {
+  width: 60px;
+  height: 4px;
+  background: rgba(48, 54, 61, 0.8);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.sync-tick-turn-fill {
+  height: 100%;
+  background: #58a6ff;
+  border-radius: 2px;
+  transition: width 0.15s ease-out;
+}
+
+.sync-tick-turn-label {
+  font-size: 10px;
+  color: #8b949e;
+  white-space: nowrap;
+}
+
+/* Paused state modifiers */
+.sync-tick-hud--paused {
+  border-color: rgba(240, 136, 62, 0.4);
+}
+
+.sync-tick-turn-fill--paused {
+  background: #f0883e;
+  animation: sync-tick-fill-pulse 1.8s ease-in-out infinite;
+}
+
+.sync-tick-hud--paused .sync-tick-turn-label {
+  color: #f0883e;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+@keyframes sync-tick-fill-pulse {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0.5; }
+}

@@ -1,0 +1,142 @@
+[
+  {
+    "id": "welcome",
+    "title": "Welcome to Branded Galaxy",
+    "instruction": "Welcome, Commander. Branded Galaxy is a turn-based grand strategy game of galactic conquest. Your mission: grow the influence of The Brand Authority across the stars.",
+    "hint": "Let's begin with a quick tour of the basics.",
+    "highlight": null,
+    "condition": null,
+    "skipable": false,
+    "autoAdvanceMs": null
+  },
+  {
+    "id": "galaxy-map",
+    "title": "The Galaxy Map",
+    "instruction": "This is your galaxy. Pan around by clicking and dragging. Zoom in and out with the scroll wheel. Explore your starting systems and the surrounding space.",
+    "hint": "Click and drag to pan the map.",
+    "highlight": null,
+    "condition": "pan",
+    "skipable": true,
+    "autoAdvanceMs": null
+  },
+  {
+    "id": "your-systems",
+    "title": "Your Systems",
+    "instruction": "The blue systems belong to The Brand Authority — that's you. Click on your Capital Prime system to open its System Detail panel.",
+    "hint": "Click the blue 'Capital Prime' system.",
+    "highlight": "sys-t01",
+    "condition": "panelOpen:system",
+    "skipable": true,
+    "autoAdvanceMs": null
+  },
+  {
+    "id": "resources",
+    "title": "Your Resources",
+    "instruction": "At the top of the screen you'll see your resource bar: Credits ◆ (orange), Materials ⚙ (blue), Recruits ♟ (green), and Influence ★ (purple). These drive everything from fleet upkeep to facility construction.",
+    "hint": null,
+    "highlight": "resource-hud",
+    "condition": null,
+    "skipable": false,
+    "autoAdvanceMs": null
+  },
+  {
+    "id": "build-facility",
+    "title": "Building a Facility",
+    "instruction": "Facilities boost your systems. Click Capital Prime, then open the FACILITIES tab in the System Detail panel. Queue a Shipyard — it will complete over the next few turns.",
+    "hint": "Click Capital Prime → FACILITIES tab → Queue a Shipyard.",
+    "highlight": "sys-t01",
+    "condition": "constructionQueued",
+    "skipable": true,
+    "autoAdvanceMs": null
+  },
+  {
+    "id": "end-turn",
+    "title": "End Your Turn",
+    "instruction": "When you're ready, click the [END TURN] button on the left side of the top toolbar. The game will process the Resolution Phase and then the Maintenance Phase before your next turn.",
+    "hint": "Click [END TURN] to advance to the next turn.",
+    "highlight": "end-turn-btn",
+    "condition": "turnSubmitted",
+    "skipable": false,
+    "autoAdvanceMs": null
+  },
+  {
+    "id": "turn-results",
+    "title": "Turn Results",
+    "instruction": "Excellent! The Turn Summary shows what happened: resources produced, construction progress, and any events. Review the summary, then dismiss it.",
+    "hint": null,
+    "highlight": "turn-summary",
+    "condition": null,
+    "skipable": false,
+    "autoAdvanceMs": null
+  },
+  {
+    "id": "fleet-intro",
+    "title": "Your Fleet",
+    "instruction": "Fleets are how you project power across the galaxy. Open the Fleet panel using the FLEET button on the right side of the screen.",
+    "hint": "Click the Fleet nav button to open the Fleet panel.",
+    "highlight": "fleet-nav",
+    "condition": "panelOpen:fleet",
+    "skipable": true,
+    "autoAdvanceMs": null
+  },
+  {
+    "id": "fleet-order",
+    "title": "Issue a Fleet Order",
+    "instruction": "Select one of your fleets and issue a command order. Fleets can Patrol a system, Raid for resources, or Blockade enemy supply lines.",
+    "hint": "Select a fleet, then assign a command order.",
+    "highlight": null,
+    "condition": "fleetOrderSubmitted",
+    "skipable": true,
+    "autoAdvanceMs": null
+  },
+  {
+    "id": "characters",
+    "title": "Your Characters",
+    "instruction": "Characters are powerful individuals who can command fleets, lead missions, and boost your systems. Open the Character Roster.",
+    "hint": "Click the CHARS nav button to open the roster.",
+    "highlight": "chars-nav",
+    "condition": "panelOpen:characters",
+    "skipable": true,
+    "autoAdvanceMs": null
+  },
+  {
+    "id": "send-mission",
+    "title": "Send a Mission",
+    "instruction": "Assign a character to a Reconnaissance mission against a neutral system. Missions gather intelligence and can shift system loyalties.",
+    "hint": "Open a character card and start a Reconnaissance mission.",
+    "highlight": null,
+    "condition": "missionSubmitted",
+    "skipable": true,
+    "autoAdvanceMs": null
+  },
+  {
+    "id": "research",
+    "title": "Research Technology",
+    "instruction": "The Tech Tree is always visible inside the Research panel. Click the Research nav button on the right side of the screen to open it, then click a technology node to queue it for research.",
+    "hint": "Open the Research panel and click a technology node to start researching it.",
+    "highlight": "research-hud",
+    "condition": "researchStarted",
+    "skipable": true,
+    "autoAdvanceMs": null
+  },
+  {
+    "id": "victory",
+    "title": "Victory Conditions",
+    "instruction": "Click the Victory nav button or press V to open the Victory screen. It shows your progress toward each win condition. The first faction to meet any win condition claims victory!",
+    "hint": "Click the VICTORY nav button or press V to view your victory progress.",
+    "highlight": "victory-hud",
+    "condition": null,
+    "skipable": false,
+    "autoAdvanceMs": null
+  },
+  {
+    "id": "complete",
+    "title": "Tutorial Complete!",
+    "instruction": "Excellent work, Commander. You now know the basics of Branded Galaxy. The galaxy awaits your conquest — good luck!",
+    "hint": null,
+    "highlight": null,
+    "condition": null,
+    "skipable": false,
+    "autoAdvanceMs": null
+  }
+]

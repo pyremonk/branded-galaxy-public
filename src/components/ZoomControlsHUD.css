@@ -1,0 +1,40 @@
+/*
+ * ZoomControlsHUD.css — Zoom in/out buttons for the galaxy map.
+ * Rendered as the right section inside .map-nav-panel.
+ */
+
+.zoom-controls-hud {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 8px 6px;
+  justify-content: center;
+  border-left: 1px solid rgba(88, 166, 255, 0.15);
+}
+
+.zoom-btn {
+  display: block;
+  padding: 4px 10px;
+  background: rgba(22, 27, 34, 0.88);
+  border: 1px solid #30363d;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #58a6ff;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.4;
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+}
+
+/* smaller buttons used for 100% zoom increments */
+.zoom-btn--small {
+  padding: 2px 6px;
+  font-size: 12px;
+}
+
+.zoom-btn:hover {
+  background: rgba(88, 166, 255, 0.12);
+  border-color: #58a6ff;
+  color: #79c0ff;
+}

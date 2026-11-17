@@ -1,0 +1,124 @@
+/* EventChoiceModal — choice event dialog overlay
+   Spec: 045-event-system-spec.md (FR-ES-004)
+*/
+
+.ecm-scrim {
+  position: fixed;
+  inset: 0;
+  background: rgba(1, 4, 9, 0.80);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9000;
+}
+
+.ecm-modal {
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 8px;
+  width: min(560px, 92vw);
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.6);
+}
+
+.ecm-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.ecm-badge {
+  background: #f85149;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  padding: 2px 8px;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.ecm-title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #e6edf3;
+}
+
+.ecm-description {
+  margin: 0;
+  font-size: 14px;
+  color: #8b949e;
+  line-height: 1.6;
+}
+
+.ecm-choices {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.ecm-choice-btn {
+  background: #0d1117;
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  padding: 12px 16px;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.ecm-choice-btn:hover {
+  border-color: #58a6ff;
+  background: #1c2128;
+}
+
+.ecm-choice-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #e6edf3;
+}
+
+.ecm-choice-preview {
+  font-size: 12px;
+  font-weight: 600;
+  color: #3fb950;
+}
+
+.ecm-choice-hint {
+  font-size: 12px;
+  color: #8b949e;
+}
+
+/* Notice badge variant for non-choice (informational) events */
+.ecm-badge--notice {
+  background: #388bfd;
+}
+
+/* Acknowledge button for non-choice events — full-width, muted style */
+.ecm-acknowledge-btn {
+  background: #0d1117;
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  padding: 10px 16px;
+  width: 100%;
+  text-align: center;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  color: #8b949e;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+
+.ecm-acknowledge-btn:hover {
+  border-color: #388bfd;
+  color: #e6edf3;
+}

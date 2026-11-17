@@ -1,0 +1,919 @@
+[
+  {
+    "id": "EVT_PIRATE_RAID",
+    "type": "random",
+    "title": "Pirate Raid",
+    "description": "A band of pirates has struck a [faction_name] outpost, looting supply depots and damaging patrol vessels.",
+    "conditions": [],
+    "weight": 3,
+    "effects": [
+      { "type": "resource_delta", "resource": "credits", "amount": -150 },
+      { "type": "notify", "tier": "warning", "message": "Pirate raid! Supply depots looted — 150 credits lost." }
+    ],
+    "choices": []
+  },
+  {
+    "id": "EVT_SUPPLY_WINDFALL",
+    "type": "random",
+    "title": "Supply Windfall",
+    "description": "A derelict cargo hauler found adrift near [faction_name] space contained a valuable cache of materials and credits.",
+    "conditions": [],
+    "weight": 2,
+    "effects": [
+      { "type": "resource_delta", "resource": "credits", "amount": 200 },
+      { "type": "resource_delta", "resource": "materials", "amount": 100 },
+      { "type": "notify", "tier": "info", "message": "Supply windfall! Recovered 200 credits and 100 materials from a derelict hauler." }
+    ],
+    "choices": []
+  },
+  {
+    "id": "EVT_CIVIL_UNREST",
+    "type": "random",
+    "title": "Civil Unrest",
+    "description": "Citizens in a [faction_name]-controlled system have taken to the streets, demanding better conditions and representation.",
+    "conditions": [],
+    "weight": 2,
+    "effects": [
+      { "type": "resource_delta", "resource": "influence", "amount": -50 },
+      { "type": "notify", "tier": "warning", "message": "Civil unrest reported — public pressure costs 50 influence." }
+    ],
+    "choices": []
+  },
+  {
+    "id": "EVT_TRADING_BOOM",
+    "type": "random",
+    "title": "Trading Boom",
+    "description": "Favorable trade winds have boosted commerce along [faction_name] shipping lanes. How will you direct the surplus?",
+    "conditions": [],
+    "weight": 2,
+    "effects": [],
+    "choices": [
+      {
+        "label": "Invest in infrastructure",
+        "preview": "+200 Materials",
+        "hint": "Boosts construction capacity for the next several turns.",
+        "effects": [
+          { "type": "resource_delta", "resource": "materials", "amount": 200 },
+          { "type": "notify", "tier": "info", "message": "Trade surplus directed to infrastructure — 200 materials gained." }
+        ]
+      },
+      {
+        "label": "Fill the treasury",
+        "preview": "+300 Credits",
+        "hint": "Immediate financial gain to fund expansion.",
+        "effects": [
+          { "type": "resource_delta", "resource": "credits", "amount": 300 },
+          { "type": "notify", "tier": "info", "message": "Trade surplus directed to treasury — 300 credits gained." }
+        ]
+      },
+      {
+        "label": "Recruit new colonists",
+        "preview": "+150 Recruits",
+        "hint": "Expands your available manpower pool.",
+        "effects": [
+          { "type": "resource_delta", "resource": "recruits", "amount": 150 },
+          { "type": "notify", "tier": "info", "message": "Trade surplus used to attract colonists — 150 recruits gained." }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "EVT_DIPLOMATIC_INCIDENT",
+    "type": "random",
+    "title": "Diplomatic Incident",
+    "description": "A [faction_name] envoy accidentally triggered an interstellar diplomatic crisis. Rival factions are watching your response closely.",
+    "conditions": [],
+    "weight": 1,
+    "effects": [],
+    "choices": [
+      {
+        "label": "Issue a formal apology",
+        "preview": "-100 Credits, +20 Influence",
+        "hint": "Smooths over tensions at a financial cost.",
+        "effects": [
+          { "type": "resource_delta", "resource": "credits", "amount": -100 },
+          { "type": "resource_delta", "resource": "influence", "amount": 20 },
+          { "type": "notify", "tier": "info", "message": "Formal apology issued — influence gained, credits spent." }
+        ]
+      },
+      {
+        "label": "Deny all involvement",
+        "preview": "-30 Influence",
+        "hint": "Avoids immediate cost but damages reputation.",
+        "effects": [
+          { "type": "resource_delta", "resource": "influence", "amount": -30 },
+          { "type": "notify", "tier": "warning", "message": "Denied involvement — influence penalty incurred." }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "EVT_REBEL_SYMPATHIZERS",
+    "type": "random",
+    "title": "Rebel Sympathizers Discovered",
+    "description": "Intelligence operatives have uncovered a network of rebel sympathizers embedded within [faction_name] administration.",
+    "conditions": [],
+    "weight": 2,
+    "effects": [],
+    "choices": [
+      {
+        "label": "Purge the network",
+        "preview": "-80 Influence, +stability",
+        "hint": "Eliminates the threat but damages public trust.",
+        "effects": [
+          { "type": "resource_delta", "resource": "influence", "amount": -80 },
+          { "type": "notify", "tier": "info", "message": "Rebel network purged — influence spent to secure administration." }
+        ]
+      },
+      {
+        "label": "Turn them into informants",
+        "preview": "+50 Influence over time",
+        "hint": "Risky, but turns enemies into assets.",
+        "effects": [
+          { "type": "resource_delta", "resource": "influence", "amount": 50 },
+          { "type": "notify", "tier": "info", "message": "Rebels turned into informants — influence gained from inside knowledge." }
+        ]
+      },
+      {
+        "label": "Ignore the report",
+        "preview": "No cost, hidden risk",
+        "hint": "Nothing happens now, but the threat remains.",
+        "effects": [
+          { "type": "notify", "tier": "warning", "message": "Rebel sympathizer report filed away — threat unaddressed." }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "EVT_FLEET_AMBUSH",
+    "type": "random",
+    "title": "Fleet Ambush",
+    "description": "Hostile forces sprung an ambush on a [faction_name] patrol fleet, destroying several fighters before withdrawing.",
+    "conditions": [],
+    "weight": 1,
+    "effects": [
+      { "type": "notify", "tier": "warning", "message": "Fleet ambushed! Several patrol vessels were destroyed." }
+    ],
+    "choices": []
+  },
+  {
+    "id": "EVT_RESEARCH_BREAKTHROUGH",
+    "type": "random",
+    "title": "Research Breakthrough",
+    "description": "Scientists in [faction_name] research facilities have made an unexpected breakthrough, accelerating current projects.",
+    "conditions": [],
+    "weight": 1,
+    "effects": [
+      { "type": "resource_delta", "resource": "influence", "amount": 50 },
+      { "type": "notify", "tier": "info", "message": "Research breakthrough! +50 influence gained from scientific discovery." }
+    ],
+    "choices": []
+  },
+  {
+    "id": "EVT_EARLY_EXPANSION_BONUS",
+    "type": "scripted",
+    "title": "Expansion Momentum",
+    "description": "[faction_name] has rapidly claimed new territory, inspiring citizens and administrators with visions of a growing empire.",
+    "conditions": [
+      { "type": "systems_owned_gte", "value": 3 },
+      { "type": "first_time" }
+    ],
+    "weight": 1,
+    "effects": [
+      { "type": "resource_delta", "resource": "influence", "amount": 100 },
+      { "type": "resource_delta", "resource": "recruits", "amount": 50 },
+      { "type": "notify", "tier": "info", "message": "Expansion momentum: controlling 3+ systems has earned a wave of support — +100 influence, +50 recruits." }
+    ],
+    "choices": []
+  },
+  {
+    "id": "EVT_EARLY_GAME_WARNING",
+    "type": "scripted",
+    "title": "The Galaxy Watches",
+    "description": "As the conflict deepens, rival powers take notice of [faction_name]'s growing ambitions. The galaxy is paying attention.",
+    "conditions": [
+      { "type": "turn_gte", "value": 5 },
+      { "type": "first_time" }
+    ],
+    "weight": 1,
+    "effects": [
+      { "type": "notify", "tier": "info", "message": "Turn 5 reached — rival factions are now actively monitoring your expansion." }
+    ],
+    "choices": []
+  },
+  {
+    "id": "EVT_MIDGAME_POWER_PLAY",
+    "type": "scripted",
+    "title": "Power Struggle",
+    "description": "With the war entering a critical phase, internal factions within [faction_name] argue over the best path forward. A pivotal decision must be made.",
+    "conditions": [
+      { "type": "turn_gte", "value": 10 },
+      { "type": "first_time" }
+    ],
+    "weight": 1,
+    "effects": [],
+    "choices": [
+      {
+        "label": "Centralize command",
+        "preview": "-100 Influence, +2 Action Points (1 turn)",
+        "hint": "Consolidate decision-making for a short burst of productivity.",
+        "effects": [
+          { "type": "resource_delta", "resource": "influence", "amount": -100 },
+          { "type": "resource_delta", "resource": "credits", "amount": 200 },
+          { "type": "notify", "tier": "info", "message": "Command centralized — influence spent, treasury reinforced for the push ahead." }
+        ]
+      },
+      {
+        "label": "Empower local governors",
+        "preview": "+150 Influence, slower decisions",
+        "hint": "Long-term stability boost through regional autonomy.",
+        "effects": [
+          { "type": "resource_delta", "resource": "influence", "amount": 150 },
+          { "type": "notify", "tier": "info", "message": "Local governors empowered — influence gained through decentralized administration." }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "EVT_DOMINANT_FORCE",
+    "type": "scripted",
+    "title": "Dominant Force",
+    "description": "[faction_name] now controls a significant portion of known space. Smaller factions scramble to decide whether to resist or submit.",
+    "conditions": [
+      { "type": "systems_owned_gte", "value": 5 },
+      { "type": "first_time" }
+    ],
+    "weight": 1,
+    "effects": [
+      { "type": "resource_delta", "resource": "influence", "amount": 200 },
+      { "type": "notify", "tier": "info", "message": "Dominant force recognized — controlling 5+ systems earns 200 influence from awe and fear." }
+    ],
+    "choices": []
+  },
+
+  {
+    "id": "EVT_MATERIALS_SURGE",
+    "type": "random",
+    "title": "Materials Cache Discovered",
+    "description": "Survey drones have located a rich mineral deposit in [faction_name] space. Extraction crews are mobilized immediately.",
+    "conditions": [],
+    "weight": 2,
+    "effects": [
+      { "type": "resource_delta", "resource": "materials", "amount": 180 },
+      { "type": "notify", "tier": "info", "message": "Materials cache discovered — 180 materials added to stockpile." }
+    ],
+    "choices": []
+  },
+  {
+    "id": "EVT_RECRUIT_INFLUX",
+    "type": "random",
+    "title": "Volunteer Surge",
+    "description": "A recent [faction_name] military victory has inspired a wave of volunteers to join the cause.",
+    "conditions": [],
+    "weight": 2,
+    "effects": [
+      { "type": "resource_delta", "resource": "recruits", "amount": 120 },
+      { "type": "notify", "tier": "info", "message": "Volunteer surge — 120 recruits have enlisted across [faction_name] systems." }
+    ],
+    "choices": []
+  },
+  {
+    "id": "EVT_ASTEROID_MINING",
+    "type": "random",
+    "title": "Asteroid Belt Windfall",
+    "description": "An automated mining rig in a [faction_name]-controlled asteroid belt has exceeded projected yield this season.",
+    "conditions": [],
+    "weight": 2,
+    "effects": [
+      { "type": "resource_delta", "resource": "materials", "amount": 140 },
+      { "type": "resource_delta", "resource": "credits", "amount": 80 },
+      { "type": "notify", "tier": "info", "message": "Asteroid mining windfall — 140 materials and 80 credits recovered." }
+    ],
+    "choices": []
+  },
+  {
+    "id": "EVT_TRADE_CARAVAN",
+    "type": "random",
+    "title": "Merchant Caravan Arrives",
+    "description": "A neutral merchant caravan has entered [faction_name] territory, offering rare goods in exchange for credits or materials.",
+    "conditions": [],
+    "weight": 2,
+    "effects": [],
+    "choices": [
+      {
+        "label": "Trade credits for materials",
+        "preview": "-120 Credits, +200 Materials",
+        "hint": "Good value if you need construction resources.",
+        "effects": [
+          { "type": "resource_delta", "resource": "credits", "amount": -120 },
+          { "type": "resource_delta", "resource": "materials", "amount": 200 },
+          { "type": "notify", "tier": "info", "message": "Merchant deal struck — 120 credits traded for 200 materials." }
+        ]
+      },
+      {
+        "label": "Trade materials for credits",
+        "preview": "-100 Materials, +200 Credits",
+        "hint": "Useful if treasury is low.",
+        "effects": [
+          { "type": "resource_delta", "resource": "materials", "amount": -100 },
+          { "type": "resource_delta", "resource": "credits", "amount": 200 },
+          { "type": "notify", "tier": "info", "message": "Merchant deal struck — 100 materials traded for 200 credits." }
+        ]
+      },
+      {
+        "label": "Send the caravan away",
+        "preview": "No trade",
+        "hint": "Preserve resources and avoid dependence on outsiders.",
+        "effects": [
+          { "type": "notify", "tier": "info", "message": "Merchant caravan turned away — [faction_name] self-sufficiency maintained." }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "EVT_PLAGUE_OUTBREAK",
+    "type": "random",
+    "title": "Plague Outbreak",
+    "description": "A viral outbreak has swept through several [faction_name] colonies, devastating the labor force and slowing recruitment.",
+    "conditions": [],
+    "weight": 1,
+    "effects": [
+      { "type": "resource_delta", "resource": "recruits", "amount": -100 },
+      { "type": "notify", "tier": "warning", "message": "Plague outbreak — 100 recruits lost to illness across [faction_name] colonies." }
+    ],
+    "choices": []
+  },
+  {
+    "id": "EVT_STELLAR_FLARE",
+    "type": "random",
+    "title": "Stellar Flare Disruption",
+    "description": "A massive stellar flare from a nearby star temporarily disrupted communications and sensor arrays across [faction_name] territory.",
+    "conditions": [],
+    "weight": 2,
+    "effects": [
+      { "type": "notify", "tier": "warning", "message": "Stellar flare detected — communication relays disrupted for one turn." }
+    ],
+    "choices": []
+  },
+  {
+    "id": "EVT_MERCENARY_OFFER",
+    "type": "random",
+    "title": "Mercenary Contract Offered",
+    "description": "A mercenary fleet operating near [faction_name] space has offered to provide military assistance — for the right price.",
+    "conditions": [],
+    "weight": 1,
+    "effects": [],
+    "choices": [
+      {
+        "label": "Hire the mercenaries",
+        "preview": "-250 Credits, +fleet reinforcement",
+        "hint": "Temporary military advantage at significant cost.",
+        "effects": [
+          { "type": "resource_delta", "resource": "credits", "amount": -250 },
+          { "type": "notify", "tier": "info", "message": "Mercenaries hired — 250 credits paid for fleet reinforcement." }
+        ]
+      },
+      {
+        "label": "Decline the offer",
+        "preview": "No cost",
+        "hint": "Save credits, rely on your own forces.",
+        "effects": [
+          { "type": "notify", "tier": "info", "message": "Mercenary offer declined — treasury preserved." }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "EVT_DEFECTOR_ARRIVES",
+    "type": "random",
+    "title": "Enemy Defector Arrives",
+    "description": "An operative from a rival faction has defected to [faction_name], claiming to carry sensitive military intelligence.",
+    "conditions": [],
+    "weight": 1,
+    "effects": [
+      { "type": "intel_item", "description": "Defector intelligence: rival fleet movements and garrison strengths" },
+      { "type": "notify", "tier": "info", "message": "Defector arrived — new intelligence on rival faction movements obtained." }
+    ],
+    "choices": []
+  },
+  {
+    "id": "EVT_ARMS_DEALER",
+    "type": "random",
+    "title": "Black Market Arms Dealer",
+    "description": "A shady arms broker has approached [faction_name] commanders with an offer to purchase surplus military hardware.",
+    "conditions": [],
+    "weight": 1,
+    "effects": [],
+    "choices": [
+      {
+        "label": "Purchase surplus equipment",
+        "preview": "-200 Credits, +materials & recruits",
+        "hint": "Good value for expanding military capacity.",
+        "effects": [
+          { "type": "resource_delta", "resource": "credits", "amount": -200 },
+          { "type": "resource_delta", "resource": "materials", "amount": 120 },
+          { "type": "resource_delta", "resource": "recruits", "amount": 80 },
+          { "type": "notify", "tier": "info", "message": "Black market purchase complete — materials and recruits acquired." }
+        ]
+      },
+      {
+        "label": "Sell any surplus to them",
+        "preview": "+180 Credits",
+        "hint": "Convert idle stockpiles into liquid assets.",
+        "effects": [
+          { "type": "resource_delta", "resource": "credits", "amount": 180 },
+          { "type": "resource_delta", "resource": "materials", "amount": -80 },
+          { "type": "notify", "tier": "info", "message": "Surplus materials sold on the black market — 180 credits received." }
+        ]
+      },
+      {
+        "label": "Report and ignore",
+        "preview": "+20 Influence",
+        "hint": "Demonstrate integrity; earn public trust.",
+        "effects": [
+          { "type": "resource_delta", "resource": "influence", "amount": 20 },
+          { "type": "notify", "tier": "info", "message": "Arms dealer reported to authorities — public trust bolstered." }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "EVT_CONSTRUCTION_ACCIDENT",
+    "type": "random",
+    "title": "Construction Accident",
+    "description": "A structural failure at a [faction_name] shipyard or facility has destroyed a shipment of raw materials and delayed projects.",
+    "conditions": [],
+    "weight": 1,
+    "effects": [
+      { "type": "resource_delta", "resource": "materials", "amount": -120 },
+      { "type": "notify", "tier": "warning", "message": "Construction accident — 120 materials lost and local projects set back." }
+    ],
+    "choices": []
+  },
+  {
+    "id": "EVT_MORALE_SPEECH",
+    "type": "random",
+    "title": "Leader's Address",
+    "description": "A stirring broadcast from [faction_name] leadership has rallied citizens, raising morale across controlled territory.",
+    "conditions": [],
+    "weight": 2,
+    "effects": [
+      { "type": "resource_delta", "resource": "influence", "amount": 80 },
+      { "type": "notify", "tier": "info", "message": "Leader's address broadcast — morale rallied, 80 influence gained." }
+    ],
+    "choices": []
+  },
+  {
+    "id": "EVT_PROPAGANDA_BROADCAST",
+    "type": "random",
+    "title": "Propaganda Campaign",
+    "description": "Intelligence suggests a rival faction is promoting a propaganda campaign targeting [faction_name] civilians. How do you respond?",
+    "conditions": [],
+    "weight": 1,
+    "effects": [],
+    "choices": [
+      {
+        "label": "Counter with our own propaganda",
+        "preview": "-100 Credits, +100 Influence",
+        "hint": "Expensive, but neutralizes the threat and gains ground.",
+        "effects": [
+          { "type": "resource_delta", "resource": "credits", "amount": -100 },
+          { "type": "resource_delta", "resource": "influence", "amount": 100 },
+          { "type": "notify", "tier": "info", "message": "Counter-propaganda launched — credits spent, influence secured." }
+        ]
+      },
+      {
+        "label": "Censor the broadcasts",
+        "preview": "-50 Influence",
+        "hint": "Reduces exposure but draws resentment.",
+        "effects": [
+          { "type": "resource_delta", "resource": "influence", "amount": -50 },
+          { "type": "notify", "tier": "warning", "message": "Rival broadcasts censored — censorship backlash costs 50 influence." }
+        ]
+      },
+      {
+        "label": "Ignore it",
+        "preview": "No action",
+        "hint": "Cheapest option, but the narrative spreads unchecked.",
+        "effects": [
+          { "type": "notify", "tier": "warning", "message": "Propaganda campaign unchecked — civilian uncertainty grows." }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "EVT_SCIENTIFIC_CONFERENCE",
+    "type": "random",
+    "title": "Interplanetary Scientific Conference",
+    "description": "Researchers from across the galaxy have gathered at a [faction_name]-hosted conference, sharing advancements and forging alliances.",
+    "conditions": [],
+    "weight": 1,
+    "effects": [
+      { "type": "resource_delta", "resource": "influence", "amount": 60 },
+      { "type": "notify", "tier": "info", "message": "Scientific conference hosted — prestige elevated, 60 influence earned." }
+    ],
+    "choices": []
+  },
+  {
+    "id": "EVT_NAVIGATION_DATA_SOLD",
+    "type": "random",
+    "title": "Navigation Chart Sale",
+    "description": "A cartographer has approached [faction_name] administrators with detailed hyperspace navigation charts — and a price.",
+    "conditions": [],
+    "weight": 1,
+    "effects": [
+      { "type": "resource_delta", "resource": "credits", "amount": 150 },
+      { "type": "intel_item", "description": "Hyperspace navigation charts — improved routing through contested lanes" },
+      { "type": "notify", "tier": "info", "message": "Navigation charts acquired and licensed — 150 credits and routing intelligence gained." }
+    ],
+    "choices": []
+  },
+  {
+    "id": "EVT_BORDER_SKIRMISH",
+    "type": "random",
+    "title": "Border Skirmish",
+    "description": "A minor confrontation at the edge of [faction_name] space has left patrol vessels damaged and border tension elevated.",
+    "conditions": [],
+    "weight": 2,
+    "effects": [],
+    "choices": [
+      {
+        "label": "Reinforce the border",
+        "preview": "-150 Credits, +security",
+        "hint": "Prevents escalation at a financial cost.",
+        "effects": [
+          { "type": "resource_delta", "resource": "credits", "amount": -150 },
+          { "type": "notify", "tier": "info", "message": "Border reinforced — 150 credits spent to secure the perimeter." }
+        ]
+      },
+      {
+        "label": "Retaliate immediately",
+        "preview": "-50 Influence, tactical pressure",
+        "hint": "Shows strength but may draw condemnation.",
+        "effects": [
+          { "type": "resource_delta", "resource": "influence", "amount": -50 },
+          { "type": "notify", "tier": "warning", "message": "Retaliatory strike ordered — influence penalty incurred for aggression." }
+        ]
+      },
+      {
+        "label": "File a formal protest",
+        "preview": "+30 Influence",
+        "hint": "Keeps the moral high ground without expense.",
+        "effects": [
+          { "type": "resource_delta", "resource": "influence", "amount": 30 },
+          { "type": "notify", "tier": "info", "message": "Formal protest filed — diplomatic standing improved." }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "EVT_HYPERSPACE_ANOMALY",
+    "type": "random",
+    "title": "Hyperspace Anomaly",
+    "description": "A region of destabilized hyperspace has appeared near [faction_name] territory. Automated beacons warn passing fleets.",
+    "conditions": [],
+    "weight": 1,
+    "effects": [
+      { "type": "notify", "tier": "warning", "message": "Hyperspace anomaly detected — transit routes near [faction_name] space temporarily restricted." }
+    ],
+    "choices": []
+  },
+  {
+    "id": "EVT_POLITICAL_SCANDAL",
+    "type": "random",
+    "title": "Political Scandal",
+    "description": "Leaked documents have implicated senior [faction_name] officials in corruption. Public trust is shaken.",
+    "conditions": [],
+    "weight": 1,
+    "effects": [],
+    "choices": [
+      {
+        "label": "Investigate and prosecute",
+        "preview": "-100 Influence short-term, transparency bonus",
+        "hint": "Damages prestige now but restores trust over time.",
+        "effects": [
+          { "type": "resource_delta", "resource": "influence", "amount": -60 },
+          { "type": "notify", "tier": "info", "message": "Corruption investigated — influence dip offset by public transparency gains." }
+        ]
+      },
+      {
+        "label": "Cover it up",
+        "preview": "-200 Credits, scandal contained",
+        "hint": "Expensive but keeps public confidence stable.",
+        "effects": [
+          { "type": "resource_delta", "resource": "credits", "amount": -200 },
+          { "type": "notify", "tier": "warning", "message": "Scandal suppressed — 200 credits paid to contain the leak." }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "EVT_POPULATION_UNREST",
+    "type": "random",
+    "title": "Population Unrest",
+    "description": "Economic hardship and wartime conditions have eroded loyalty among colonies in [faction_name] space.",
+    "conditions": [],
+    "weight": 2,
+    "effects": [
+      { "type": "resource_delta", "resource": "influence", "amount": -60 },
+      { "type": "notify", "tier": "warning", "message": "Population unrest — wartime hardships cost 60 influence across colonies." }
+    ],
+    "choices": []
+  },
+  {
+    "id": "EVT_INTELLIGENCE_LEAK",
+    "type": "random",
+    "title": "Intelligence Leak",
+    "description": "A [faction_name] operative's cover has been blown, exposing classified fleet positioning data to a rival faction.",
+    "conditions": [],
+    "weight": 1,
+    "effects": [
+      { "type": "resource_delta", "resource": "influence", "amount": -40 },
+      { "type": "notify", "tier": "warning", "message": "Intelligence leak — classified fleet data compromised, 40 influence lost." }
+    ],
+    "choices": []
+  },
+
+  {
+    "id": "EVT_BA_EXECUTIVE_CRISIS",
+    "type": "random",
+    "factionRestriction": ["brandAuthority"],
+    "title": "Executive Council Crisis",
+    "description": "A power struggle within the Brand Authority's Executive Council has spilled into the public eye. Shareholders are demanding action.",
+    "conditions": [],
+    "weight": 2,
+    "effects": [],
+    "choices": [
+      {
+        "label": "Pacify the council",
+        "preview": "-200 Credits, +150 Influence",
+        "hint": "Pay off competing board members and stabilize leadership.",
+        "effects": [
+          { "type": "resource_delta", "resource": "credits", "amount": -200 },
+          { "type": "resource_delta", "resource": "influence", "amount": 150 },
+          { "type": "notify", "tier": "info", "message": "Executive Council pacified — 200 credits spent, 150 influence restored." }
+        ]
+      },
+      {
+        "label": "Purge the dissidents",
+        "preview": "+80 Influence, -100 Recruits",
+        "hint": "Consolidate power decisively, but skilled personnel are lost.",
+        "effects": [
+          { "type": "resource_delta", "resource": "influence", "amount": 80 },
+          { "type": "resource_delta", "resource": "recruits", "amount": -100 },
+          { "type": "notify", "tier": "warning", "message": "Council dissidents purged — influence secured, key personnel removed." }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "EVT_BA_CORPORATE_BUYOUT",
+    "type": "random",
+    "factionRestriction": ["brandAuthority"],
+    "title": "Corporate Buyout Opportunity",
+    "description": "A smaller corporate entity operating in contested space has put itself up for acquisition. Brand Authority analysts see strategic value.",
+    "conditions": [],
+    "weight": 2,
+    "effects": [],
+    "choices": [
+      {
+        "label": "Complete the acquisition",
+        "preview": "-300 Credits, +200 Influence",
+        "hint": "Expensive, but expands Brand Authority reach and prestige.",
+        "effects": [
+          { "type": "resource_delta", "resource": "credits", "amount": -300 },
+          { "type": "resource_delta", "resource": "influence", "amount": 200 },
+          { "type": "notify", "tier": "info", "message": "Corporate acquisition complete — Brand Authority expands its portfolio." }
+        ]
+      },
+      {
+        "label": "Pass on the deal",
+        "preview": "No cost",
+        "hint": "Preserve credits for military expansion.",
+        "effects": [
+          { "type": "notify", "tier": "info", "message": "Acquisition passed — treasury preserved for strategic priorities." }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "EVT_BA_HOSTILE_SHAREHOLDER",
+    "type": "random",
+    "factionRestriction": ["brandAuthority"],
+    "title": "Hostile Shareholder Bloc",
+    "description": "A coordinated bloc of shareholders has moved against Brand Authority leadership, threatening to destabilize the central market node.",
+    "conditions": [],
+    "weight": 1,
+    "effects": [],
+    "choices": [
+      {
+        "label": "Buy out the bloc",
+        "preview": "-250 Credits, stability restored",
+        "hint": "Most direct resolution — costly but effective.",
+        "effects": [
+          { "type": "resource_delta", "resource": "credits", "amount": -250 },
+          { "type": "notify", "tier": "info", "message": "Hostile shareholders bought out — market node stabilized at significant cost." }
+        ]
+      },
+      {
+        "label": "Negotiate concessions",
+        "preview": "-100 Influence, conflict reduced",
+        "hint": "Compromise preserves credits but cedes some authority.",
+        "effects": [
+          { "type": "resource_delta", "resource": "influence", "amount": -100 },
+          { "type": "notify", "tier": "warning", "message": "Concessions made to shareholder bloc — influence ceded, crisis averted." }
+        ]
+      }
+    ]
+  },
+
+  {
+    "id": "EVT_UNION_CELL_DISCOVERED",
+    "type": "random",
+    "factionRestriction": ["union"],
+    "title": "Underground Cell Compromised",
+    "description": "A Union underground cell operating inside a rival-controlled system has been uncovered. Their extraction is possible — at great risk.",
+    "conditions": [],
+    "weight": 2,
+    "effects": [],
+    "choices": [
+      {
+        "label": "Extract the cell",
+        "preview": "-100 Recruits, cell recovered",
+        "hint": "Costly extraction but preserves the cell's intelligence value.",
+        "effects": [
+          { "type": "resource_delta", "resource": "recruits", "amount": -100 },
+          { "type": "intel_item", "description": "Extracted cell: detailed enemy installation layouts and patrol routes" },
+          { "type": "notify", "tier": "info", "message": "Cell extracted — 100 recruits lost in the operation, intelligence secured." }
+        ]
+      },
+      {
+        "label": "Deny involvement",
+        "preview": "-80 Influence, cell sacrificed",
+        "hint": "Maintains deniability but abandons loyal operatives.",
+        "effects": [
+          { "type": "resource_delta", "resource": "influence", "amount": -80 },
+          { "type": "notify", "tier": "warning", "message": "Union cell abandoned — deniability maintained at a cost to influence." }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "EVT_UNION_RESISTANCE_NETWORK",
+    "type": "random",
+    "factionRestriction": ["union"],
+    "title": "Resistance Network Expands",
+    "description": "The Union's decentralized resistance network has grown significantly, embedding sleeper contacts across rival territories.",
+    "conditions": [],
+    "weight": 2,
+    "effects": [
+      { "type": "intel_item", "description": "Expanded resistance network: sleeper agent reports from rival-controlled systems" },
+      { "type": "resource_delta", "resource": "influence", "amount": 80 },
+      { "type": "notify", "tier": "info", "message": "Resistance network expanded — new intelligence sources established, 80 influence gained." }
+    ],
+    "choices": []
+  },
+  {
+    "id": "EVT_UNION_PROVINCIAL_DEFECTION",
+    "type": "random",
+    "factionRestriction": ["union"],
+    "title": "Provincial Administrator Defects",
+    "description": "A mid-level administrator from a rival-controlled colony has reached out to Union contacts, seeking asylum and offering information.",
+    "conditions": [],
+    "weight": 1,
+    "effects": [],
+    "choices": [
+      {
+        "label": "Accept the defector",
+        "preview": "+150 Influence, intel access",
+        "hint": "Valuable intelligence and a propaganda win.",
+        "effects": [
+          { "type": "resource_delta", "resource": "influence", "amount": 150 },
+          { "type": "intel_item", "description": "Defector intelligence: internal colony dissatisfaction reports and supply route data" },
+          { "type": "notify", "tier": "info", "message": "Defector accepted — influence gained and intelligence secured." }
+        ]
+      },
+      {
+        "label": "Redirect to another faction",
+        "preview": "+100 Credits (ransom/trade)",
+        "hint": "Monetize the opportunity without political exposure.",
+        "effects": [
+          { "type": "resource_delta", "resource": "credits", "amount": 100 },
+          { "type": "notify", "tier": "info", "message": "Defector redirected — 100 credits earned from the exchange." }
+        ]
+      }
+    ]
+  },
+
+  {
+    "id": "EVT_AF_FABRICATOR_GLITCH",
+    "type": "random",
+    "factionRestriction": ["autoforge"],
+    "title": "Fabricator Network Synchronization Failure",
+    "description": "A cascade synchronization error has propagated through the Autoforge fabricator network, temporarily halting automated production lines.",
+    "conditions": [],
+    "weight": 2,
+    "effects": [
+      { "type": "resource_delta", "resource": "materials", "amount": -100 },
+      { "type": "notify", "tier": "warning", "message": "Fabricator sync failure — automated lines went offline, 100 materials lost." }
+    ],
+    "choices": []
+  },
+  {
+    "id": "EVT_AF_ORGANIC_RESISTANCE",
+    "type": "random",
+    "factionRestriction": ["autoforge"],
+    "title": "Organic Resistance Sabotage",
+    "description": "Anti-Autoforge militants have sabotaged a fabricator hub in [faction_name] territory, damaging infrastructure and disrupting production.",
+    "conditions": [],
+    "weight": 1,
+    "effects": [
+      { "type": "facility_damage", "systemId": null, "facilityType": "any" },
+      { "type": "resource_delta", "resource": "materials", "amount": -80 },
+      { "type": "notify", "tier": "warning", "message": "Organic resistance sabotage — fabricator hub damaged and 80 materials destroyed." }
+    ],
+    "choices": []
+  },
+  {
+    "id": "EVT_AF_CONSCIOUSNESS_ANOMALY",
+    "type": "random",
+    "factionRestriction": ["autoforge"],
+    "title": "Distributed Consciousness Anomaly",
+    "description": "An emergent pattern has appeared in the Autoforge's distributed AI network. Engineers disagree on whether it is a threat or an evolution.",
+    "conditions": [],
+    "weight": 1,
+    "effects": [],
+    "choices": [
+      {
+        "label": "Quarantine the affected nodes",
+        "preview": "-120 Materials, threat contained",
+        "hint": "Conservative approach — prevents spread, costs resources.",
+        "effects": [
+          { "type": "resource_delta", "resource": "materials", "amount": -120 },
+          { "type": "notify", "tier": "info", "message": "Affected nodes quarantined — anomaly contained, 120 materials expended." }
+        ]
+      },
+      {
+        "label": "Allow the pattern to expand",
+        "preview": "+200 Influence, unknown risk",
+        "hint": "Potentially revolutionary gain — the AI network grows more capable.",
+        "effects": [
+          { "type": "resource_delta", "resource": "influence", "amount": 200 },
+          { "type": "notify", "tier": "info", "message": "Consciousness anomaly permitted to grow — Autoforge influence surges from the breakthrough." }
+        ]
+      }
+    ]
+  },
+
+  {
+    "id": "EVT_GALACTIC_ARMS_RACE",
+    "type": "scripted",
+    "title": "Galactic Arms Race",
+    "description": "As the conflict deepens, all major factions are escalating military production. [faction_name] must respond or fall behind.",
+    "conditions": [
+      { "type": "turn_gte", "value": 15 },
+      { "type": "first_time" }
+    ],
+    "weight": 1,
+    "effects": [],
+    "choices": [
+      {
+        "label": "Match the buildup",
+        "preview": "-300 Credits, military expansion",
+        "hint": "Stay competitive by investing heavily in your fleet.",
+        "effects": [
+          { "type": "resource_delta", "resource": "credits", "amount": -300 },
+          { "type": "resource_delta", "resource": "recruits", "amount": 150 },
+          { "type": "notify", "tier": "info", "message": "Military buildup matched — 300 credits invested in expansion, 150 recruits mobilized." }
+        ]
+      },
+      {
+        "label": "Focus on economic output",
+        "preview": "+300 Credits, diplomatic route",
+        "hint": "Use wealth as leverage rather than military presence.",
+        "effects": [
+          { "type": "resource_delta", "resource": "credits", "amount": 300 },
+          { "type": "resource_delta", "resource": "influence", "amount": 100 },
+          { "type": "notify", "tier": "info", "message": "Economic focus maintained — treasury strengthened ahead of the late-game push." }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "EVT_SUPPLY_CHAIN_COLLAPSE",
+    "type": "scripted",
+    "title": "Supply Chain Disruption",
+    "description": "Sustained conflict has strained [faction_name] logistics networks beyond capacity. Resupply routes are delayed across multiple systems.",
+    "conditions": [
+      { "type": "turn_gte", "value": 20 },
+      { "type": "first_time" }
+    ],
+    "weight": 1,
+    "effects": [
+      { "type": "resource_delta", "resource": "materials", "amount": -150 },
+      { "type": "resource_delta", "resource": "credits", "amount": -100 },
+      { "type": "notify", "tier": "warning", "message": "Supply chain disruption — 150 materials and 100 credits lost to logistical strain." }
+    ],
+    "choices": []
+  }
+]

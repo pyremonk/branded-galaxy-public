@@ -1,0 +1,97 @@
+/* CriticalAlertDialog — Sequential critical alert modal
+   Spec: 036-notifications-alerts-spec.md (FR-NA-003)
+*/
+
+.cad-scrim {
+  position: fixed;
+  inset: 0;
+  background: rgba(1, 4, 9, 0.72);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9000;
+  pointer-events: all;
+}
+
+.cad-modal {
+  background: #161b22;
+  border: 1px solid #f85149;
+  border-radius: 8px;
+  width: min(460px, 92vw);
+  padding: 24px 28px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  box-shadow: 0 0 0 1px rgba(248, 81, 73, 0.25), 0 16px 48px rgba(0, 0, 0, 0.7);
+}
+
+.cad-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.cad-badge {
+  background: #f85149;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  padding: 3px 10px;
+  border-radius: 4px;
+  flex-shrink: 0;
+  font-family: var(--font-mono, monospace);
+}
+
+.cad-progress {
+  font-size: 11px;
+  color: #8b949e;
+  font-family: var(--font-mono, monospace);
+  letter-spacing: 0.04em;
+}
+
+.cad-message {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #e6edf3;
+}
+
+.cad-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  margin-top: 4px;
+}
+
+.cad-btn {
+  font-family: var(--font-mono, monospace);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  padding: 7px 18px;
+  border-radius: 5px;
+  cursor: pointer;
+  border: 1px solid;
+  transition: background 0.15s, color 0.15s;
+}
+
+.cad-btn--primary {
+  background: rgba(88, 166, 255, 0.12);
+  border-color: #58a6ff;
+  color: #58a6ff;
+}
+.cad-btn--primary:hover {
+  background: rgba(88, 166, 255, 0.22);
+}
+
+.cad-btn--secondary {
+  background: transparent;
+  border-color: #484f58;
+  color: #8b949e;
+}
+.cad-btn--secondary:hover {
+  background: rgba(255, 255, 255, 0.06);
+  color: #c9d1d9;
+}

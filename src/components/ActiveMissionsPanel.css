@@ -1,0 +1,239 @@
+/* ActiveMissionsPanel — Mission management UI styles */
+
+.missions-panel {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+}
+
+/* ─── Tabs ─────────────────────────────────────────────────────────────────── */
+
+.missions-tabs {
+  display: flex;
+  gap: 4px;
+  padding: 8px 12px 0;
+  border-bottom: 1px solid #21262d;
+  flex-shrink: 0;
+}
+
+.missions-tab {
+  background: transparent;
+  border: 1px solid transparent;
+  border-bottom: none;
+  border-radius: 6px 6px 0 0;
+  color: #8b949e;
+  cursor: pointer;
+  font-family: monospace;
+  font-size: 11px;
+  padding: 5px 12px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: color 0.15s, background 0.15s;
+}
+
+.missions-tab:hover {
+  color: #c9d1d9;
+  background: rgba(88, 166, 255, 0.06);
+}
+
+.missions-tab--active {
+  border-color: #30363d;
+  background: #0d1117;
+  color: #e6edf3;
+}
+
+.missions-tab-count {
+  background: #21262d;
+  border-radius: 10px;
+  font-size: 10px;
+  line-height: 1;
+  min-width: 16px;
+  padding: 2px 5px;
+  text-align: center;
+  color: #8b949e;
+}
+
+.missions-tab--active .missions-tab-count {
+  background: #388bfd22;
+  color: #58a6ff;
+}
+
+/* ─── Mission List ──────────────────────────────────────────────────────────── */
+
+.missions-list {
+  flex: 1;
+  overflow-y: auto;
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.missions-empty {
+  color: #484f58;
+  font-size: 12px;
+  font-family: monospace;
+  text-align: center;
+  padding: 24px 0;
+}
+
+/* ─── Mission Card ──────────────────────────────────────────────────────────── */
+
+.mission-card {
+  background: #161b22;
+  border: 1px solid #21262d;
+  border-radius: 6px;
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.mission-card--staged {
+  border-left: 3px solid #f0883e;
+}
+
+.mission-card--active {
+  border-left: 3px solid #58a6ff;
+}
+
+.mission-card--completed {
+  border-left: 3px solid #30363d;
+  cursor: pointer;
+  transition: border-color 0.15s;
+}
+
+.mission-card--completed:hover {
+  border-color: #8b949e;
+}
+
+.mission-card-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.mission-type-tag {
+  background: #21262d;
+  border: 1px solid #30363d;
+  border-radius: 4px;
+  color: #c9d1d9;
+  font-family: monospace;
+  font-size: 10px;
+  padding: 2px 6px;
+  text-transform: uppercase;
+}
+
+.mission-card-faction {
+  color: #484f58;
+  font-family: monospace;
+  font-size: 10px;
+}
+
+.mission-turns-left {
+  margin-left: auto;
+  color: #58a6ff;
+  font-family: monospace;
+  font-size: 10px;
+}
+
+.mission-card-turn {
+  margin-left: auto;
+  color: #484f58;
+  font-family: monospace;
+  font-size: 10px;
+}
+
+.mission-outcome-badge {
+  font-family: monospace;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.mission-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.mission-card-target,
+.mission-card-chars {
+  color: #8b949e;
+  font-family: monospace;
+  font-size: 11px;
+}
+
+.mission-card-target span,
+.mission-card-chars span {
+  color: #c9d1d9;
+}
+
+/* ─── Progress Bar ──────────────────────────────────────────────────────────── */
+
+.mission-progress-bar {
+  background: #21262d;
+  border-radius: 3px;
+  height: 4px;
+  overflow: hidden;
+  width: 100%;
+}
+
+.mission-progress-fill {
+  background: #58a6ff;
+  border-radius: 3px;
+  height: 100%;
+  transition: width 0.3s ease;
+}
+
+.mission-progress-label {
+  color: #484f58;
+  font-family: monospace;
+  font-size: 10px;
+}
+
+/* ─── Cancel Button ─────────────────────────────────────────────────────────── */
+
+.mission-cancel-btn {
+  align-self: flex-end;
+  background: transparent;
+  border: 1px solid #f85149;
+  border-radius: 4px;
+  color: #f85149;
+  cursor: pointer;
+  font-family: monospace;
+  font-size: 10px;
+  padding: 3px 10px;
+  transition: background 0.15s;
+}
+
+.mission-cancel-btn:hover {
+  background: rgba(248, 81, 73, 0.1);
+}
+
+/* ─── Completed Card Detail ─────────────────────────────────────────────────── */
+
+.mission-card-detail {
+  border-top: 1px solid #21262d;
+  display: flex;
+  flex-direction: column;
+  font-family: monospace;
+  font-size: 11px;
+  gap: 3px;
+  color: #8b949e;
+  padding-top: 6px;
+}
+
+.mission-detected {
+  color: #f0883e;
+}
+
+.mission-capture {
+  color: #f85149;
+}
+
+.mission-effect {
+  color: #3fb950;
+}

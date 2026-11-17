@@ -1,0 +1,420 @@
+{
+  "factionId": "brandAuthority",
+  "technologies": [
+    {
+      "id": "military-logistics-1",
+      "tier": 1,
+      "name": "Military Logistics I",
+      "description": "Streamlined supply chains and logistical reforms accelerate fleet production across all Brand Authority shipyards.",
+      "icon": "▶",
+      "startingTech": true,
+      "cost": {
+        "credits": 200,
+        "influence": 50,
+        "turns": 5
+      },
+      "prerequisites": [],
+      "effects": [
+        {
+          "type": "production-bonus",
+          "target": "fleetProductionSpeed",
+          "value": 0.1
+        }
+      ],
+      "unlocks": {
+        "units": [],
+        "buildings": [],
+        "missions": [],
+        "victoryConditions": []
+      }
+    },
+    {
+      "id": "corporate-tax-reform",
+      "tier": 1,
+      "name": "Corporate Tax Reform",
+      "description": "Restructured taxation frameworks and favorable trade policies increase credit income from all controlled systems.",
+      "icon": "◆",
+      "startingTech": false,
+      "cost": {
+        "credits": 300,
+        "influence": 75,
+        "turns": 6
+      },
+      "prerequisites": [],
+      "effects": [
+        {
+          "type": "production-bonus",
+          "target": "creditIncome",
+          "value": 0.15
+        }
+      ],
+      "unlocks": {
+        "units": [],
+        "buildings": [],
+        "missions": [],
+        "victoryConditions": []
+      }
+    },
+    {
+      "id": "advanced-materials-science",
+      "tier": 1,
+      "name": "Advanced Materials Science",
+      "description": "Breakthrough alloy compositions and manufacturing techniques improve materials output across Brand Authority industrial complexes.",
+      "icon": "⚙",
+      "startingTech": false,
+      "cost": {
+        "credits": 250,
+        "influence": 60,
+        "turns": 5
+      },
+      "prerequisites": [],
+      "effects": [
+        {
+          "type": "production-bonus",
+          "target": "materialProduction",
+          "value": 0.1
+        }
+      ],
+      "unlocks": {
+        "units": [],
+        "buildings": [],
+        "missions": [],
+        "victoryConditions": []
+      }
+    },
+    {
+      "id": "fleet-doctrine-overwhelming-force",
+      "tier": 2,
+      "name": "Fleet Doctrine: Overwhelming Force",
+      "description": "Coordinated strike protocols and superior training give Brand Authority warships a decisive edge in direct combat engagements.",
+      "icon": "⚔",
+      "startingTech": false,
+      "cost": {
+        "credits": 600,
+        "influence": 150,
+        "turns": 7.5
+      },
+      "prerequisites": [
+        "military-logistics-1"
+      ],
+      "effects": [
+        {
+          "type": "military-bonus",
+          "target": "shipCombatPower",
+          "value": 0.15
+        }
+      ],
+      "unlocks": {
+        "units": [
+          "heavy-cruiser"
+        ],
+        "buildings": [],
+        "missions": [],
+        "victoryConditions": []
+      }
+    },
+    {
+      "id": "economic-consolidation",
+      "tier": 2,
+      "name": "Economic Consolidation",
+      "description": "Centralized resource management and expanded storage infrastructure expands resource caps and increases trade hub efficiency.",
+      "icon": "▣",
+      "startingTech": false,
+      "cost": {
+        "credits": 700,
+        "influence": 175,
+        "turns": 9
+      },
+      "prerequisites": [
+        "corporate-tax-reform"
+      ],
+      "effects": [
+        {
+          "type": "storage-cap-bonus",
+          "target": "all",
+          "value": 0.25
+        },
+        {
+          "type": "production-bonus",
+          "target": "tradeHubBonus",
+          "value": 0.1
+        }
+      ],
+      "unlocks": {
+        "units": [],
+        "buildings": [],
+        "missions": [],
+        "victoryConditions": []
+      }
+    },
+    {
+      "id": "propaganda-networks",
+      "tier": 2,
+      "name": "Propaganda Networks",
+      "description": "Galaxy-wide broadcast infrastructure and targeted messaging campaigns greatly amplify Brand Authority influence generation.",
+      "icon": "⊕",
+      "startingTech": false,
+      "cost": {
+        "credits": 500,
+        "influence": 125,
+        "turns": 7.5
+      },
+      "prerequisites": [
+        "advanced-materials-science"
+      ],
+      "effects": [
+        {
+          "type": "production-bonus",
+          "target": "influenceGeneration",
+          "value": 0.2
+        }
+      ],
+      "unlocks": {
+        "units": [],
+        "buildings": [
+          "propaganda-center"
+        ],
+        "missions": [],
+        "victoryConditions": []
+      }
+    },
+    {
+      "id": "advanced-shipyards",
+      "tier": 3,
+      "name": "Advanced Shipyards",
+      "description": "Next-generation fabrication methods and orbital dry docks push fleet output to unprecedented levels.",
+      "icon": "◇",
+      "startingTech": false,
+      "cost": {
+        "credits": 1200,
+        "influence": 300,
+        "turns": 11
+      },
+      "prerequisites": [
+        "fleet-doctrine-overwhelming-force",
+        "economic-consolidation"
+      ],
+      "effects": [
+        {
+          "type": "production-bonus",
+          "target": "fleetProductionSpeed",
+          "value": 0.25
+        }
+      ],
+      "unlocks": {
+        "units": [
+          "dreadnought"
+        ],
+        "buildings": [],
+        "missions": [],
+        "victoryConditions": []
+      }
+    },
+    {
+      "id": "intelligence-apparatus",
+      "tier": 3,
+      "name": "Intelligence Apparatus",
+      "description": "Dedicated counterintelligence divisions and algorithmic surveillance protect against espionage and covert operations.",
+      "icon": "◑",
+      "startingTech": false,
+      "cost": {
+        "credits": 1000,
+        "influence": 250,
+        "turns": 9.5
+      },
+      "prerequisites": [
+        "propaganda-networks",
+        "economic-consolidation"
+      ],
+      "effects": [
+        {
+          "type": "mission-bonus",
+          "target": "sabotageDefense",
+          "value": 0.3
+        }
+      ],
+      "unlocks": {
+        "units": [],
+        "buildings": [
+          "intelligence-network"
+        ],
+        "missions": [],
+        "victoryConditions": []
+      }
+    },
+    {
+      "id": "resource-optimization",
+      "tier": 3,
+      "name": "Resource Optimization",
+      "description": "Algorithmic supply chain analytics reduce construction overhead and maximize yield from special locations.",
+      "icon": "⊟",
+      "startingTech": false,
+      "cost": {
+        "credits": 1400,
+        "influence": 325,
+        "turns": 12
+      },
+      "prerequisites": [
+        "economic-consolidation",
+        "advanced-materials-science"
+      ],
+      "effects": [
+        {
+          "type": "production-bonus",
+          "target": "specialLocationOutput",
+          "value": 0.2
+        },
+        {
+          "type": "cost-reduction",
+          "target": "constructionCost",
+          "value": 0.15
+        }
+      ],
+      "unlocks": {
+        "units": [],
+        "buildings": [],
+        "missions": [],
+        "victoryConditions": []
+      }
+    },
+    {
+      "id": "supercarrier-program",
+      "tier": 4,
+      "name": "Supercarrier Program",
+      "description": "Classified capital ship program develops the mightiest vessels ever built, dramatically expanding fleet capacity.",
+      "icon": "⛨",
+      "startingTech": false,
+      "cost": {
+        "credits": 2500,
+        "influence": 500,
+        "turns": 13.5
+      },
+      "prerequisites": [
+        "advanced-shipyards",
+        "intelligence-apparatus"
+      ],
+      "effects": [
+        {
+          "type": "military-bonus",
+          "target": "fleetCapacity",
+          "value": 0.3
+        }
+      ],
+      "unlocks": {
+        "units": [
+          "supercarrier"
+        ],
+        "buildings": [],
+        "missions": [],
+        "victoryConditions": []
+      }
+    },
+    {
+      "id": "integrated-defense-grid",
+      "tier": 4,
+      "name": "Integrated Defense Grid",
+      "description": "Networked planetary shields and automated defense platforms create an impenetrable fortress around every Brand Authority system.",
+      "icon": "⊡",
+      "startingTech": false,
+      "cost": {
+        "credits": 2200,
+        "influence": 450,
+        "turns": 12
+      },
+      "prerequisites": [
+        "advanced-shipyards",
+        "intelligence-apparatus"
+      ],
+      "effects": [
+        {
+          "type": "military-bonus",
+          "target": "defenseRating",
+          "value": 0.4
+        }
+      ],
+      "unlocks": {
+        "units": [],
+        "buildings": [
+          "fortress-station"
+        ],
+        "missions": [],
+        "victoryConditions": []
+      }
+    },
+    {
+      "id": "economic-hegemony",
+      "tier": 4,
+      "name": "Economic Hegemony",
+      "description": "Total market control transforms influence into economic leverage, converting political capital directly into credits.",
+      "icon": "♛",
+      "startingTech": false,
+      "cost": {
+        "credits": 2800,
+        "influence": 550,
+        "turns": 14
+      },
+      "prerequisites": [
+        "resource-optimization",
+        "intelligence-apparatus"
+      ],
+      "effects": [
+        {
+          "type": "production-bonus",
+          "target": "creditIncome",
+          "value": 0.3
+        },
+        {
+          "type": "unique-capability",
+          "target": "influence-to-credits-conversion",
+          "value": 1
+        }
+      ],
+      "unlocks": {
+        "units": [],
+        "buildings": [],
+        "missions": [],
+        "victoryConditions": []
+      }
+    },
+    {
+      "id": "galactic-administration",
+      "tier": 5,
+      "name": "Galactic Administration",
+      "description": "The Brand Authority achieves perfect bureaucratic control — systems never lose loyalty, remote management eliminates the friction of distance, and the Enforcer class enfolds all who resist.",
+      "icon": "⌖",
+      "startingTech": false,
+      "cost": {
+        "credits": 5000,
+        "influence": 1000,
+        "turns": 15
+      },
+      "prerequisites": [
+        "supercarrier-program",
+        "integrated-defense-grid",
+        "economic-hegemony"
+      ],
+      "effects": [
+        {
+          "type": "unique-capability",
+          "target": "loyalty-decay-elimination",
+          "value": 1
+        },
+        {
+          "type": "unique-capability",
+          "target": "remote-system-management",
+          "value": 1
+        }
+      ],
+      "unlocks": {
+        "units": [
+          "enforcer"
+        ],
+        "buildings": [],
+        "missions": [],
+        "victoryConditions": [
+          "economic-dominance"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,264 @@
+{
+  "facilityTypes": {
+    "shipyard": {
+      "id": "shipyard",
+      "name": "Shipyard",
+      "description": "Enables ship production; required for fleet construction.",
+      "cost": {
+        "credits": 400,
+        "materials": 150
+      },
+      "buildTime": 5,
+      "maxHP": 5,
+      "prerequisites": [],
+      "upgradable": true,
+      "maxLevel": 3,
+      "upgradeCostFactor": 0.5,
+      "upgradeTime": 3.5,
+      "effects": {
+        "enablesShipProduction": true
+      },
+      "levelEffects": {
+        "1": {
+          "shipSlots": 1
+        },
+        "2": {
+          "shipSlots": 2
+        },
+        "3": {
+          "shipSlots": 3
+        }
+      }
+    },
+    "training": {
+      "id": "training",
+      "name": "Training Facility",
+      "description": "+20% recruit generation at system.",
+      "cost": {
+        "credits": 300,
+        "materials": 100
+      },
+      "buildTime": 3,
+      "maxHP": 4,
+      "prerequisites": [],
+      "upgradable": true,
+      "maxLevel": 3,
+      "upgradeCostFactor": 0.5,
+      "upgradeTime": 3.5,
+      "effects": {
+        "recruitGenBonus": 0.2,
+        "troopsPerTurn": 1
+      },
+      "levelEffects": {
+        "1": {
+          "recruitGenBonus": 0.2,
+          "troopsPerTurn": 1
+        },
+        "2": {
+          "recruitGenBonus": 0.35,
+          "troopsPerTurn": 2
+        },
+        "3": {
+          "recruitGenBonus": 0.5,
+          "troopsPerTurn": 3
+        }
+      }
+    },
+    "research": {
+      "id": "research",
+      "name": "Research Facility",
+      "description": "-10% tech research cost; +Research bonus for stationed characters.",
+      "cost": {
+        "credits": 500,
+        "materials": 200
+      },
+      "buildTime": 5,
+      "maxHP": 5,
+      "prerequisites": [],
+      "upgradable": true,
+      "maxLevel": 3,
+      "upgradeCostFactor": 0.5,
+      "upgradeTime": 3.5,
+      "effects": {
+        "researchCostReduction": 0.1
+      },
+      "levelEffects": {
+        "1": {
+          "researchCostReduction": 0.1
+        },
+        "2": {
+          "researchCostReduction": 0.15
+        },
+        "3": {
+          "researchCostReduction": 0.2
+        }
+      }
+    },
+    "defense": {
+      "id": "defense",
+      "name": "Defense Platform",
+      "description": "+10% combat defense bonus for friendly fleets at system.",
+      "cost": {
+        "credits": 350,
+        "materials": 150
+      },
+      "buildTime": 3,
+      "maxHP": 6,
+      "prerequisites": [],
+      "upgradable": false,
+      "maxLevel": 1,
+      "effects": {
+        "fleetDefenseBonus": 0.1,
+        "invasionDefenseModifier": 0.15
+      }
+    },
+    "shield": {
+      "id": "shield",
+      "name": "Shield Generator",
+      "description": "+5% additional combat defense; reduces raid damage by 20%.",
+      "cost": {
+        "credits": 600,
+        "materials": 250
+      },
+      "buildTime": 6.5,
+      "maxHP": 6,
+      "prerequisites": [
+        "defense"
+      ],
+      "upgradable": false,
+      "maxLevel": 1,
+      "effects": {
+        "fleetDefenseBonus": 0.05,
+        "raidDamageReduction": 0.2,
+        "invasionDamageReduction": 0.2,
+        "invasionStrengthReduction": 0.15
+      }
+    },
+    "extractor": {
+      "id": "extractor",
+      "name": "Resource Extractor",
+      "description": "+15% credits and materials from system per turn.",
+      "cost": {
+        "credits": 400,
+        "materials": 100
+      },
+      "buildTime": 3,
+      "maxHP": 4,
+      "prerequisites": [],
+      "upgradable": false,
+      "maxLevel": 1,
+      "effects": {
+        "creditsBonus": 0.15,
+        "materialsBonus": 0.15
+      }
+    },
+    "ion_cannon": {
+      "id": "ion_cannon",
+      "name": "Ion Cannon",
+      "description": "First combat round: reduces enemy fleet's effective combat power by 15%.",
+      "cost": {
+        "credits": 500,
+        "materials": 200
+      },
+      "buildTime": 5,
+      "maxHP": 6,
+      "prerequisites": [
+        "defense"
+      ],
+      "upgradable": false,
+      "maxLevel": 1,
+      "effects": {
+        "spaceCombatDebuff": 0.15,
+        "invasionStrengthReduction": 0.15,
+        "invasionDefenseModifier": 0.1,
+        "selfDamageOnFire": 1
+      }
+    }
+  },
+  "baseTypes": {
+    "union": {
+      "id": "secretBase",
+      "name": "Secret Base",
+      "description": "Hidden headquarters that must remain undiscovered.",
+      "maxHP": 5,
+      "maxCount": 1,
+      "buildCost": {
+        "credits": 500,
+        "materials": 200
+      },
+      "buildTime": 2,
+      "visible": false,
+      "effects": {
+        "productionBonus": 0.25,
+        "hidden": true
+      },
+      "discoveryCluesRequired": 5,
+      "relocationCost": {
+        "credits": 500,
+        "materials": 200
+      }
+    },
+    "brandAuthority": {
+      "id": "sectorHQ",
+      "name": "Sector HQ",
+      "description": "Visible regional command center with strong defensive bonuses.",
+      "maxHP": 8,
+      "maxCount": 3,
+      "buildCost": {
+        "credits": 800,
+        "materials": 300
+      },
+      "buildTime": 7,
+      "visible": true,
+      "effects": {
+        "productionBonus": 0.2,
+        "fleetDefenseBonus": 0.15,
+        "missionResistanceBonus": 2,
+        "supplyHubRange": 2
+      }
+    },
+    "autoforge": {
+      "id": "outpost",
+      "name": "Outpost",
+      "description": "Forward base providing production and influence per turn.",
+      "maxHP": 3,
+      "maxCount": 999,
+      "buildCost": {
+        "credits": 300,
+        "materials": 100
+      },
+      "buildTime": 4,
+      "visible": true,
+      "effects": {
+        "productionBonus": 0.1,
+        "influencePerTurn": 1,
+        "networkBonusPerThree": 0.05
+      }
+    }
+  },
+  "queueMaxSize": 3,
+  "groundTroopsMax": 20,
+  "groundTroopsBaseGenPerTurn": 1,
+  "groundTroopsLoyaltyThreshold": 50,
+  "troopReinforcementCost": {
+    "recruits": 10
+  },
+  "troopReinforcementAmount": 5,
+  "invasionMaxRounds": 15,
+  "factionCostModifiers": {
+    "union": {
+      "allFacilities": 0.85
+    },
+    "brandAuthority": {
+      "defense": 0.9,
+      "shield": 0.9,
+      "ion_cannon": 0.9
+    },
+    "autoforge": {
+      "outpost": 0.8
+    }
+  },
+  "repairCostFactor": 0.5,
+  "demolitionRefundRate": 0.25,
+  "cancelRefundRate": 0.5
+}

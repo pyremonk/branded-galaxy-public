@@ -1,0 +1,71 @@
+{
+  "seed": "tutorial",
+  "size": "small",
+  "mapSize": { "width": 2000, "height": 1500 },
+  "sectors": [
+    { "id": "sec-t01", "name": "Core Sector" },
+    { "id": "sec-t02", "name": "Frontier Sector" }
+  ],
+  "systems": [
+    {
+      "id": "sys-t01", "name": "Capital Prime", "sectorId": "sec-t01",
+      "position": { "x": 400, "y": 600 }, "population": 8,
+      "loyalty": "brandAuthority", "loyaltyValue": 100, "loyalties": { "brandAuthority": 100 },
+      "troops": 5, "specialType": "tradeHub",
+      "resources": { "credits": 120, "materials": 40, "recruits": 0, "influence": 0 },
+      "connections": ["sys-t02", "sys-t03"], "defenseRating": 2, "facilities": []
+    },
+    {
+      "id": "sys-t02", "name": "Forge Station", "sectorId": "sec-t01",
+      "position": { "x": 300, "y": 350 }, "population": 5,
+      "loyalty": "brandAuthority", "loyaltyValue": 100, "loyalties": { "brandAuthority": 100 },
+      "troops": 5, "specialType": "manufacturingCenter",
+      "resources": { "credits": 40, "materials": 80, "recruits": 0, "influence": 0 },
+      "connections": ["sys-t01"], "defenseRating": 1, "facilities": []
+    },
+    {
+      "id": "sys-t03", "name": "Frontier Post", "sectorId": "sec-t01",
+      "position": { "x": 700, "y": 700 }, "population": 4,
+      "loyalty": "brandAuthority", "loyaltyValue": 80, "loyalties": { "brandAuthority": 80 },
+      "troops": 3, "specialType": null,
+      "resources": { "credits": 30, "materials": 25, "recruits": 0, "influence": 0 },
+      "connections": ["sys-t01", "sys-t04"], "defenseRating": 1, "facilities": []
+    },
+    {
+      "id": "sys-t04", "name": "Nexus Point", "sectorId": "sec-t02",
+      "position": { "x": 1000, "y": 600 }, "population": 4,
+      "loyalty": "neutral", "loyaltyValue": 50, "loyalties": {},
+      "troops": 0, "specialType": null,
+      "resources": { "credits": 25, "materials": 20, "recruits": 0, "influence": 0 },
+      "connections": ["sys-t03", "sys-t05"], "defenseRating": 0, "facilities": []
+    },
+    {
+      "id": "sys-t05", "name": "Union Outpost", "sectorId": "sec-t02",
+      "position": { "x": 1300, "y": 450 }, "population": 4,
+      "loyalty": "union", "loyaltyValue": 80, "loyalties": { "union": 80 },
+      "troops": 3, "specialType": null,
+      "resources": { "credits": 25, "materials": 20, "recruits": 0, "influence": 0 },
+      "connections": ["sys-t04", "sys-t06"], "defenseRating": 1, "facilities": []
+    },
+    {
+      "id": "sys-t06", "name": "Union Core", "sectorId": "sec-t02",
+      "position": { "x": 1600, "y": 600 }, "population": 7,
+      "loyalty": "union", "loyaltyValue": 100, "loyalties": { "union": 100 },
+      "troops": 5, "specialType": "researchFacility",
+      "resources": { "credits": 50, "materials": 30, "recruits": 0, "influence": 0 },
+      "connections": ["sys-t05"], "defenseRating": 2, "facilities": []
+    }
+  ],
+  "factionData": {
+    "brandAuthority": {
+      "controlledSystems": ["sys-t01", "sys-t02", "sys-t03"],
+      "startingResources": { "credits": 500, "materials": 300, "recruits": 100, "influence": 100 },
+      "bonuses": { "creditMultiplier": 1.0, "materialMultiplier": 1.0, "recruitMultiplier": 1.0 }
+    },
+    "union": {
+      "controlledSystems": ["sys-t05", "sys-t06"],
+      "startingResources": { "credits": 500, "materials": 300, "recruits": 100, "influence": 100 },
+      "bonuses": { "creditMultiplier": 1.0, "materialMultiplier": 1.0, "recruitMultiplier": 1.0 }
+    }
+  }
+}

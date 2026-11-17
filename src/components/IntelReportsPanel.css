@@ -1,0 +1,229 @@
+/* IntelReportsPanel.css — Styles for the Intelligence Reports panel */
+
+/* ─── Threat Summary ─────────────────────────────────────────────────────── */
+
+.intel-threat-section {
+  background: rgba(248, 81, 73, 0.05);
+  border-radius: 6px;
+  padding: 8px;
+}
+
+.intel-threat-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: 6px;
+}
+
+.intel-threat-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 8px;
+  border-left: 3px solid #f85149;
+  background: rgba(13, 17, 23, 0.6);
+  border-radius: 0 4px 4px 0;
+  font-size: 12px;
+  font-family: monospace;
+  transition: background 0.15s;
+}
+
+.intel-threat-row:hover {
+  background: rgba(88, 166, 255, 0.08);
+}
+
+.intel-threat-icon {
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.intel-threat-system {
+  font-weight: 600;
+  color: #c9d1d9;
+  min-width: 80px;
+}
+
+.intel-threat-type {
+  color: #8b949e;
+  flex: 1;
+}
+
+.intel-expiring-tag {
+  color: #f0883e;
+  font-size: 11px;
+  font-style: italic;
+  margin-left: auto;
+}
+
+/* ─── Filter bar ─────────────────────────────────────────────────────────── */
+
+.intel-filter-section {
+  padding: 8px 0 4px;
+}
+
+.intel-filter-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 6px;
+  align-items: center;
+}
+
+.intel-filter-btn {
+  padding: 3px 9px;
+  font-family: monospace;
+  font-size: 11px;
+  background: rgba(48, 54, 61, 0.6);
+  border: 1px solid #30363d;
+  border-radius: 4px;
+  color: #8b949e;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.intel-filter-btn--active {
+  background: rgba(88, 166, 255, 0.15);
+  border-color: #58a6ff;
+  color: #58a6ff;
+}
+
+.intel-filter-btn:hover {
+  border-color: #58a6ff;
+}
+
+.intel-system-select,
+.intel-sort-select {
+  padding: 3px 8px;
+  font-family: monospace;
+  font-size: 11px;
+  background: rgba(22, 27, 34, 0.9);
+  border: 1px solid #30363d;
+  border-radius: 4px;
+  color: #c9d1d9;
+  cursor: pointer;
+}
+
+.intel-expiring-label {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-family: monospace;
+  font-size: 11px;
+  color: #8b949e;
+  cursor: pointer;
+}
+
+.intel-expiring-label input {
+  accent-color: #f0883e;
+}
+
+/* ─── Intel Item list ────────────────────────────────────────────────────── */
+
+.intel-item-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 6px;
+}
+
+.intel-item-row {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 8px 10px;
+  background: rgba(22, 27, 34, 0.7);
+  border: 1px solid #21262d;
+  border-radius: 6px;
+  transition: border-color 0.15s;
+}
+
+.intel-item-row--expiring {
+  border-color: #f0883e;
+  background: rgba(240, 136, 62, 0.06);
+}
+
+.intel-item-main {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.intel-item-icon {
+  font-size: 16px;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.intel-item-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.intel-item-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.intel-item-system {
+  font-family: monospace;
+  font-size: 12px;
+  font-weight: 600;
+  color: #c9d1d9;
+}
+
+.intel-item-type {
+  font-family: monospace;
+  font-size: 11px;
+  color: #58a6ff;
+  background: rgba(88, 166, 255, 0.1);
+  padding: 1px 5px;
+  border-radius: 3px;
+}
+
+.intel-item-source {
+  font-family: monospace;
+  font-size: 10px;
+  color: #8b949e;
+  background: rgba(48, 54, 61, 0.5);
+  padding: 1px 5px;
+  border-radius: 3px;
+}
+
+.intel-item-summary {
+  font-family: monospace;
+  font-size: 11px;
+  color: #8b949e;
+  margin-top: 3px;
+}
+
+.intel-item-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 4px;
+  border-top: 1px solid #21262d;
+}
+
+.intel-item-age {
+  font-family: monospace;
+  font-size: 10px;
+}
+
+.intel-item-expiry {
+  font-family: monospace;
+  font-size: 10px;
+  color: #8b949e;
+}
+
+.intel-item-expiry--soon {
+  color: #f0883e;
+  font-weight: 600;
+  animation: intel-pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes intel-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}

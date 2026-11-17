@@ -1,0 +1,47 @@
+/*
+ * MiniMap.css — Galaxy overview mini-map.
+ * Rendered inside .map-nav-panel which provides fixed positioning + shared border.
+ */
+
+/* ── Combined panel: minimap + zoom controls ── */
+.map-nav-panel {
+  position: fixed;
+  bottom: 70px;   /* above the MapFilterHUD bar */
+  left: 16px;
+  z-index: 210;
+
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+
+  background: rgba(13, 17, 23, 0.88);
+  border: 1px solid rgba(88, 166, 255, 0.25);
+  border-radius: 6px;
+  overflow: hidden;
+  user-select: none;
+}
+
+/* ── Minimap section (left side of panel) ── */
+.minimap {
+  display: flex;
+  flex-direction: column;
+}
+
+.minimap-title {
+  padding: 3px 8px;
+  font-family: 'JetBrains Mono', 'Courier New', monospace;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: rgba(88, 166, 255, 0.6);
+  background: rgba(13, 17, 23, 0.6);
+  border-bottom: 1px solid rgba(88, 166, 255, 0.15);
+  text-transform: uppercase;
+}
+
+.minimap-canvas {
+  display: block;
+  cursor: crosshair;
+  width: 160px;
+  height: 160px;
+}

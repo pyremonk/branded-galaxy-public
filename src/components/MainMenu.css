@@ -1,0 +1,98 @@
+/* MainMenu.css */
+.mm-overlay {
+  position: fixed;
+  inset: 0;
+  background: #0d1117;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.mm-panel {
+  text-align: center;
+  font-family: monospace;
+}
+
+.mm-title {
+  font-size: 48px;
+  color: #58a6ff;
+  letter-spacing: 0.12em;
+  margin: 0 0 8px;
+  text-shadow: 0 0 40px rgba(88, 166, 255, 0.4);
+}
+
+.mm-subtitle {
+  color: #6e7681;
+  font-size: 14px;
+  letter-spacing: 0.1em;
+  margin: 0 0 40px;
+}
+
+.mm-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  align-items: center;
+}
+
+.mm-btn {
+  font-family: monospace;
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: 0.06em;
+  border-radius: 6px;
+  border: 1px solid;
+  cursor: pointer;
+  padding: 12px 48px;
+  width: 260px;
+  transition: opacity 0.15s, background 0.15s;
+}
+
+.mm-btn--continue {
+  background: rgba(63, 185, 80, 0.15);
+  border-color: #3fb950;
+  color: #3fb950;
+}
+.mm-btn--continue:hover { background: rgba(63, 185, 80, 0.28); }
+
+.mm-btn--new {
+  background: rgba(88, 166, 255, 0.12);
+  border-color: #58a6ff;
+  color: #58a6ff;
+}
+.mm-btn--new:hover { background: rgba(88, 166, 255, 0.24); }
+
+.mm-btn--load {
+  background: transparent;
+  border-color: #484f58;
+  color: #8b949e;
+}
+.mm-btn--load:hover { border-color: #8b949e; color: #c9d1d9; }
+
+/* Tutorial button — prominent (first-time players) */
+.mm-btn--tutorial {
+  background: rgba(63, 185, 80, 0.15);
+  border-color: #3fb950;
+  color: #3fb950;
+}
+.mm-btn--tutorial:hover { background: rgba(63, 185, 80, 0.28); }
+
+/* Tutorial button — secondary (after completion) */
+.mm-btn--tutorial-secondary {
+  background: transparent;
+  border-color: #484f58;
+  color: #6e7681;
+  font-size: 13px;
+  padding: 8px 48px;
+}
+.mm-btn--tutorial-secondary:hover { border-color: #8b949e; color: #c9d1d9; }
+
+.mm-btn--audio {
+  background: transparent;
+  border-color: #484f58;
+  color: #8b949e;
+  font-size: 13px;
+  padding: 8px 48px;
+}
+.mm-btn--audio:hover { border-color: #58a6ff; color: #58a6ff; }

@@ -1,0 +1,64 @@
+/*
+ * TurnProgressBar.css — Compact turn-boundary progress for sync mode.
+ * Sits in TopBarHUD where the END TURN + turn chip normally appear.
+ * Spec: 062-unified-time-display-spec.md (FR-UTD-007)
+ */
+
+.turn-progress-bar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  padding: 3px 8px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 12px;
+  color: #c9d1d9;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.turn-progress-bar:hover {
+  background: rgba(88, 166, 255, 0.08);
+  border-color: #30363d;
+}
+
+.turn-progress-bar__label {
+  color: #3fb950;
+  font-size: 13px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.turn-progress-bar__track {
+  width: 80px;
+  height: 6px;
+  background: #21262d;
+  border-radius: 3px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.turn-progress-bar__fill {
+  height: 100%;
+  background: #3fb950;
+  border-radius: 3px;
+  transition: width 0.3s ease;
+}
+
+.turn-progress-bar__pct {
+  color: #8b949e;
+  font-size: 11px;
+  min-width: 28px;
+  text-align: right;
+}
+
+.turn-progress-bar__speed {
+  color: #58a6ff;
+  font-weight: 600;
+  font-size: 12px;
+  margin-left: 2px;
+}

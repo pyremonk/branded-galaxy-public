@@ -1,0 +1,15 @@
+/*
+ * LeftSidePanel.css — container that holds initiative order and action
+ * limits together on the left side of the screen.
+ */
+
+.left-side-panel {
+  position: fixed;
+  top: 56px; /* a bit below the 48px top bar */
+  left: 16px;
+  z-index: 150;
+
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
